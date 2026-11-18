@@ -1,0 +1,20 @@
+{
+  "profile_sha256": "a689562ee0e338730531c9cbc9a0cd20f74d00f59d63721eb141d03f09a8fccf",
+  "profile_bytes": 1101099,
+  "patched_bolt_sha256": "67b6027bedb90262a42ac8ed89124c7392eb0dcdc9fac314e41940cee214333e",
+  "original_sha256": "29c3362b983c49606ee7576972a0b31c09f29b847e6516f7659ef8c4240f5933",
+  "training_seed": 42,
+  "training_requests": 200,
+  "targets": {
+    "sqlite3VdbeExec": {
+      "nonzero_records": 831,
+      "counter_sum_not_function_calls": 4914711877
+    },
+    "vdbeRecordCompareInt": {
+      "nonzero_records": 18,
+      "counter_sum_not_function_calls": 43879708
+    }
+  },
+  "counter_mode": "MAP_SHARED across forks; periodic cumulative dump; final dump on parent exit",
+  "correctness": "visible HTTP text matches original for both training traces"
+}

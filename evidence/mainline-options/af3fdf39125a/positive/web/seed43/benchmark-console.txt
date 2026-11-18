@@ -1,0 +1,202 @@
+Results directory: /home/zhm/bolt-lab/notrack-main-20261118-af3fdf39125a/stage2/apps/fossil-web/results/measurements-20261118-195732-xjxn9osf
+browse: 300 requests/run; 24 balanced rounds.
+browse round 1/24: C-after-fix / A-original / B-before-fix
+  C-after-fix: 3.9246s, 76.44 req/s, server CPU=3.880s
+  A-original: 3.9005s, 76.91 req/s, server CPU=3.870s
+  B-before-fix: 3.8151s, 78.64 req/s, server CPU=3.780s
+browse round 2/24: A-original / C-after-fix / B-before-fix
+  A-original: 3.9991s, 75.02 req/s, server CPU=3.970s
+  C-after-fix: 3.9590s, 75.78 req/s, server CPU=3.920s
+  B-before-fix: 3.8731s, 77.46 req/s, server CPU=3.830s
+browse round 3/24: B-before-fix / A-original / C-after-fix
+  B-before-fix: 3.8622s, 77.68 req/s, server CPU=3.830s
+  A-original: 3.9156s, 76.62 req/s, server CPU=3.900s
+  C-after-fix: 3.9156s, 76.62 req/s, server CPU=3.870s
+browse round 4/24: C-after-fix / B-before-fix / A-original
+  C-after-fix: 3.8739s, 77.44 req/s, server CPU=3.840s
+  B-before-fix: 3.8627s, 77.67 req/s, server CPU=3.830s
+  A-original: 3.9081s, 76.76 req/s, server CPU=3.890s
+browse round 5/24: B-before-fix / C-after-fix / A-original
+  B-before-fix: 3.8528s, 77.87 req/s, server CPU=3.830s
+  C-after-fix: 3.8154s, 78.63 req/s, server CPU=3.770s
+  A-original: 3.9358s, 76.22 req/s, server CPU=3.920s
+browse round 6/24: B-before-fix / A-original / C-after-fix
+  B-before-fix: 3.9226s, 76.48 req/s, server CPU=3.890s
+  A-original: 3.9670s, 75.62 req/s, server CPU=3.950s
+  C-after-fix: 3.8722s, 77.48 req/s, server CPU=3.830s
+browse round 7/24: C-after-fix / A-original / B-before-fix
+  C-after-fix: 3.8979s, 76.97 req/s, server CPU=3.870s
+  A-original: 3.8579s, 77.76 req/s, server CPU=3.820s
+  B-before-fix: 3.9780s, 75.41 req/s, server CPU=3.950s
+browse round 8/24: B-before-fix / C-after-fix / A-original
+  B-before-fix: 3.8619s, 77.68 req/s, server CPU=3.820s
+  C-after-fix: 3.9370s, 76.20 req/s, server CPU=3.890s
+  A-original: 3.9538s, 75.88 req/s, server CPU=3.930s
+browse round 9/24: A-original / B-before-fix / C-after-fix
+  A-original: 3.9713s, 75.54 req/s, server CPU=3.940s
+  B-before-fix: 3.8525s, 77.87 req/s, server CPU=3.830s
+  C-after-fix: 3.8187s, 78.56 req/s, server CPU=3.790s
+browse round 10/24: B-before-fix / C-after-fix / A-original
+  B-before-fix: 3.8497s, 77.93 req/s, server CPU=3.820s
+  C-after-fix: 3.9054s, 76.82 req/s, server CPU=3.880s
+  A-original: 3.9168s, 76.59 req/s, server CPU=3.890s
+browse round 11/24: C-after-fix / B-before-fix / A-original
+  C-after-fix: 3.7731s, 79.51 req/s, server CPU=3.760s
+  B-before-fix: 3.9259s, 76.42 req/s, server CPU=3.880s
+  A-original: 3.9039s, 76.85 req/s, server CPU=3.880s
+browse round 12/24: A-original / C-after-fix / B-before-fix
+  A-original: 3.9172s, 76.59 req/s, server CPU=3.870s
+  C-after-fix: 3.8525s, 77.87 req/s, server CPU=3.820s
+  B-before-fix: 3.8375s, 78.18 req/s, server CPU=3.810s
+browse round 13/24: C-after-fix / A-original / B-before-fix
+  C-after-fix: 3.8484s, 77.96 req/s, server CPU=3.820s
+  A-original: 3.9062s, 76.80 req/s, server CPU=3.880s
+  B-before-fix: 3.9311s, 76.31 req/s, server CPU=3.910s
+browse round 14/24: C-after-fix / B-before-fix / A-original
+  C-after-fix: 3.9024s, 76.88 req/s, server CPU=3.870s
+  B-before-fix: 3.8588s, 77.74 req/s, server CPU=3.830s
+  A-original: 3.9748s, 75.47 req/s, server CPU=3.950s
+browse round 15/24: C-after-fix / B-before-fix / A-original
+  C-after-fix: 3.8891s, 77.14 req/s, server CPU=3.860s
+  B-before-fix: 3.8134s, 78.67 req/s, server CPU=3.770s
+  A-original: 3.9246s, 76.44 req/s, server CPU=3.900s
+browse round 16/24: B-before-fix / C-after-fix / A-original
+  B-before-fix: 3.8819s, 77.28 req/s, server CPU=3.860s
+  C-after-fix: 3.8194s, 78.55 req/s, server CPU=3.780s
+  A-original: 3.8955s, 77.01 req/s, server CPU=3.870s
+browse round 17/24: A-original / B-before-fix / C-after-fix
+  A-original: 3.9491s, 75.97 req/s, server CPU=3.930s
+  B-before-fix: 3.8673s, 77.57 req/s, server CPU=3.820s
+  C-after-fix: 3.9151s, 76.63 req/s, server CPU=3.890s
+browse round 18/24: A-original / C-after-fix / B-before-fix
+  A-original: 3.9124s, 76.68 req/s, server CPU=3.900s
+  C-after-fix: 3.8284s, 78.36 req/s, server CPU=3.800s
+  B-before-fix: 3.8028s, 78.89 req/s, server CPU=3.780s
+browse round 19/24: A-original / B-before-fix / C-after-fix
+  A-original: 3.9568s, 75.82 req/s, server CPU=3.910s
+  B-before-fix: 3.8280s, 78.37 req/s, server CPU=3.800s
+  C-after-fix: 3.8178s, 78.58 req/s, server CPU=3.770s
+browse round 20/24: A-original / C-after-fix / B-before-fix
+  A-original: 3.9680s, 75.61 req/s, server CPU=3.930s
+  C-after-fix: 3.8936s, 77.05 req/s, server CPU=3.850s
+  B-before-fix: 3.9448s, 76.05 req/s, server CPU=3.920s
+browse round 21/24: B-before-fix / A-original / C-after-fix
+  B-before-fix: 3.8785s, 77.35 req/s, server CPU=3.850s
+  A-original: 3.9166s, 76.60 req/s, server CPU=3.890s
+  C-after-fix: 3.8392s, 78.14 req/s, server CPU=3.800s
+browse round 22/24: C-after-fix / A-original / B-before-fix
+  C-after-fix: 3.9459s, 76.03 req/s, server CPU=3.920s
+  A-original: 3.8949s, 77.02 req/s, server CPU=3.860s
+  B-before-fix: 3.8698s, 77.52 req/s, server CPU=3.840s
+browse round 23/24: A-original / B-before-fix / C-after-fix
+  A-original: 3.9030s, 76.86 req/s, server CPU=3.870s
+  B-before-fix: 3.8613s, 77.69 req/s, server CPU=3.840s
+  C-after-fix: 3.8442s, 78.04 req/s, server CPU=3.800s
+browse round 24/24: B-before-fix / A-original / C-after-fix
+  B-before-fix: 3.8686s, 77.55 req/s, server CPU=3.840s
+  A-original: 3.8909s, 77.10 req/s, server CPU=3.860s
+  C-after-fix: 3.8656s, 77.61 req/s, server CPU=3.840s
+review: 500 requests/run; 24 balanced rounds.
+review round 1/24: C-after-fix / A-original / B-before-fix
+  C-after-fix: 3.3047s, 151.30 req/s, server CPU=3.280s
+  A-original: 3.3840s, 147.76 req/s, server CPU=3.350s
+  B-before-fix: 3.2952s, 151.74 req/s, server CPU=3.260s
+review round 2/24: A-original / C-after-fix / B-before-fix
+  A-original: 3.3725s, 148.26 req/s, server CPU=3.360s
+  C-after-fix: 3.2712s, 152.85 req/s, server CPU=3.230s
+  B-before-fix: 3.3120s, 150.97 req/s, server CPU=3.290s
+review round 3/24: B-before-fix / A-original / C-after-fix
+  B-before-fix: 3.3121s, 150.96 req/s, server CPU=3.290s
+  A-original: 3.3781s, 148.01 req/s, server CPU=3.360s
+  C-after-fix: 3.2879s, 152.07 req/s, server CPU=3.260s
+review round 4/24: C-after-fix / B-before-fix / A-original
+  C-after-fix: 3.2804s, 152.42 req/s, server CPU=3.250s
+  B-before-fix: 3.2843s, 152.24 req/s, server CPU=3.260s
+  A-original: 3.3903s, 147.48 req/s, server CPU=3.360s
+review round 5/24: B-before-fix / C-after-fix / A-original
+  B-before-fix: 3.2988s, 151.57 req/s, server CPU=3.280s
+  C-after-fix: 3.2749s, 152.68 req/s, server CPU=3.260s
+  A-original: 3.3872s, 147.61 req/s, server CPU=3.360s
+review round 6/24: B-before-fix / A-original / C-after-fix
+  B-before-fix: 3.3025s, 151.40 req/s, server CPU=3.290s
+  A-original: 3.3815s, 147.86 req/s, server CPU=3.350s
+  C-after-fix: 3.3903s, 147.48 req/s, server CPU=3.360s
+review round 7/24: C-after-fix / A-original / B-before-fix
+  C-after-fix: 3.3407s, 149.67 req/s, server CPU=3.310s
+  A-original: 3.3780s, 148.02 req/s, server CPU=3.360s
+  B-before-fix: 3.3036s, 151.35 req/s, server CPU=3.280s
+review round 8/24: B-before-fix / C-after-fix / A-original
+  B-before-fix: 3.3213s, 150.54 req/s, server CPU=3.290s
+  C-after-fix: 3.2706s, 152.88 req/s, server CPU=3.250s
+  A-original: 3.3952s, 147.27 req/s, server CPU=3.360s
+review round 9/24: A-original / B-before-fix / C-after-fix
+  A-original: 3.3983s, 147.13 req/s, server CPU=3.370s
+  B-before-fix: 3.3147s, 150.84 req/s, server CPU=3.300s
+  C-after-fix: 3.3123s, 150.95 req/s, server CPU=3.280s
+review round 10/24: B-before-fix / C-after-fix / A-original
+  B-before-fix: 3.3579s, 148.90 req/s, server CPU=3.320s
+  C-after-fix: 3.2895s, 152.00 req/s, server CPU=3.270s
+  A-original: 3.3578s, 148.91 req/s, server CPU=3.340s
+review round 11/24: C-after-fix / B-before-fix / A-original
+  C-after-fix: 3.2908s, 151.94 req/s, server CPU=3.260s
+  B-before-fix: 3.3367s, 149.85 req/s, server CPU=3.310s
+  A-original: 3.3645s, 148.61 req/s, server CPU=3.320s
+review round 12/24: A-original / C-after-fix / B-before-fix
+  A-original: 3.4098s, 146.64 req/s, server CPU=3.390s
+  C-after-fix: 3.2820s, 152.35 req/s, server CPU=3.250s
+  B-before-fix: 3.3230s, 150.47 req/s, server CPU=3.290s
+review round 13/24: C-after-fix / A-original / B-before-fix
+  C-after-fix: 3.3499s, 149.26 req/s, server CPU=3.320s
+  A-original: 3.3631s, 148.67 req/s, server CPU=3.330s
+  B-before-fix: 3.2938s, 151.80 req/s, server CPU=3.270s
+review round 14/24: C-after-fix / B-before-fix / A-original
+  C-after-fix: 3.2743s, 152.71 req/s, server CPU=3.250s
+  B-before-fix: 3.3212s, 150.55 req/s, server CPU=3.300s
+  A-original: 3.3666s, 148.52 req/s, server CPU=3.330s
+review round 15/24: C-after-fix / B-before-fix / A-original
+  C-after-fix: 3.3025s, 151.40 req/s, server CPU=3.290s
+  B-before-fix: 3.3382s, 149.78 req/s, server CPU=3.320s
+  A-original: 3.3892s, 147.53 req/s, server CPU=3.360s
+review round 16/24: B-before-fix / C-after-fix / A-original
+  B-before-fix: 3.2991s, 151.56 req/s, server CPU=3.260s
+  C-after-fix: 3.2638s, 153.19 req/s, server CPU=3.240s
+  A-original: 3.3917s, 147.42 req/s, server CPU=3.370s
+review round 17/24: A-original / B-before-fix / C-after-fix
+  A-original: 3.3845s, 147.73 req/s, server CPU=3.350s
+  B-before-fix: 3.3287s, 150.21 req/s, server CPU=3.310s
+  C-after-fix: 3.2689s, 152.95 req/s, server CPU=3.240s
+review round 18/24: A-original / C-after-fix / B-before-fix
+  A-original: 3.4538s, 144.77 req/s, server CPU=3.430s
+  C-after-fix: 3.2774s, 152.56 req/s, server CPU=3.240s
+  B-before-fix: 3.2846s, 152.22 req/s, server CPU=3.280s
+review round 19/24: A-original / B-before-fix / C-after-fix
+  A-original: 3.3492s, 149.29 req/s, server CPU=3.330s
+  B-before-fix: 3.4004s, 147.04 req/s, server CPU=3.360s
+  C-after-fix: 3.3104s, 151.04 req/s, server CPU=3.270s
+review round 20/24: A-original / C-after-fix / B-before-fix
+  A-original: 3.4088s, 146.68 req/s, server CPU=3.400s
+  C-after-fix: 3.3025s, 151.40 req/s, server CPU=3.270s
+  B-before-fix: 3.2836s, 152.27 req/s, server CPU=3.260s
+review round 21/24: B-before-fix / A-original / C-after-fix
+  B-before-fix: 3.3246s, 150.39 req/s, server CPU=3.300s
+  A-original: 3.3706s, 148.34 req/s, server CPU=3.340s
+  C-after-fix: 3.3042s, 151.32 req/s, server CPU=3.270s
+review round 22/24: C-after-fix / A-original / B-before-fix
+  C-after-fix: 3.2534s, 153.68 req/s, server CPU=3.230s
+  A-original: 3.3776s, 148.04 req/s, server CPU=3.360s
+  B-before-fix: 3.2974s, 151.64 req/s, server CPU=3.270s
+review round 23/24: A-original / B-before-fix / C-after-fix
+  A-original: 3.3595s, 148.83 req/s, server CPU=3.340s
+  B-before-fix: 3.2956s, 151.72 req/s, server CPU=3.280s
+  C-after-fix: 3.2834s, 152.28 req/s, server CPU=3.270s
+review round 24/24: B-before-fix / A-original / C-after-fix
+  B-before-fix: 3.3129s, 150.93 req/s, server CPU=3.280s
+  A-original: 3.4015s, 146.99 req/s, server CPU=3.380s
+  C-after-fix: 3.2963s, 151.68 req/s, server CPU=3.280s
+browse: A-original -> B-before-fix: elapsed reduction +1.538%; wins/ties/losses=[21, 0, 3]
+browse: A-original -> C-after-fix: elapsed reduction +1.494%; wins/ties/losses=[20, 0, 4]
+browse: B-before-fix -> C-after-fix: elapsed reduction -0.106%; wins/ties/losses=[12, 0, 12]
+review: A-original -> B-before-fix: elapsed reduction +2.189%; wins/ties/losses=[22, 0, 2]
+review: A-original -> C-after-fix: elapsed reduction +2.707%; wins/ties/losses=[23, 0, 1]
+review: B-before-fix -> C-after-fix: elapsed reduction +0.727%; wins/ties/losses=[19, 0, 5]
+SUCCESS: all requested cases completed. /home/zhm/bolt-lab/notrack-main-20261118-af3fdf39125a/stage2/apps/fossil-web/results/measurements-20261118-195732-xjxn9osf

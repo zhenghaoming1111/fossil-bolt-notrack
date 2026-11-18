@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "upstream_commit": "af3fdf39125a6f119bfcc97f1dd00572185f6e07",
+  "upstream_commit_date_utc": "2026-11-18T09:22:08Z",
+  "selected_on": "2026-11-18",
+  "llvm_version": "24.0.0git",
+  "source_archive_url": "https://codeload.github.com/llvm/llvm-project/tar.gz/af3fdf39125a6f119bfcc97f1dd00572185f6e07",
+  "source_archive_sha256": "303f2ef9c3be04bc3c72d092825399abdfc7331ca1eca7a07a437894c23c74ac",
+  "source_archive_bytes": 328796975,
+  "baseline_file": "bolt/lib/Target/X86/X86MCPlusBuilder.cpp",
+  "baseline_file_sha256": "9f173baaa7fe80153bf4c896750b32960b9b8eb030eb058895656d4b9b47461c",
+  "patched_file_sha256": "9c7b47cb82130763e8902cf4b01dbc9e6d50f349e5e7fc2434909d78d84e91d8",
+  "patch": "patches/notrack-jump-table-options.patch",
+  "patch_sha256": "2c359b4708adfa3a55b20eec473e484c23c4907debd632f2ab1ea635c3246e76",
+  "has_independent_option": true,
+  "build": {
+    "type": "Release",
+    "assertions": true,
+    "targets": [
+      "X86"
+    ],
+    "projects": [
+      "clang",
+      "lld",
+      "bolt"
+    ],
+    "compiler": "clang-18",
+    "cxx_compiler": "clang++-18",
+    "linker": "lld-18",
+    "parallel_jobs": 4,
+    "parallel_link_jobs": 1,
+    "test_clang": "same-commit clang 24.0.0git",
+    "test_lld": "same-commit LLD 24.0.0",
+    "clang_enable_cir": true
+  },
+  "scope": "Same pinned mainline; explicit OFF/ON and finite nonregression experiments.",
+  "mainline_correctness_validated": true,
+  "option_name": "--x86-notrack-jump-tables",
+  "option_default": false
+}

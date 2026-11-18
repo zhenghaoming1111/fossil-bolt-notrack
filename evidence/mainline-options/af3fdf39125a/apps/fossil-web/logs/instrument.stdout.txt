@@ -1,0 +1,34 @@
+BOLT-INFO: Target architecture: x86_64
+BOLT-INFO: BOLT version: af3fdf39125a6f119bfcc97f1dd00572185f6e07
+BOLT-INFO: first alloc address is 0x400000
+BOLT-INFO: creating new program header table at address 0xa00000, offset 0x600000
+BOLT-INFO: enabling relocation mode
+BOLT-INFO: forcing -jump-tables=move for instrumentation
+BOLT-INFO: enabling lite mode
+BOLT-INFO: 0 out of 5446 functions in the binary (0.0%) have non-empty execution profile
+BOLT-INFO: validate-mem-refs updated 3 object references
+BOLT-INSTRUMENTER: Number of indirect call site descriptors: 1132
+BOLT-INSTRUMENTER: Number of indirect call target descriptors: 5418
+BOLT-INSTRUMENTER: Number of function descriptors: 5418
+BOLT-INSTRUMENTER: Number of branch counters: 79798
+BOLT-INSTRUMENTER: Number of ST leaf node counters: 52194
+BOLT-INSTRUMENTER: Number of direct call counters: 0
+BOLT-INSTRUMENTER: Total number of counters: 131992
+BOLT-INSTRUMENTER: Total size of counters: 1055936 bytes (static alloc memory)
+BOLT-INSTRUMENTER: Total size of string table emitted: 107719 bytes in file
+BOLT-INSTRUMENTER: Total size of descriptors: 7998740 bytes in file
+BOLT-INSTRUMENTER: Profile will be saved to file /home/zhm/bolt-lab/notrack-main-20261118-af3fdf39125a/stage2/apps/fossil-web/profiles/fossil.fdata
+BOLT-INFO: 50870 instructions were shortened
+BOLT-INFO: removed 1116 empty blocks
+BOLT-INFO: UCE removed 16597 blocks and 1021461 bytes of code
+BOLT-INFO: padding code to 0x1200000 to accommodate hot text
+BOLT-INFO: output linked against instrumentation runtime library, lib entry point is 0x1380760
+BOLT-INFO: clear procedure is 0x137c300
+BOLT-INFO: patched build-id (flipped first and last bits)
+BOLT-INFO: setting _end to 0x139a48c
+BOLT-INFO: setting __bolt_runtime_start to 0x1380760
+BOLT-INFO: setting __bolt_runtime_fini to 0x13807a0
+BOLT-INFO: setting __hot_start to 0xc00000
+BOLT-INFO: setting __hot_end to 0x11bfaf8
+BOLT-INFO: runtime library finalization was hooked via DT_FINI, set to 0x13807a0
+BOLT-INFO: runtime library initialization was hooked via ELF Header Entry Point, set to 0x1380760

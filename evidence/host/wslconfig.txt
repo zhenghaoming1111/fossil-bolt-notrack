@@ -1,0 +1,6 @@
+[wsl2]
+memory=12GB
+swap=8GB
+processors=8
+networkingMode=mirrored
+dnsTunneling=true

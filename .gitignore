@@ -1,0 +1,6 @@
+/delivery/
+/artifacts/
+/build/
+/results/
+__pycache__/
+*.pyc

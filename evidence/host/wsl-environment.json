@@ -1,0 +1,127 @@
+{
+  "collected_at_utc": "2026-11-18T08:35:42.174820+00:00",
+  "measurement_note": "Snapshot at collection time; frequency, load and memory are not historical measurements.",
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "is_wsl": true,
+  "allowed_cpus": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "os_release": "PRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.5 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n",
+  "meminfo": "MemTotal:       12248696 kB\nMemFree:        10103188 kB\nMemAvailable:   10500496 kB\nBuffers:            4096 kB\nCached:           505992 kB\nSwapCached:            0 kB\nActive:           316048 kB\nInactive:        1155932 kB\nActive(anon):       2700 kB\nInactive(anon):   962324 kB\nActive(file):     313348 kB\nInactive(file):   193608 kB\nUnevictable:           0 kB\nMlocked:               0 kB\nSwapTotal:       8388608 kB\nSwapFree:        8388608 kB\nDirty:             68852 kB\nWriteback:             0 kB\nAnonPages:        962168 kB\nMapped:           334748 kB\nShmem:              3112 kB\nKReclaimable:      99052 kB\nSlab:             207476 kB\nSReclaimable:      99052 kB\nSUnreclaim:       108424 kB\nKernelStack:        5568 kB\nPageTables:        23628 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    14512956 kB\nCommitted_AS:    2263892 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:      165860 kB\nVmallocChunk:          0 kB\nPercpu:             2528 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:     53248 kB\nFilePmdMapped:         0 kB\nUnaccepted:            0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:       31744 kB\nDirectMap2M:     4161536 kB\nDirectMap1G:    17825792 kB\n",
+  "cpu_governors": {},
+  "commands": {
+    "uname": {
+      "argv": [
+        "uname",
+        "-a"
+      ],
+      "returncode": 0,
+      "stdout": "Linux localhost 6.18.33.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun 18 21:54:43 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux\n",
+      "stderr": ""
+    },
+    "lscpu": {
+      "argv": [
+        "lscpu"
+      ],
+      "returncode": 0,
+      "stdout": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           42 bits physical, 48 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  8\nOn-line CPU(s) list:                     0-7\nVendor ID:                               GenuineIntel\nModel name:                              Intel(R) Core(TM) Ultra 9 290HX Plus\nCPU family:                              6\nModel:                                   198\nThread(s) per core:                      1\nCore(s) per socket:                      8\nSocket(s):                               1\nStepping:                                2\nBogoMIPS:                                6144.00\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology tsc_reliable nonstop_tsc cpuid tsc_known_freq pni pclmulqdq vmx ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves avx_vnni vnmi umip waitpkg gfni vaes vpclmulqdq rdpid movdiri movdir64b fsrm md_clear serialize ibt flush_l1d arch_capabilities\nVirtualization:                          VT-x\nHypervisor vendor:                       Microsoft\nVirtualization type:                     full\nL1d cache:                               384 KiB (8 instances)\nL1i cache:                               512 KiB (8 instances)\nL2 cache:                                24 MiB (8 instances)\nL3 cache:                                36 MiB (1 instance)\nNUMA node(s):                            1\nNUMA node0 CPU(s):                       0-7\nVulnerability Gather data sampling:      Not affected\nVulnerability Ghostwrite:                Not affected\nVulnerability Indirect target selection: Not affected\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Not affected\nVulnerability Mds:                       Not affected\nVulnerability Meltdown:                  Not affected\nVulnerability Mmio stale data:           Not affected\nVulnerability Old microcode:             Not affected\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Mitigation; Enhanced IBRS\nVulnerability Spec rstack overflow:      Not affected\nVulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl\nVulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization\nVulnerability Spectre v2:                Mitigation; Enhanced / Automatic IBRS; IBPB conditional; PBRSB-eIBRS SW sequence; BHI BHI_DIS_S\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Not affected\nVulnerability Tsx async abort:           Not affected\nVulnerability Vmscape:                   Not affected\n",
+      "stderr": ""
+    },
+    "lscpu_topology": {
+      "argv": [
+        "lscpu",
+        "-e=CPU,CORE,SOCKET,ONLINE"
+      ],
+      "returncode": 0,
+      "stdout": "CPU CORE SOCKET ONLINE\n  0    0      0    yes\n  1    1      0    yes\n  2    2      0    yes\n  3    3      0    yes\n  4    4      0    yes\n  5    5      0    yes\n  6    6      0    yes\n  7    7      0    yes\n",
+      "stderr": ""
+    },
+    "memory": {
+      "argv": [
+        "free",
+        "-b"
+      ],
+      "returncode": 0,
+      "stdout": "               total        used        free      shared  buff/cache   available\nMem:     12542664704  1789923328 10345664512     3186688   623992832 10752741376\nSwap:     8589934592           0  8589934592\n",
+      "stderr": ""
+    },
+    "disk": {
+      "argv": [
+        "df",
+        "-h",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "Filesystem      Size  Used Avail Use% Mounted on\nC:\\             401G  160G  241G  40% /mnt/c\n",
+      "stderr": ""
+    },
+    "gcc": {
+      "argv": [
+        "gcc",
+        "--version"
+      ],
+      "returncode": 0,
+      "stdout": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+      "stderr": ""
+    },
+    "clang": {
+      "argv": [
+        "clang-18",
+        "--version"
+      ],
+      "returncode": 0,
+      "stdout": "Ubuntu clang version 18.1.3 (1ubuntu1)\nTarget: x86_64-pc-linux-gnu\nThread model: posix\nInstalledDir: /usr/bin\n",
+      "stderr": ""
+    },
+    "python": {
+      "argv": [
+        "python3",
+        "--version"
+      ],
+      "returncode": 0,
+      "stdout": "Python 3.12.3\n",
+      "stderr": ""
+    },
+    "ldd": {
+      "argv": [
+        "ldd",
+        "--version"
+      ],
+      "returncode": 0,
+      "stdout": "ldd (Ubuntu GLIBC 2.39-0ubuntu8.9) 2.39\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\nWritten by Roland McGrath and Ulrich Drepper.\n",
+      "stderr": ""
+    },
+    "packages": {
+      "argv": [
+        "dpkg-query",
+        "-W",
+        "libc6",
+        "libssl3t64",
+        "zlib1g"
+      ],
+      "returncode": 0,
+      "stdout": "libc6:amd64\t2.39-0ubuntu8.9\nlibssl3t64:amd64\t3.0.13-0ubuntu3.15\nzlib1g:amd64\t1:1.3.dfsg-3.1ubuntu2.3\n",
+      "stderr": ""
+    },
+    "docker": {
+      "argv": [
+        "docker",
+        "--version"
+      ],
+      "error": "[Errno 2] No such file or directory: 'docker'"
+    }
+  },
+  "tools": {
+    "gcc": "/usr/bin/gcc",
+    "python3": "/usr/bin/python3",
+    "perf": "/usr/bin/perf",
+    "docker": null
+  }
+}

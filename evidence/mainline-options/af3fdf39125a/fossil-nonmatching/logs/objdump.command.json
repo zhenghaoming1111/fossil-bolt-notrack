@@ -1,0 +1,6 @@
+[
+  "objdump",
+  "-d",
+  "-w",
+  "/opt/project/runs/negative/bin/fossil.orig"
+]

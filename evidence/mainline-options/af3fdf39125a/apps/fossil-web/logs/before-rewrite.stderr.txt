@@ -1,0 +1,140 @@
+BOLT-WARNING: GNU_RELRO segment has partial file offset overlap with section .got.plt
+BOLT-WARNING: debug info will be stripped from the binary. Use -update-debug-sections to keep it.
+BOLT-WARNING: failed to post-process indirect branches for deregister_tm_clones/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for register_tm_clones/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for sqlite3JournalOpen/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for sqlite3VdbeSerialGet/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for getCellInfo/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for indexCellCompare/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for sqlite3GetToken/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for sqlite3PcacheRelease/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for sqlite3PagerUnrefNotNull/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for resolveP2Values/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for impliesNotNullRow/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for freeP4/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for vdbeCompareMemString/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for sqlite3_str_vappendf
+BOLT-WARNING: failed to post-process indirect branches for jsonTranslateTextToBlob/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for exprNodeIsConstant/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for generateSortTail/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for sqlite3VdbeRecordCompareWithSkip/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for vdbeRecordCompareInt/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for valueFromExpr.constprop.0/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for sqlite3_config
+BOLT-WARNING: failed to post-process indirect branches for resolveExprStep/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for isDate/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for strftimeFunc/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for jsonReturnFromBlob/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for unixFileControl/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for sqlite3_file_control
+BOLT-WARNING: failed to post-process indirect branches for sqlite3ExprIfTrue/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for sqlite3ExprIfFalse/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for sqlite3ExprCodeTarget/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for selectInnerLoop/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for sqlite3VdbeExec/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for sqlite3_step
+BOLT-WARNING: failed to post-process indirect branches for yy_reduce.isra.0/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for sqlite3Pragma/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for thNextCommand/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for thNextWord/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for exprEval/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for blob_reset
+BOLT-WARNING: failed to post-process indirect branches for hash_color
+BOLT-WARNING: failed to post-process indirect branches for htmlize
+BOLT-WARNING: failed to post-process indirect branches for htmlize_to_blob
+BOLT-WARNING: failed to post-process indirect branches for html_lookalike
+BOLT-WARNING: failed to post-process indirect branches for defossilize
+BOLT-WARNING: failed to post-process indirect branches for fociColumn/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for object_description
+BOLT-WARNING: failed to post-process indirect branches for login_set_capabilities
+BOLT-WARNING: failed to post-process indirect branches for login_has_capability
+BOLT-WARNING: failed to post-process indirect branches for looks_like_attack
+BOLT-WARNING: failed to post-process indirect branches for manifest_parse
+BOLT-WARNING: failed to post-process indirect branches for vxprintf
+BOLT-WARNING: failed to post-process indirect branches for page_timeline
+BOLT-WARNING: failed to post-process indirect branches for wiki_render/1(*2)
+===-------------------------------------------------------------------------===
+                             Build Binary Functions
+===-------------------------------------------------------------------------===
+  Total Execution Time: 0.1590 seconds (0.1590 wall clock)
+
+   ---User Time---   --System Time--   --User+System--   ---Wall Time---  --- Name ---
+   0.0469 ( 36.8%)   0.0095 ( 30.3%)   0.0565 ( 35.5%)   0.0564 ( 35.5%)  scan functions
+   0.0436 ( 34.2%)   0.0114 ( 36.2%)   0.0550 ( 34.6%)   0.0550 ( 34.6%)  buildCFG
+   0.0370 ( 29.0%)   0.0106 ( 33.6%)   0.0475 ( 29.9%)   0.0475 ( 29.9%)  Disassemble function
+   0.1275 (100.0%)   0.0315 (100.0%)   0.1590 (100.0%)   0.1590 (100.0%)  Total
+
+===-------------------------------------------------------------------------===
+                                 Rewrite passes
+===-------------------------------------------------------------------------===
+  Total Execution Time: 0.5579 seconds (0.5579 wall clock)
+
+   ---User Time---   --System Time--   --User+System--   ---Wall Time---  --- Name ---
+   0.2541 ( 49.2%)   0.0004 (  1.0%)   0.2545 ( 45.6%)   0.2545 ( 45.6%)  run optimization passes
+   0.0977 ( 18.9%)   0.0205 ( 50.0%)   0.1182 ( 21.2%)   0.1182 ( 21.2%)  disassemble functions
+   0.0879 ( 17.0%)   0.0042 ( 10.2%)   0.0921 ( 16.5%)   0.0921 ( 16.5%)  discover file objects
+   0.0552 ( 10.7%)   0.0156 ( 38.1%)   0.0708 ( 12.7%)   0.0708 ( 12.7%)  emit and link
+   0.0112 (  2.2%)   0.0000 (  0.0%)   0.0112 (  2.0%)   0.0112 (  2.0%)  pre-process profile data
+   0.0097 (  1.9%)   0.0003 (  0.7%)   0.0100 (  1.8%)   0.0100 (  1.8%)  process profile data
+   0.0007 (  0.1%)   0.0000 (  0.0%)   0.0007 (  0.1%)   0.0007 (  0.1%)  read special sections
+   0.0002 (  0.0%)   0.0000 (  0.1%)   0.0003 (  0.0%)   0.0003 (  0.0%)  update metadata post-emit
+   0.0001 (  0.0%)   0.0000 (  0.0%)   0.0001 (  0.0%)   0.0001 (  0.0%)  process metadata pre-CFG
+   0.0001 (  0.0%)   0.0000 (  0.0%)   0.0001 (  0.0%)   0.0001 (  0.0%)  process profile data pre-CFG
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  process section metadata
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  discover storage
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  process metadata post-CFG
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  read debug info
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  finalize metadata pre-emit
+   0.5169 (100.0%)   0.0410 (100.0%)   0.5579 (100.0%)   0.5579 (100.0%)  Total
+
+===-------------------------------------------------------------------------===
+                          Binary Function Pass Manager
+===-------------------------------------------------------------------------===
+  Total Execution Time: 0.2530 seconds (0.2530 wall clock)
+
+   ---User Time---   --System Time--   --User+System--   ---Wall Time---  --- Name ---
+   0.0464 ( 18.4%)   0.0000 (  0.0%)   0.0464 ( 18.3%)   0.0464 ( 18.3%)  reorder-blocks
+   0.0432 ( 17.1%)   0.0000 (  0.0%)   0.0432 ( 17.1%)   0.0432 ( 17.1%)  aligner
+   0.0312 ( 12.4%)   0.0000 (  0.0%)   0.0312 ( 12.3%)   0.0312 ( 12.3%)  profile-quality-stats
+   0.0302 ( 11.9%)   0.0000 (  0.0%)   0.0302 ( 11.9%)   0.0302 ( 11.9%)  reorder-functions
+   0.0110 (  4.4%)   0.0000 (  0.0%)   0.0110 (  4.4%)   0.0110 (  4.4%)  shorten-instructions
+   0.0109 (  4.3%)   0.0000 (  0.0%)   0.0109 (  4.3%)   0.0109 (  4.3%)  validate-mem-refs
+   0.0104 (  4.1%)   0.0000 (  0.0%)   0.0104 (  4.1%)   0.0104 (  4.1%)  eliminate-unreachable
+   0.0089 (  3.5%)   0.0000 (  0.0%)   0.0089 (  3.5%)   0.0088 (  3.5%)  normalize CFG
+   0.0087 (  3.4%)   0.0001 ( 38.8%)   0.0088 (  3.5%)   0.0088 (  3.5%)  set dyno-stats before optimizations
+   0.0080 (  3.2%)   0.0000 (  0.0%)   0.0080 (  3.2%)   0.0080 (  3.2%)  fix-branches
+   0.0077 (  3.1%)   0.0000 (  0.0%)   0.0077 (  3.1%)   0.0077 (  3.1%)  finalize-functions
+   0.0076 (  3.0%)   0.0000 (  0.0%)   0.0076 (  3.0%)   0.0076 (  3.0%)  validate-internal-calls
+   0.0072 (  2.8%)   0.0000 (  0.0%)   0.0072 (  2.8%)   0.0072 (  2.8%)  patch-entries
+   0.0054 (  2.1%)   0.0000 (  0.0%)   0.0054 (  2.1%)   0.0054 (  2.1%)  simplify-conditional-tail-calls
+   0.0045 (  1.8%)   0.0000 (  0.0%)   0.0045 (  1.8%)   0.0045 (  1.8%)  remove-nops
+   0.0030 (  1.2%)   0.0000 (  0.0%)   0.0030 (  1.2%)   0.0030 (  1.2%)  inst-lowering
+   0.0026 (  1.0%)   0.0000 (  0.0%)   0.0026 (  1.0%)   0.0026 (  1.0%)  lower-annotations
+   0.0018 (  0.7%)   0.0000 (  0.0%)   0.0018 (  0.7%)   0.0018 (  0.7%)  strip-rep-ret
+   0.0011 (  0.4%)   0.0000 (  0.0%)   0.0011 (  0.4%)   0.0011 (  0.4%)  clean-mc-state
+   0.0010 (  0.4%)   0.0000 (  0.0%)   0.0010 (  0.4%)   0.0010 (  0.4%)  loop-inversion-opt
+   0.0007 (  0.3%)   0.0000 (  0.0%)   0.0007 (  0.3%)   0.0007 (  0.3%)  assign-sections
+   0.0005 (  0.2%)   0.0001 ( 34.1%)   0.0007 (  0.3%)   0.0007 (  0.3%)  estimate-edge-counts
+   0.0004 (  0.2%)   0.0001 ( 27.1%)   0.0005 (  0.2%)   0.0005 (  0.2%)  print-stats
+   0.0002 (  0.1%)   0.0000 (  0.0%)   0.0002 (  0.1%)   0.0002 (  0.1%)  populate-output-functions
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  split-functions
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  inlining
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  indirect-call-promotion
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  frame-optimizer
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  tail-duplication
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  plt-call-optimization
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  reorder-data
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  peepholes
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  alloc-combiner
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  retpoline-insertion
+   0.2527 (100.0%)   0.0004 (100.0%)   0.2530 (100.0%)   0.2530 (100.0%)  Total
+
+===-------------------------------------------------------------------------===
+                                  CG breakdown
+===-------------------------------------------------------------------------===
+  Total Execution Time: 0.0247 seconds (0.0247 wall clock)
+
+   ---User Time---   --User+System--   ---Wall Time---  --- Name ---
+   0.0247 (100.0%)   0.0247 (100.0%)   0.0247 (100.0%)  Callgraph construction
+   0.0247 (100.0%)   0.0247 (100.0%)   0.0247 (100.0%)  Total
+

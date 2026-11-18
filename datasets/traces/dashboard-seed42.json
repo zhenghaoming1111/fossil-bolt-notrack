@@ -1,0 +1,402 @@
+[
+  {
+    "kind": "report_file",
+    "path": "/reports?view=byfile&user=andybradford"
+  },
+  {
+    "kind": "report_file",
+    "path": "/reports?view=byfile&user=florian"
+  },
+  {
+    "kind": "report_year",
+    "path": "/reports?view=byyear&type=ci&user=danield"
+  },
+  {
+    "kind": "report_user",
+    "path": "/reports?view=byuser"
+  },
+  {
+    "kind": "report_user",
+    "path": "/reports?view=byuser"
+  },
+  {
+    "kind": "report_file",
+    "path": "/reports?view=byfile&user=aku"
+  },
+  {
+    "kind": "report_month",
+    "path": "/reports?view=bymonth&type=ci&user=mistachkin"
+  },
+  {
+    "kind": "report_user",
+    "path": "/reports?view=byuser"
+  },
+  {
+    "kind": "report_year",
+    "path": "/reports?view=byyear&type=ci&user=florian"
+  },
+  {
+    "kind": "report_file",
+    "path": "/reports?view=byfile"
+  },
+  {
+    "kind": "report_user",
+    "path": "/reports?view=byuser"
+  },
+  {
+    "kind": "report_file",
+    "path": "/reports?view=byfile&user=aku"
+  },
+  {
+    "kind": "report_month",
+    "path": "/reports?view=bymonth&type=ci&user=brickviking"
+  },
+  {
+    "kind": "report_month",
+    "path": "/reports?view=bymonth&type=ci&user=florian"
+  },
+  {
+    "kind": "report_year",
+    "path": "/reports?view=byyear&type=ci&user=aku"
+  },
+  {
+    "kind": "report_month",
+    "path": "/reports?view=bymonth&type=ci&user=danshearer"
+  },
+  {
+    "kind": "report_year",
+    "path": "/reports?view=byyear&type=ci"
+  },
+  {
+    "kind": "report_user",
+    "path": "/reports?view=byuser"
+  },
+  {
+    "kind": "report_user",
+    "path": "/reports?view=byuser"
+  },
+  {
+    "kind": "report_year",
+    "path": "/reports?view=byyear&type=ci&user=danield"
+  },
+  {
+    "kind": "report_user",
+    "path": "/reports?view=byuser"
+  },
+  {
+    "kind": "report_user",
+    "path": "/reports?view=byuser"
+  },
+  {
+    "kind": "report_file",
+    "path": "/reports?view=byfile&user=mistachkin"
+  },
+  {
+    "kind": "report_file",
+    "path": "/reports?view=byfile&user=florian"
+  },
+  {
+    "kind": "report_user",
+    "path": "/reports?view=byuser"
+  },
+  {
+    "kind": "report_file",
+    "path": "/reports?view=byfile&user=stephan"
+  },
+  {
+    "kind": "report_file",
+    "path": "/reports?view=byfile&user=aku"
+  },
+  {
+    "kind": "report_user",
+    "path": "/reports?view=byuser"
+  },
+  {
+    "kind": "report_file",
+    "path": "/reports?view=byfile&user=jan.nijtmans"
+  },
+  {
+    "kind": "report_month",
+    "path": "/reports?view=bymonth&type=ci"
+  },
+  {
+    "kind": "report_user",
+    "path": "/reports?view=byuser"
+  },
+  {
+    "kind": "report_user",
+    "path": "/reports?view=byuser"
+  },
+  {
+    "kind": "report_year",
+    "path": "/reports?view=byyear&type=ci&user=drh"
+  },
+  {
+    "kind": "report_file",
+    "path": "/reports?view=byfile&user=andygoth"
+  },
+  {
+    "kind": "report_user",
+    "path": "/reports?view=byuser"
+  },
+  {
+    "kind": "report_user",
+    "path": "/reports?view=byuser"
+  },
+  {
+    "kind": "report_user",
+    "path": "/reports?view=byuser"
+  },
+  {
+    "kind": "report_month",
+    "path": "/reports?view=bymonth&type=ci&user=andygoth"
+  },
+  {
+    "kind": "report_file",
+    "path": "/reports?view=byfile&user=danshearer"
+  },
+  {
+    "kind": "report_user",
+    "path": "/reports?view=byuser"
+  },
+  {
+    "kind": "report_user",
+    "path": "/reports?view=byuser"
+  },
+  {
+    "kind": "report_file",
+    "path": "/reports?view=byfile&user=danshearer"
+  },
+  {
+    "kind": "report_year",
+    "path": "/reports?view=byyear&type=ci"
+  },
+  {
+    "kind": "report_user",
+    "path": "/reports?view=byuser"
+  },
+  {
+    "kind": "report_user",
+    "path": "/reports?view=byuser"
+  },
+  {
+    "kind": "report_month",
+    "path": "/reports?view=bymonth&type=ci"
+  },
+  {
+    "kind": "report_month",
+    "path": "/reports?view=bymonth&type=ci&user=jan.nijtmans"
+  },
+  {
+    "kind": "report_file",
+    "path": "/reports?view=byfile&user=mistachkin"
+  },
+  {
+    "kind": "report_year",
+    "path": "/reports?view=byyear&type=ci&user=aku"
+  },
+  {
+    "kind": "report_year",
+    "path": "/reports?view=byyear&type=ci&user=danshearer"
+  },
+  {
+    "kind": "report_file",
+    "path": "/reports?view=byfile&user=jan.nijtmans"
+  },
+  {
+    "kind": "report_user",
+    "path": "/reports?view=byuser"
+  },
+  {
+    "kind": "report_user",
+    "path": "/reports?view=byuser"
+  },
+  {
+    "kind": "report_user",
+    "path": "/reports?view=byuser"
+  },
+  {
+    "kind": "report_month",
+    "path": "/reports?view=bymonth&type=ci&user=wyoung"
+  },
+  {
+    "kind": "report_file",
+    "path": "/reports?view=byfile&user=drh"
+  },
+  {
+    "kind": "report_file",
+    "path": "/reports?view=byfile&user=stephan"
+  },
+  {
+    "kind": "report_file",
+    "path": "/reports?view=byfile&user=wolfgang"
+  },
+  {
+    "kind": "report_user",
+    "path": "/reports?view=byuser"
+  },
+  {
+    "kind": "report_month",
+    "path": "/reports?view=bymonth&type=ci&user=aku"
+  },
+  {
+    "kind": "report_file",
+    "path": "/reports?view=byfile&user=andygoth"
+  },
+  {
+    "kind": "report_file",
+    "path": "/reports?view=byfile&user=brickviking"
+  },
+  {
+    "kind": "report_user",
+    "path": "/reports?view=byuser"
+  },
+  {
+    "kind": "report_file",
+    "path": "/reports?view=byfile&user=george"
+  },
+  {
+    "kind": "report_year",
+    "path": "/reports?view=byyear&type=ci"
+  },
+  {
+    "kind": "report_file",
+    "path": "/reports?view=byfile&user=wolfgang"
+  },
+  {
+    "kind": "report_year",
+    "path": "/reports?view=byyear&type=ci&user=danield"
+  },
+  {
+    "kind": "report_file",
+    "path": "/reports?view=byfile&user=george"
+  },
+  {
+    "kind": "report_year",
+    "path": "/reports?view=byyear&type=ci&user=danshearer"
+  },
+  {
+    "kind": "report_user",
+    "path": "/reports?view=byuser"
+  },
+  {
+    "kind": "report_file",
+    "path": "/reports?view=byfile&user=mistachkin"
+  },
+  {
+    "kind": "report_month",
+    "path": "/reports?view=bymonth&type=ci&user=aku"
+  },
+  {
+    "kind": "report_file",
+    "path": "/reports?view=byfile&user=jan.nijtmans"
+  },
+  {
+    "kind": "report_user",
+    "path": "/reports?view=byuser"
+  },
+  {
+    "kind": "report_file",
+    "path": "/reports?view=byfile&user=mistachkin"
+  },
+  {
+    "kind": "report_file",
+    "path": "/reports?view=byfile&user=danield"
+  },
+  {
+    "kind": "report_file",
+    "path": "/reports?view=byfile&user=wolfgang"
+  },
+  {
+    "kind": "report_user",
+    "path": "/reports?view=byuser"
+  },
+  {
+    "kind": "report_file",
+    "path": "/reports?view=byfile&user=mgagnon"
+  },
+  {
+    "kind": "report_file",
+    "path": "/reports?view=byfile&user=jan.nijtmans"
+  },
+  {
+    "kind": "report_file",
+    "path": "/reports?view=byfile&user=brickviking"
+  },
+  {
+    "kind": "report_user",
+    "path": "/reports?view=byuser"
+  },
+  {
+    "kind": "report_user",
+    "path": "/reports?view=byuser"
+  },
+  {
+    "kind": "report_year",
+    "path": "/reports?view=byyear&type=ci&user=aku"
+  },
+  {
+    "kind": "report_month",
+    "path": "/reports?view=bymonth&type=ci&user=brickviking"
+  },
+  {
+    "kind": "report_year",
+    "path": "/reports?view=byyear&type=ci&user=stephan"
+  },
+  {
+    "kind": "report_user",
+    "path": "/reports?view=byuser"
+  },
+  {
+    "kind": "report_file",
+    "path": "/reports?view=byfile&user=drh"
+  },
+  {
+    "kind": "report_month",
+    "path": "/reports?view=bymonth&type=ci"
+  },
+  {
+    "kind": "report_file",
+    "path": "/reports?view=byfile"
+  },
+  {
+    "kind": "report_file",
+    "path": "/reports?view=byfile"
+  },
+  {
+    "kind": "report_file",
+    "path": "/reports?view=byfile"
+  },
+  {
+    "kind": "report_month",
+    "path": "/reports?view=bymonth&type=ci"
+  },
+  {
+    "kind": "report_year",
+    "path": "/reports?view=byyear&type=ci&user=jan.nijtmans"
+  },
+  {
+    "kind": "report_file",
+    "path": "/reports?view=byfile&user=andygoth"
+  },
+  {
+    "kind": "report_file",
+    "path": "/reports?view=byfile&user=aku"
+  },
+  {
+    "kind": "report_file",
+    "path": "/reports?view=byfile&user=florian"
+  },
+  {
+    "kind": "report_file",
+    "path": "/reports?view=byfile&user=stephan"
+  },
+  {
+    "kind": "report_month",
+    "path": "/reports?view=bymonth&type=ci&user=danield"
+  },
+  {
+    "kind": "report_file",
+    "path": "/reports?view=byfile"
+  }
+]

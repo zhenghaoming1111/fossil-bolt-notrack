@@ -1,0 +1,96 @@
+BOLT-WARNING: GNU_RELRO segment has partial file offset overlap with section .got.plt
+BOLT-WARNING: debug info will be stripped from the binary. Use -update-debug-sections to keep it.
+BOLT-WARNING: failed to post-process indirect branches for deregister_tm_clones/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for register_tm_clones/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for sqlite3JournalOpen/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for getCellInfo/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for indexCellCompare/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for sqlite3PcacheRelease/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for sqlite3PagerUnrefNotNull/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for vdbeCompareMemString/1(*2)
+BOLT-WARNING: failed to post-process indirect branches for blob_reset
+===-------------------------------------------------------------------------===
+                             Build Binary Functions
+===-------------------------------------------------------------------------===
+  Total Execution Time: 0.1354 seconds (0.1353 wall clock)
+
+   ---User Time---   --System Time--   --User+System--   ---Wall Time---  --- Name ---
+   0.0530 ( 42.8%)   0.0033 ( 28.3%)   0.0563 ( 41.6%)   0.0563 ( 41.6%)  scan functions
+   0.0393 ( 31.8%)   0.0037 ( 31.5%)   0.0430 ( 31.8%)   0.0430 ( 31.8%)  buildCFG
+   0.0314 ( 25.4%)   0.0047 ( 40.2%)   0.0361 ( 26.7%)   0.0360 ( 26.6%)  Disassemble function
+   0.1237 (100.0%)   0.0116 (100.0%)   0.1354 (100.0%)   0.1353 (100.0%)  Total
+
+===-------------------------------------------------------------------------===
+                                 Rewrite passes
+===-------------------------------------------------------------------------===
+  Total Execution Time: 0.5020 seconds (0.5021 wall clock)
+
+   ---User Time---   --System Time--   --User+System--   ---Wall Time---  --- Name ---
+   0.2297 ( 48.0%)   0.0039 ( 16.4%)   0.2336 ( 46.5%)   0.2336 ( 46.5%)  run optimization passes
+   0.0945 ( 19.8%)   0.0081 ( 33.9%)   0.1027 ( 20.4%)   0.1027 ( 20.4%)  disassemble functions
+   0.0812 ( 17.0%)   0.0081 ( 33.9%)   0.0894 ( 17.8%)   0.0894 ( 17.8%)  discover file objects
+   0.0565 ( 11.8%)   0.0038 ( 15.8%)   0.0603 ( 12.0%)   0.0603 ( 12.0%)  emit and link
+   0.0076 (  1.6%)   0.0000 (  0.0%)   0.0076 (  1.5%)   0.0076 (  1.5%)  process profile data
+   0.0074 (  1.5%)   0.0000 (  0.0%)   0.0074 (  1.5%)   0.0074 (  1.5%)  pre-process profile data
+   0.0007 (  0.1%)   0.0000 (  0.0%)   0.0007 (  0.1%)   0.0007 (  0.1%)  read special sections
+   0.0002 (  0.0%)   0.0000 (  0.1%)   0.0002 (  0.0%)   0.0002 (  0.0%)  update metadata post-emit
+   0.0001 (  0.0%)   0.0000 (  0.0%)   0.0001 (  0.0%)   0.0001 (  0.0%)  process metadata pre-CFG
+   0.0001 (  0.0%)   0.0000 (  0.0%)   0.0001 (  0.0%)   0.0001 (  0.0%)  process profile data pre-CFG
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  process section metadata
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  discover storage
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  process metadata post-CFG
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  finalize metadata pre-emit
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  read debug info
+   0.4780 (100.0%)   0.0240 (100.0%)   0.5020 (100.0%)   0.5021 (100.0%)  Total
+
+===-------------------------------------------------------------------------===
+                          Binary Function Pass Manager
+===-------------------------------------------------------------------------===
+  Total Execution Time: 0.2329 seconds (0.2329 wall clock)
+
+   ---User Time---   --System Time--   --User+System--   ---Wall Time---  --- Name ---
+   0.0495 ( 21.6%)   0.0000 (  0.0%)   0.0495 ( 21.3%)   0.0496 ( 21.3%)  reorder-blocks
+   0.0386 ( 16.9%)   0.0000 (  0.0%)   0.0386 ( 16.6%)   0.0386 ( 16.6%)  aligner
+   0.0285 ( 12.5%)   0.0000 (  0.0%)   0.0285 ( 12.3%)   0.0285 ( 12.3%)  profile-quality-stats
+   0.0226 (  9.9%)   0.0036 ( 92.7%)   0.0262 ( 11.3%)   0.0262 ( 11.3%)  reorder-functions
+   0.0104 (  4.5%)   0.0000 (  0.0%)   0.0104 (  4.5%)   0.0104 (  4.5%)  eliminate-unreachable
+   0.0101 (  4.4%)   0.0000 (  0.0%)   0.0101 (  4.3%)   0.0101 (  4.3%)  fix-branches
+   0.0096 (  4.2%)   0.0000 (  0.0%)   0.0096 (  4.1%)   0.0096 (  4.1%)  normalize CFG
+   0.0084 (  3.7%)   0.0000 (  0.0%)   0.0084 (  3.6%)   0.0084 (  3.6%)  shorten-instructions
+   0.0080 (  3.5%)   0.0000 (  0.0%)   0.0080 (  3.4%)   0.0080 (  3.4%)  validate-mem-refs
+   0.0071 (  3.1%)   0.0000 (  0.0%)   0.0071 (  3.1%)   0.0071 (  3.1%)  set dyno-stats before optimizations
+   0.0062 (  2.7%)   0.0000 (  0.0%)   0.0062 (  2.6%)   0.0062 (  2.6%)  patch-entries
+   0.0061 (  2.7%)   0.0000 (  0.0%)   0.0061 (  2.6%)   0.0061 (  2.6%)  finalize-functions
+   0.0055 (  2.4%)   0.0002 (  4.3%)   0.0057 (  2.4%)   0.0057 (  2.4%)  simplify-conditional-tail-calls
+   0.0053 (  2.3%)   0.0000 (  0.0%)   0.0053 (  2.3%)   0.0053 (  2.3%)  validate-internal-calls
+   0.0033 (  1.4%)   0.0000 (  0.0%)   0.0033 (  1.4%)   0.0033 (  1.4%)  remove-nops
+   0.0024 (  1.0%)   0.0000 (  0.0%)   0.0024 (  1.0%)   0.0023 (  1.0%)  inst-lowering
+   0.0021 (  0.9%)   0.0000 (  0.0%)   0.0021 (  0.9%)   0.0021 (  0.9%)  lower-annotations
+   0.0013 (  0.6%)   0.0000 (  0.0%)   0.0013 (  0.6%)   0.0013 (  0.6%)  strip-rep-ret
+   0.0012 (  0.5%)   0.0000 (  0.0%)   0.0012 (  0.5%)   0.0012 (  0.5%)  clean-mc-state
+   0.0010 (  0.4%)   0.0000 (  0.0%)   0.0010 (  0.4%)   0.0010 (  0.4%)  loop-inversion-opt
+   0.0007 (  0.3%)   0.0000 (  0.6%)   0.0007 (  0.3%)   0.0007 (  0.3%)  assign-sections
+   0.0004 (  0.2%)   0.0001 (  1.7%)   0.0005 (  0.2%)   0.0005 (  0.2%)  estimate-edge-counts
+   0.0004 (  0.2%)   0.0000 (  0.0%)   0.0004 (  0.2%)   0.0004 (  0.2%)  print-stats
+   0.0002 (  0.1%)   0.0000 (  0.7%)   0.0003 (  0.1%)   0.0003 (  0.1%)  populate-output-functions
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  split-functions
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  retpoline-insertion
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  reorder-data
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  inlining
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  indirect-call-promotion
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  tail-duplication
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  peepholes
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  frame-optimizer
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  alloc-combiner
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  plt-call-optimization
+   0.2290 (100.0%)   0.0039 (100.0%)   0.2329 (100.0%)   0.2329 (100.0%)  Total
+
+===-------------------------------------------------------------------------===
+                                  CG breakdown
+===-------------------------------------------------------------------------===
+  Total Execution Time: 0.0217 seconds (0.0217 wall clock)
+
+   ---User Time---   --User+System--   ---Wall Time---  --- Name ---
+   0.0217 (100.0%)   0.0217 (100.0%)   0.0217 (100.0%)  Callgraph construction
+   0.0217 (100.0%)   0.0217 (100.0%)   0.0217 (100.0%)  Total
+

@@ -1,0 +1,57 @@
+{
+  "checked_utc": "2026-11-18T13:59:54.9338691+00:00",
+  "remote": "https://github.com/llvm/llvm-project",
+  "branch": "main",
+  "head": "37366ccbf863920857e6a20e8ad04669c1df4f45",
+  "head_commit_utc": "2026-11-18T13:58:06Z",
+  "measured": "af3fdf39125a6f119bfcc97f1dd00572185f6e07",
+  "trees": [
+    {
+      "commit": "af3fdf39125a6f119bfcc97f1dd00572185f6e07",
+      "root_tree": "08c3bb312ba263fbf3f2b5e703afa6acd2a9c404",
+      "bolt_tree": "0f44a83a1972adbf5d5f5e058f4b2dcda7fbcd26",
+      "llvm_tree": "7d9789fdb0e56a5a92bfb09afd7c2a27e6c9ab62"
+    },
+    {
+      "commit": "37366ccbf863920857e6a20e8ad04669c1df4f45",
+      "root_tree": "586b2f6c4910f27fe997a52ee21f9a22da787464",
+      "bolt_tree": "0f44a83a1972adbf5d5f5e058f4b2dcda7fbcd26",
+      "llvm_tree": "591819eaaec262619d748c20652b4b7b6280e6cd"
+    }
+  ],
+  "same_bolt_tree": true,
+  "same_llvm_tree": false,
+  "checked_file": "bolt/lib/Target/X86/X86MCPlusBuilder.cpp",
+  "source_url": "https://raw.githubusercontent.com/llvm/llvm-project/37366ccbf863920857e6a20e8ad04669c1df4f45/bolt/lib/Target/X86/X86MCPlusBuilder.cpp",
+  "source_sha256": "9f173baaa7fe80153bf4c896750b32960b9b8eb030eb058895656d4b9b47461c",
+  "option_absent": true,
+  "original_rejection": true,
+  "head_built_or_benchmarked": false,
+  "followup_check": {
+    "checked_utc": "2026-11-18T14:13:50.3233829Z",
+    "head": "488dcc2da1d378e2e6aae4e4a14537be5df10060",
+    "head_commit_utc": "2026-11-18T14:05:28Z",
+    "root_tree": "cbcc957e0cc0fa6890b18d75c474424195bcf87a",
+    "bolt_tree": "0f44a83a1972adbf5d5f5e058f4b2dcda7fbcd26",
+    "llvm_tree": "eebaafac6b0174d9f2ba80980587bcefa9a0bdce",
+    "source_git_blob": "f2a52e188f6585e463aeedb94b63077d16e35be6",
+    "source_sha256": "9f173baaa7fe80153bf4c896750b32960b9b8eb030eb058895656d4b9b47461c",
+    "option_absent": true,
+    "original_rejection": true,
+    "head_built_or_benchmarked": false
+  },
+  "delivery_check": {
+    "checked_utc": "2026-11-18T14:27:23.0570289Z",
+    "head": "7730245b648b1fd73653415ee161f73d0c69cf7d",
+    "head_commit_utc": "2026-11-18T14:25:28Z",
+    "root_tree": "90a0162c8922775e0539260d0c26bb1494dcd2f4",
+    "bolt_tree": "0f44a83a1972adbf5d5f5e058f4b2dcda7fbcd26",
+    "llvm_tree": "fbedcf500d8fb095036ea6042e62d9ad57cb511b",
+    "source_git_blob": "f2a52e188f6585e463aeedb94b63077d16e35be6",
+    "source_sha256": "9f173baaa7fe80153bf4c896750b32960b9b8eb030eb058895656d4b9b47461c",
+    "original_rejection_line": 2128,
+    "option_absent": true,
+    "original_rejection": true,
+    "head_built_or_benchmarked": false
+  }
+}

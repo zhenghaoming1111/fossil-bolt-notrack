@@ -1,0 +1,24 @@
+{
+  "status": "RUNNING",
+  "server_cpu": 0,
+  "client_cpu": 1,
+  "rounds": 24,
+  "concurrency": 4,
+  "evaluation_seed": 43,
+  "order_seed": 20261118,
+  "target_seconds": 3.0,
+  "two_warmup_trace_passes_per_variant_per_round": true,
+  "dataset_sha256": "032e728053279cfb91273eacb4ba1797d795dcfbb75596b3f65f5826af881a6f",
+  "profile_sha256": "a064623c3a3168dc35d7b093ea3a610f0b6ce5d050c541630e4677c2ae41055b",
+  "script_sha256": "b40d84fc14682861d85b48586fea699ce11b6d51917e792a65f0df4ff14195e6",
+  "trace_sha256": {
+    "browse": "ee904cd8e936028233740beb0b7fbc7d6ec7cdf4bd2ade7f93674ed842e7ffab",
+    "review": "ab9184548bf8d02319a9169017b5b5265c72a1d4beea2be5c8b0b84da6e8a67e"
+  },
+  "binary_sha256": {
+    "A-original": "29c3362b983c49606ee7576972a0b31c09f29b847e6516f7659ef8c4240f5933",
+    "B-before-fix": "35d85db52091d332f475b6794601bb181955327861f15e73d2764c204014fbcf",
+    "C-after-fix": "03928d293f0077f4390f467939076506781ae156c64f7e44406ffb91d57f7f0d"
+  },
+  "cases": {}
+}

@@ -1,0 +1,25 @@
+{
+  "upstream_commit": "af3fdf39125a6f119bfcc97f1dd00572185f6e07",
+  "llvm_version": "24.0.0git",
+  "option": "--x86-notrack-jump-tables",
+  "default": false,
+  "rounds": 24,
+  "seeds": [
+    43,
+    44
+  ],
+  "training_seed": 42,
+  "concurrency": 4,
+  "order_seed": 20261118,
+  "target_seconds": 3,
+  "presets": [
+    "web",
+    "dashboard"
+  ],
+  "before": "same executable OFF",
+  "after": "same executable ON",
+  "entry_point": "python3 scripts/run_mainline_matrix.py --tools TOOLS --apps APPS --rounds 24 --target-seconds 3 --seeds 43 44",
+  "negative_rounds": 48,
+  "noninferiority_threshold_percent": 1.0,
+  "note": "Pinned Fossil mainline plan. See datasets/manifest.json for the frozen input hashes and fossil-nonmatching/analysis-plan.json in the evidence directory for the negative control."
+}

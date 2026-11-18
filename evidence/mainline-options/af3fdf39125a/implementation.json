@@ -1,0 +1,7 @@
+{
+  "base_commit": "af3fdf39125a6f119bfcc97f1dd00572185f6e07",
+  "patch_sha256": "2c359b4708adfa3a55b20eec473e484c23c4907debd632f2ab1ea635c3246e76",
+  "source_after_sha256": "9c7b47cb82130763e8902cf4b01dbc9e6d50f349e5e7fc2434909d78d84e91d8",
+  "option": "--x86-notrack-jump-tables",
+  "default": false
+}

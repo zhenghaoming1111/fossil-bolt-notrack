@@ -1,0 +1,4 @@
+Verify real HTTP response text: A-original
+Verify real HTTP response text: B-before-fix
+Verify real HTTP response text: C-after-fix
+PASS: A/B/C HTTP 200 and identical visible repository content.

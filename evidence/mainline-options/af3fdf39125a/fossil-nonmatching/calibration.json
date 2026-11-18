@@ -1,0 +1,35 @@
+{
+  "pilot": {
+    "elapsed_seconds": 1.6691652100125793,
+    "requests": 100,
+    "requests_per_second": 59.91018708043068,
+    "errors": 0,
+    "user_seconds": 1.38,
+    "system_seconds": 0.27999999999999997,
+    "cpu_seconds": 1.66,
+    "wire_bytes": 976065,
+    "by_operation": {
+      "report_file": {
+        "count": 40,
+        "latency_p50_seconds": 0.04342516699398402,
+        "latency_p95_seconds": 0.17354274800163694
+      },
+      "report_month": {
+        "count": 15,
+        "latency_p50_seconds": 0.0356904840155039,
+        "latency_p95_seconds": 0.054151199001353234
+      },
+      "report_user": {
+        "count": 30,
+        "latency_p50_seconds": 0.10301166101999115,
+        "latency_p95_seconds": 0.11640493798768148
+      },
+      "report_year": {
+        "count": 15,
+        "latency_p50_seconds": 0.031692811026005074,
+        "latency_p95_seconds": 0.052970110991736874
+      }
+    }
+  },
+  "repeats": 1
+}

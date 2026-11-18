@@ -1,0 +1,174 @@
+--- a/bolt/lib/Target/X86/X86MCPlusBuilder.cpp
++++ b/bolt/lib/Target/X86/X86MCPlusBuilder.cpp
+@@ -40,6 +40,12 @@
+ namespace opts {
+ 
+ extern cl::OptionCategory BoltOptCategory;
++
++static cl::opt<bool> X86NoTrackJumpTables(
++    "x86-notrack-jump-tables",
++    cl::desc("Recover indexed 64-bit NOTRACK jump tables while preserving "
++             "the prefix"),
++    cl::init(false), cl::cat(BoltOptCategory));
+ 
+ static cl::opt<bool> X86StripRedundantAddressSize(
+     "x86-strip-redundant-address-size",
+@@ -2124,8 +2130,18 @@
+     DispValueOut = MO->DispImm;
+     DispExprOut = MO->DispExpr;
+ 
++    // In 64-bit mode, the DS override on an indirect jump encodes NOTRACK.
++    // The decoder retains it in the segment operand. Accept this form only
++    // for an indexed pointer table on the jump itself. Leave the MCInst
++    // unchanged so that the encoder preserves the prefix.
++    const bool IsNoTrackJumpTable =
++        opts::X86NoTrackJumpTables && PtrSize == 8 &&
++        MemLocInstr == &Instruction &&
++        Instruction.getOpcode() == X86::JMP64m && MO->SegRegNum == X86::DS &&
++        MO->ScaleImm == PtrSize && MO->IndexRegNum != X86::NoRegister;
++
+     if ((MO->BaseRegNum != X86::NoRegister && MO->BaseRegNum != RIPRegister) ||
+-        MO->SegRegNum != X86::NoRegister)
++        (MO->SegRegNum != X86::NoRegister && !IsNoTrackJumpTable))
+       return IndirectBranchType::UNKNOWN;
+ 
+     if (MemLocInstr == &Instruction &&
+--- /dev/null
++++ b/bolt/test/X86/notrack-jump-table.test
+@@ -0,0 +1,64 @@
++# REQUIRES: system-linux, bolt-runtime
++
++# RUN: %clang -O2 -g -fno-pie -no-pie -Wl,-q \
++# RUN:   %p/Inputs/notrack-jump-table.c %p/Inputs/notrack-jump-table.s -o %t.exe
++# RUN: %t.exe
++# RUN: llvm-bolt %t.exe -o %t.default --lite=0 --print-cfg \
++# RUN:   --print-only=dispatch_plain,dispatch_notrack,dispatch_fs,dispatch_gs \
++# RUN:   2>&1 | FileCheck %s --check-prefix=OFF
++# RUN: %t.default
++# RUN: llvm-bolt %t.exe --x86-notrack-jump-tables=false -o %t.off --lite=0 --print-cfg \
++# RUN:   --print-only=dispatch_plain,dispatch_notrack,dispatch_fs,dispatch_gs \
++# RUN:   2>&1 | FileCheck %s --check-prefix=OFF
++# RUN: %t.off
++# RUN: llvm-bolt %t.exe --x86-notrack-jump-tables -o %t.bolt --lite=0 --reorder-blocks=reverse \
++# RUN:   --jump-tables=move --no-threads --sequential-disassembly --print-cfg \
++# RUN:   --print-only=dispatch_plain,dispatch_notrack,dispatch_fs,dispatch_gs \
++# RUN:   2>&1 | FileCheck %s --check-prefix=CFG
++# RUN: %t.bolt
++# RUN: llvm-objdump -d --disassemble-symbols=dispatch_notrack %t.bolt \
++# RUN:   | FileCheck %s --check-prefix=PREFIX
++# RUN: llvm-bolt %t.exe --x86-notrack-jump-tables -o %t.inst --instrument --instrumentation-file=%t.fdata
++# RUN: %t.inst
++# RUN: test -s %t.fdata
++# RUN: llvm-objdump -d --disassemble-symbols=dispatch_notrack %t.inst \
++# RUN:   | FileCheck %s --check-prefix=PREFIX
++# RUN: llvm-bolt %t.exe --x86-notrack-jump-tables -o %t.profiled --data=%t.fdata \
++# RUN:   --reorder-blocks=ext-tsp --jump-tables=move --lite=0
++# RUN: %t.profiled
++# RUN: llvm-objdump -d --disassemble-symbols=dispatch_notrack %t.profiled \
++# RUN:   | FileCheck %s --check-prefix=PREFIX
++
++# The normal and NOTRACK jump tables must both be recovered. FS and GS keep
++# their real segment semantics and must remain outside this recognition path.
++# CFG-LABEL: Binary Function "dispatch_plain" after building cfg {
++# CFG: IsSimple : 1
++# CFG: JUMPTABLE
++# CFG-LABEL: Binary Function "dispatch_notrack" after building cfg {
++# CFG: IsSimple : 1
++# CFG: JUMPTABLE
++# CFG-LABEL: Binary Function "dispatch_fs" after building cfg {
++# CFG: IsSimple : 0
++# CFG-NOT: JUMPTABLE
++# CFG-LABEL: Binary Function "dispatch_gs" after building cfg {
++# CFG: IsSimple : 0
++# CFG-NOT: JUMPTABLE
++
++# Check the emitted code for the relocated symbol, not the old code section.
++# Execution covers every table entry, so stale target addresses also fail.
++# PREFIX-LABEL: <dispatch_notrack>:
++# PREFIX: 3e ff 24 c5
++
++# Default and explicit OFF retain upstream recognition.
++# OFF-LABEL: Binary Function "dispatch_plain" after building cfg {
++# OFF: IsSimple : 1
++# OFF: JUMPTABLE
++# OFF-LABEL: Binary Function "dispatch_notrack" after building cfg {
++# OFF: IsSimple : 0
++# OFF-NOT: JUMPTABLE
++# OFF-LABEL: Binary Function "dispatch_fs" after building cfg {
++# OFF: IsSimple : 0
++# OFF-NOT: JUMPTABLE
++# OFF-LABEL: Binary Function "dispatch_gs" after building cfg {
++# OFF: IsSimple : 0
++# OFF-NOT: JUMPTABLE
+--- /dev/null
++++ b/bolt/test/X86/Inputs/notrack-jump-table.c
+@@ -0,0 +1,21 @@
++#include <limits.h>
++#include <stdio.h>
++
++int dispatch_plain(unsigned index);
++int dispatch_notrack(unsigned index);
++
++int main(void) {
++  const unsigned inputs[] = {0, 1, 2, 3, UINT_MAX};
++  const int expected[] = {11, 22, 33, -1, -1};
++  for (unsigned i = 0; i < sizeof(inputs) / sizeof(inputs[0]); ++i) {
++    const int plain = dispatch_plain(inputs[i]);
++    const int notrack = dispatch_notrack(inputs[i]);
++    if (plain != expected[i] || notrack != expected[i]) {
++      fprintf(stderr, "index=%u expected=%d plain=%d notrack=%d\n",
++              inputs[i], expected[i], plain, notrack);
++      return 1;
++    }
++  }
++  puts("PASS: plain and notrack dispatch; all table entries and defaults.");
++  return 0;
++}
+--- /dev/null
++++ b/bolt/test/X86/Inputs/notrack-jump-table.s
+@@ -0,0 +1,45 @@
++/* FS/GS functions are analysis-only controls: the driver never calls them. */
++.text
++.macro DISPATCH name, mode
++.p2align 4
++.globl \name
++.type \name, @function
++\name:
++  cmpl $2, %edi
++  ja .Ldefault\@
++  movl %edi, %eax
++.if \mode == 1
++  notrack jmp *.Ltable\@(,%rax,8)
++.elseif \mode == 2
++  jmp *%fs:.Ltable\@(,%rax,8)
++.elseif \mode == 3
++  jmp *%gs:.Ltable\@(,%rax,8)
++.else
++  jmp *.Ltable\@(,%rax,8)
++.endif
++.Lcase0\@:
++  movl $11, %eax
++  ret
++.Lcase1\@:
++  movl $22, %eax
++  ret
++.Lcase2\@:
++  movl $33, %eax
++  ret
++.Ldefault\@:
++  movl $-1, %eax
++  ret
++.size \name, .-\name
++.pushsection .rodata
++.p2align 3
++.Ltable\@:
++  .quad .Lcase0\@, .Lcase1\@, .Lcase2\@
++.popsection
++.endm
++
++DISPATCH dispatch_plain, 0
++DISPATCH dispatch_notrack, 1
++DISPATCH dispatch_fs, 2
++DISPATCH dispatch_gs, 3
++
++.section .note.GNU-stack,"",@progbits

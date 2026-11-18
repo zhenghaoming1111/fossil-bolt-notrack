@@ -1,0 +1,129 @@
+{
+  "status": "PASS",
+  "no_notrack_jmp": true,
+  "load_segments_identical": true,
+  "compiler_flags": "-O2 -g -fno-omit-frame-pointer -fno-reorder-blocks-and-partition -fno-pie -no-pie -fcf-protection=none",
+  "linker_flags": "-no-pie -Wl,--emit-relocs",
+  "original_sha256": "e8a14300e9f9be9cc5e966b8592257d49f74c8c50beca1d0cb863646b6a33f9e",
+  "profile_sha256": "0405f64564349eb66fd2899c7a7da33cfd8805a53cde719d68242f9a8b60d903",
+  "fossil_version": "This is fossil version 2.28 [52445a27f1] 2026-03-11 11:31:46 UTC\nCompiled on Nov 18 2026 13:53:24 using gcc-13.3.0 (64-bit)\nSQLite 3.52.0 2026-03-06 16:01:44 557aeb4386\nSSL (OpenSSL 3.0.13 30 Jan 2024)\nzlib 1.3, loaded 1.3\n",
+  "snapshot_sha256": "032e728053279cfb91273eacb4ba1797d795dcfbb75596b3f65f5826af881a6f",
+  "rewrites": {
+    "off": {
+      "elf_sha256": "fffef8f875d27e3d38e1f8439656ed14ab0bb61856d190759d31790c657e441d",
+      "image": {
+        "entry": 13229534,
+        "segments": [
+          {
+            "vaddr": 4194304,
+            "paddr": 4194304,
+            "offset": 0,
+            "filesz": 19248,
+            "memsz": 19248,
+            "flags": 4,
+            "align": 4096,
+            "sha256": "82bf069d267e87d76a7ac23cd176914c7b86a95e16d9bc021166bd61343390ef"
+          },
+          {
+            "vaddr": 4214784,
+            "paddr": 4214784,
+            "offset": 20480,
+            "filesz": 2959249,
+            "memsz": 2959249,
+            "flags": 5,
+            "align": 4096,
+            "sha256": "be876d26d42d655b9581d2f34af2bb3198ce22250178bc3826f2f271371a29a6"
+          },
+          {
+            "vaddr": 7176192,
+            "paddr": 7176192,
+            "offset": 2981888,
+            "filesz": 2356616,
+            "memsz": 2356616,
+            "flags": 4,
+            "align": 4096,
+            "sha256": "2e0f97ae3690851b5dc6270030976de965a33459dfc972e7dee6b5b16e6147e1"
+          },
+          {
+            "vaddr": 9538944,
+            "paddr": 9538944,
+            "offset": 5340544,
+            "filesz": 37560,
+            "memsz": 58208,
+            "flags": 6,
+            "align": 4096,
+            "sha256": "9d11a93a9b7374253c6e16d77cf460d8a70f3afb1b1fc8f82e971ab5400b49cb"
+          },
+          {
+            "vaddr": 10485760,
+            "paddr": 10485760,
+            "offset": 6291456,
+            "filesz": 4539244,
+            "memsz": 4539244,
+            "flags": 5,
+            "align": 2097152,
+            "sha256": "424b5ec9bec9551088e515efe7839332e4db4ceb44844a0c723eaf590d5181dd"
+          }
+        ]
+      }
+    },
+    "on": {
+      "elf_sha256": "2e5b61e51ab7931f60468647c00721ce8f15b4152398a45d82b8bc18bde82635",
+      "image": {
+        "entry": 13229534,
+        "segments": [
+          {
+            "vaddr": 4194304,
+            "paddr": 4194304,
+            "offset": 0,
+            "filesz": 19248,
+            "memsz": 19248,
+            "flags": 4,
+            "align": 4096,
+            "sha256": "82bf069d267e87d76a7ac23cd176914c7b86a95e16d9bc021166bd61343390ef"
+          },
+          {
+            "vaddr": 4214784,
+            "paddr": 4214784,
+            "offset": 20480,
+            "filesz": 2959249,
+            "memsz": 2959249,
+            "flags": 5,
+            "align": 4096,
+            "sha256": "be876d26d42d655b9581d2f34af2bb3198ce22250178bc3826f2f271371a29a6"
+          },
+          {
+            "vaddr": 7176192,
+            "paddr": 7176192,
+            "offset": 2981888,
+            "filesz": 2356616,
+            "memsz": 2356616,
+            "flags": 4,
+            "align": 4096,
+            "sha256": "2e0f97ae3690851b5dc6270030976de965a33459dfc972e7dee6b5b16e6147e1"
+          },
+          {
+            "vaddr": 9538944,
+            "paddr": 9538944,
+            "offset": 5340544,
+            "filesz": 37560,
+            "memsz": 58208,
+            "flags": 6,
+            "align": 4096,
+            "sha256": "9d11a93a9b7374253c6e16d77cf460d8a70f3afb1b1fc8f82e971ab5400b49cb"
+          },
+          {
+            "vaddr": 10485760,
+            "paddr": 10485760,
+            "offset": 6291456,
+            "filesz": 4539244,
+            "memsz": 4539244,
+            "flags": 5,
+            "align": 2097152,
+            "sha256": "424b5ec9bec9551088e515efe7839332e4db4ceb44844a0c723eaf590d5181dd"
+          }
+        ]
+      }
+    }
+  }
+}

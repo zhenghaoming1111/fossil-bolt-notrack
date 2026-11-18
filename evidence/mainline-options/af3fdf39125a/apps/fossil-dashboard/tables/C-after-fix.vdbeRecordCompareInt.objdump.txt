@@ -1,0 +1,80 @@
+
+/home/zhm/bolt-lab/notrack-main-20261118-af3fdf39125a/stage2/apps/fossil-dashboard/bin/fossil.after:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+Disassembly of section .plt:
+
+Disassembly of section .plt.sec:
+
+Disassembly of section .bolt.org.text:
+
+Disassembly of section .fini:
+
+Disassembly of section .text:
+
+0000000000c1dc80 <vdbeRecordCompareInt>:
+  c1dc80:	f3 0f 1e fa          	endbr64
+  c1dc84:	0f b6 06             	movzx  eax,BYTE PTR [rsi]
+  c1dc87:	83 e0 3f             	and    eax,0x3f
+  c1dc8a:	48 01 f0             	add    rax,rsi
+  c1dc8d:	80 7e 01 09          	cmp    BYTE PTR [rsi+0x1],0x9
+  c1dc91:	77 6d                	ja     c1dd00 <vdbeRecordCompareInt+0x80>
+  c1dc93:	0f b6 4e 01          	movzx  ecx,BYTE PTR [rsi+0x1]
+  c1dc97:	3e ff 24 cd 80 45 e4 00 	notrack jmp QWORD PTR [rcx*8+0xe44580]
+  c1dc9f:	0f be 08             	movsx  ecx,BYTE PTR [rax]
+  c1dca2:	0f b7 40 01          	movzx  eax,WORD PTR [rax+0x1]
+  c1dca6:	66 c1 c0 08          	rol    ax,0x8
+  c1dcaa:	c1 e1 10             	shl    ecx,0x10
+  c1dcad:	0f b7 c0             	movzx  eax,ax
+  c1dcb0:	09 c8                	or     eax,ecx
+  c1dcb2:	48 98                	cdqe
+  c1dcb4:	48 3b 42 10          	cmp    rax,QWORD PTR [rdx+0x10]
+  c1dcb8:	7d 15                	jge    c1dccf <vdbeRecordCompareInt+0x4f>
+  c1dcba:	0f be 42 20          	movsx  eax,BYTE PTR [rdx+0x20]
+  c1dcbe:	c3                   	ret
+  c1dcbf:	0f be 08             	movsx  ecx,BYTE PTR [rax]
+  c1dcc2:	0f b6 40 01          	movzx  eax,BYTE PTR [rax+0x1]
+  c1dcc6:	c1 e1 08             	shl    ecx,0x8
+  c1dcc9:	09 c8                	or     eax,ecx
+  c1dccb:	48 98                	cdqe
+  c1dccd:	eb e5                	jmp    c1dcb4 <vdbeRecordCompareInt+0x34>
+  c1dccf:	7e 05                	jle    c1dcd6 <vdbeRecordCompareInt+0x56>
+  c1dcd1:	0f be 42 21          	movsx  eax,BYTE PTR [rdx+0x21]
+  c1dcd5:	c3                   	ret
+  c1dcd6:	66 83 7a 1c 01       	cmp    WORD PTR [rdx+0x1c],0x1
+  c1dcdb:	77 09                	ja     c1dce6 <vdbeRecordCompareInt+0x66>
+  c1dcdd:	c6 42 22 01          	mov    BYTE PTR [rdx+0x22],0x1
+  c1dce1:	0f be 42 1e          	movsx  eax,BYTE PTR [rdx+0x1e]
+  c1dce5:	c3                   	ret
+  c1dce6:	b9 01 00 00 00       	mov    ecx,0x1
+  c1dceb:	e9 90 02 00 00       	jmp    c1df80 <sqlite3VdbeRecordCompareWithSkip>
+  c1dcf0:	48 0f be 00          	movsx  rax,BYTE PTR [rax]
+  c1dcf4:	eb be                	jmp    c1dcb4 <vdbeRecordCompareInt+0x34>
+  c1dcf6:	31 c0                	xor    eax,eax
+  c1dcf8:	48 3b 42 10          	cmp    rax,QWORD PTR [rdx+0x10]
+  c1dcfc:	7c bc                	jl     c1dcba <vdbeRecordCompareInt+0x3a>
+  c1dcfe:	eb cf                	jmp    c1dccf <vdbeRecordCompareInt+0x4f>
+  c1dd00:	31 c9                	xor    ecx,ecx
+  c1dd02:	e9 79 02 00 00       	jmp    c1df80 <sqlite3VdbeRecordCompareWithSkip>
+  c1dd07:	b8 01 00 00 00       	mov    eax,0x1
+  c1dd0c:	eb a6                	jmp    c1dcb4 <vdbeRecordCompareInt+0x34>
+  c1dd0e:	8b 00                	mov    eax,DWORD PTR [rax]
+  c1dd10:	0f c8                	bswap  eax
+  c1dd12:	48 98                	cdqe
+  c1dd14:	eb 9e                	jmp    c1dcb4 <vdbeRecordCompareInt+0x34>
+  c1dd16:	8b 48 02             	mov    ecx,DWORD PTR [rax+0x2]
+  c1dd19:	0f c9                	bswap  ecx
+  c1dd1b:	41 89 c8             	mov    r8d,ecx
+  c1dd1e:	0f be 08             	movsx  ecx,BYTE PTR [rax]
+  c1dd21:	0f b6 40 01          	movzx  eax,BYTE PTR [rax+0x1]
+  c1dd25:	c1 e1 08             	shl    ecx,0x8
+  c1dd28:	09 c8                	or     eax,ecx
+  c1dd2a:	44 89 c1             	mov    ecx,r8d
+  c1dd2d:	48 c1 e0 20          	shl    rax,0x20
+  c1dd31:	48 01 c8             	add    rax,rcx
+  c1dd34:	e9 7b ff ff ff       	jmp    c1dcb4 <vdbeRecordCompareInt+0x34>
+  c1dd39:	48 8b 00             	mov    rax,QWORD PTR [rax]
+  c1dd3c:	48 0f c8             	bswap  rax
+  c1dd3f:	e9 70 ff ff ff       	jmp    c1dcb4 <vdbeRecordCompareInt+0x34>

@@ -1,0 +1,102 @@
+Results directory: /home/zhm/bolt-lab/notrack-main-20261118-af3fdf39125a/stage2/apps/fossil-dashboard/results/measurements-20261118-194820-aaoogr_u
+dashboard: 200 requests/run; 24 balanced rounds.
+dashboard round 1/24: C-after-fix / A-original / B-before-fix
+  C-after-fix: 3.3715s, 59.32 req/s, server CPU=3.360s
+  A-original: 3.6647s, 54.58 req/s, server CPU=3.660s
+  B-before-fix: 3.5525s, 56.30 req/s, server CPU=3.560s
+dashboard round 2/24: A-original / C-after-fix / B-before-fix
+  A-original: 3.6415s, 54.92 req/s, server CPU=3.630s
+  C-after-fix: 3.3712s, 59.33 req/s, server CPU=3.370s
+  B-before-fix: 3.4947s, 57.23 req/s, server CPU=3.510s
+dashboard round 3/24: B-before-fix / A-original / C-after-fix
+  B-before-fix: 3.5162s, 56.88 req/s, server CPU=3.510s
+  A-original: 4.0547s, 49.33 req/s, server CPU=4.050s
+  C-after-fix: 3.4510s, 57.95 req/s, server CPU=3.450s
+dashboard round 4/24: C-after-fix / B-before-fix / A-original
+  C-after-fix: 3.3603s, 59.52 req/s, server CPU=3.360s
+  B-before-fix: 3.4945s, 57.23 req/s, server CPU=3.500s
+  A-original: 3.6628s, 54.60 req/s, server CPU=3.670s
+dashboard round 5/24: B-before-fix / C-after-fix / A-original
+  B-before-fix: 3.4979s, 57.18 req/s, server CPU=3.500s
+  C-after-fix: 3.3746s, 59.27 req/s, server CPU=3.370s
+  A-original: 3.6197s, 55.25 req/s, server CPU=3.610s
+dashboard round 6/24: B-before-fix / A-original / C-after-fix
+  B-before-fix: 3.5238s, 56.76 req/s, server CPU=3.520s
+  A-original: 3.6432s, 54.90 req/s, server CPU=3.640s
+  C-after-fix: 3.3729s, 59.30 req/s, server CPU=3.380s
+dashboard round 7/24: C-after-fix / A-original / B-before-fix
+  C-after-fix: 3.3952s, 58.91 req/s, server CPU=3.400s
+  A-original: 3.6170s, 55.29 req/s, server CPU=3.620s
+  B-before-fix: 3.5008s, 57.13 req/s, server CPU=3.500s
+dashboard round 8/24: B-before-fix / C-after-fix / A-original
+  B-before-fix: 3.5234s, 56.76 req/s, server CPU=3.510s
+  C-after-fix: 3.3989s, 58.84 req/s, server CPU=3.390s
+  A-original: 3.6366s, 55.00 req/s, server CPU=3.620s
+dashboard round 9/24: A-original / B-before-fix / C-after-fix
+  A-original: 3.6285s, 55.12 req/s, server CPU=3.640s
+  B-before-fix: 3.4610s, 57.79 req/s, server CPU=3.460s
+  C-after-fix: 3.4601s, 57.80 req/s, server CPU=3.460s
+dashboard round 10/24: B-before-fix / C-after-fix / A-original
+  B-before-fix: 3.4898s, 57.31 req/s, server CPU=3.480s
+  C-after-fix: 3.4890s, 57.32 req/s, server CPU=3.490s
+  A-original: 3.6297s, 55.10 req/s, server CPU=3.620s
+dashboard round 11/24: C-after-fix / B-before-fix / A-original
+  C-after-fix: 3.3678s, 59.39 req/s, server CPU=3.360s
+  B-before-fix: 3.5045s, 57.07 req/s, server CPU=3.490s
+  A-original: 3.6219s, 55.22 req/s, server CPU=3.620s
+dashboard round 12/24: A-original / C-after-fix / B-before-fix
+  A-original: 3.6211s, 55.23 req/s, server CPU=3.620s
+  C-after-fix: 3.3690s, 59.36 req/s, server CPU=3.380s
+  B-before-fix: 3.5428s, 56.45 req/s, server CPU=3.540s
+dashboard round 13/24: C-after-fix / A-original / B-before-fix
+  C-after-fix: 3.3788s, 59.19 req/s, server CPU=3.370s
+  A-original: 3.6552s, 54.72 req/s, server CPU=3.650s
+  B-before-fix: 3.5387s, 56.52 req/s, server CPU=3.530s
+dashboard round 14/24: C-after-fix / B-before-fix / A-original
+  C-after-fix: 3.4564s, 57.86 req/s, server CPU=3.460s
+  B-before-fix: 3.5403s, 56.49 req/s, server CPU=3.540s
+  A-original: 3.6393s, 54.96 req/s, server CPU=3.630s
+dashboard round 15/24: C-after-fix / B-before-fix / A-original
+  C-after-fix: 3.4107s, 58.64 req/s, server CPU=3.410s
+  B-before-fix: 3.5250s, 56.74 req/s, server CPU=3.520s
+  A-original: 3.6696s, 54.50 req/s, server CPU=3.660s
+dashboard round 16/24: B-before-fix / C-after-fix / A-original
+  B-before-fix: 3.5365s, 56.55 req/s, server CPU=3.540s
+  C-after-fix: 3.3761s, 59.24 req/s, server CPU=3.370s
+  A-original: 3.7429s, 53.44 req/s, server CPU=3.740s
+dashboard round 17/24: A-original / B-before-fix / C-after-fix
+  A-original: 3.6329s, 55.05 req/s, server CPU=3.630s
+  B-before-fix: 3.5001s, 57.14 req/s, server CPU=3.500s
+  C-after-fix: 3.3904s, 58.99 req/s, server CPU=3.390s
+dashboard round 18/24: A-original / C-after-fix / B-before-fix
+  A-original: 3.5959s, 55.62 req/s, server CPU=3.600s
+  C-after-fix: 3.3849s, 59.09 req/s, server CPU=3.390s
+  B-before-fix: 3.4899s, 57.31 req/s, server CPU=3.500s
+dashboard round 19/24: A-original / B-before-fix / C-after-fix
+  A-original: 3.6374s, 54.98 req/s, server CPU=3.640s
+  B-before-fix: 3.5096s, 56.99 req/s, server CPU=3.510s
+  C-after-fix: 3.3498s, 59.71 req/s, server CPU=3.340s
+dashboard round 20/24: A-original / C-after-fix / B-before-fix
+  A-original: 3.5993s, 55.57 req/s, server CPU=3.590s
+  C-after-fix: 3.3981s, 58.86 req/s, server CPU=3.400s
+  B-before-fix: 3.5168s, 56.87 req/s, server CPU=3.520s
+dashboard round 21/24: B-before-fix / A-original / C-after-fix
+  B-before-fix: 3.5225s, 56.78 req/s, server CPU=3.520s
+  A-original: 3.6599s, 54.65 req/s, server CPU=3.660s
+  C-after-fix: 3.4047s, 58.74 req/s, server CPU=3.410s
+dashboard round 22/24: C-after-fix / A-original / B-before-fix
+  C-after-fix: 3.3929s, 58.95 req/s, server CPU=3.390s
+  A-original: 3.6288s, 55.12 req/s, server CPU=3.630s
+  B-before-fix: 3.5483s, 56.37 req/s, server CPU=3.550s
+dashboard round 23/24: A-original / B-before-fix / C-after-fix
+  A-original: 3.6446s, 54.88 req/s, server CPU=3.650s
+  B-before-fix: 3.5208s, 56.81 req/s, server CPU=3.520s
+  C-after-fix: 3.4053s, 58.73 req/s, server CPU=3.410s
+dashboard round 24/24: B-before-fix / A-original / C-after-fix
+  B-before-fix: 3.4885s, 57.33 req/s, server CPU=3.490s
+  A-original: 3.6402s, 54.94 req/s, server CPU=3.620s
+  C-after-fix: 3.4015s, 58.80 req/s, server CPU=3.400s
+dashboard: A-original -> B-before-fix: elapsed reduction +3.380%; wins/ties/losses=[24, 0, 0]
+dashboard: A-original -> C-after-fix: elapsed reduction +6.866%; wins/ties/losses=[24, 0, 0]
+dashboard: B-before-fix -> C-after-fix: elapsed reduction +3.451%; wins/ties/losses=[24, 0, 0]
+SUCCESS: all requested cases completed. /home/zhm/bolt-lab/notrack-main-20261118-af3fdf39125a/stage2/apps/fossil-dashboard/results/measurements-20261118-194820-aaoogr_u

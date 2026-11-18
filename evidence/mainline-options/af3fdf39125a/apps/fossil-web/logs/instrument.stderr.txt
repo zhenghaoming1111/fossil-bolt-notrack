@@ -1,0 +1,1 @@
+BOLT-WARNING: debug info will be stripped from the binary. Use -update-debug-sections to keep it.

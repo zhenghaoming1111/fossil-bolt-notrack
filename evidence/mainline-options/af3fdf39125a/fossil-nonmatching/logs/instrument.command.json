@@ -1,0 +1,11 @@
+[
+  "/opt/project/artifacts/mainline-options/after-fix/bin/llvm-bolt",
+  "/opt/project/runs/negative/bin/fossil.orig",
+  "-instrument",
+  "-runtime-instrumentation-lib=libbolt_rt_instr.a",
+  "-instrumentation-file=/opt/project/runs/negative/profiles/fossil.fdata",
+  "-instrumentation-sleep-time=1",
+  "-instrumentation-no-counters-clear",
+  "-o",
+  "/opt/project/runs/negative/bin/fossil.inst"
+]

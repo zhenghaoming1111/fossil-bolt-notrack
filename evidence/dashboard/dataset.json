@@ -1,0 +1,22 @@
+{
+  "upstream_url": "https://fossil-scm.org/home",
+  "snapshot_sha256": "032e728053279cfb91273eacb4ba1797d795dcfbb75596b3f65f5826af881a6f",
+  "upstream_sha256": "4af230334254869e948abb7db5ac5aba8a195198aad6b7d19fd1712aea7e8aa1",
+  "snapshot_bytes": 73244672,
+  "tip": "ea810b6f00dd3602d6fc208879a4b3f1a1b452c6c9ec556d61af1abfe562c1f6",
+  "checkins": 21159,
+  "artifacts": 68482,
+  "training_seed": 42,
+  "evaluation_seed": 43,
+  "mixes_are_designed_not_observed_traffic": true,
+  "mixes": {
+    "dashboard": {
+      "report_file": 40,
+      "report_user": 30,
+      "report_month": 15,
+      "report_year": 15
+    }
+  },
+  "current_source_files_used": 153,
+  "valid_file_checkin": "ea810b6f00dd3602d6fc208879a4b3f1a1b452c6c9ec556d61af1abfe562c1f6"
+}

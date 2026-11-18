@@ -1,0 +1,11 @@
+[
+  "/home/zhm/bolt-lab/notrack-main-20261118-af3fdf39125a/stage2/tools/after-fix/bin/llvm-bolt",
+  "/home/zhm/bolt-lab/notrack-main-20261118-af3fdf39125a/stage2/apps/fossil-dashboard/bin/fossil.orig",
+  "-instrument",
+  "-runtime-instrumentation-lib=libbolt_rt_instr.a",
+  "-instrumentation-file=/home/zhm/bolt-lab/notrack-main-20261118-af3fdf39125a/stage2/apps/fossil-dashboard/profiles/fossil.fdata",
+  "-instrumentation-sleep-time=1",
+  "-instrumentation-no-counters-clear",
+  "-o",
+  "/home/zhm/bolt-lab/notrack-main-20261118-af3fdf39125a/stage2/apps/fossil-dashboard/bin/fossil.inst"
+]

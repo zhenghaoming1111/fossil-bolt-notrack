@@ -1,0 +1,48 @@
+Host System...x86_64-pc-linux-gnu
+Build System...x86_64-pc-linux-gnu
+C compiler... gcc -O2 -g -fno-omit-frame-pointer -fno-reorder-blocks-and-partition -fno-pie -no-pie -fcf-protection=none 
+C++ compiler... c++ -O2 -g -fno-omit-frame-pointer -fno-reorder-blocks-and-partition -fno-pie -no-pie -fcf-protection=none 
+Build C compiler...cc
+Checking for stdlib.h...ok
+Checking for uint32_t...ok
+Checking for uint16_t...ok
+Checking for int16_t...ok
+Checking for uint8_t...ok
+Checking for pread...ok
+Checking for cscope...no
+Checking for tclsh...ok
+Found Tclsh version 8.6 in the PATH.
+Checking libs for iconv...none needed
+Checking libs for sin...-lm
+Checking libs for dlopen...none needed
+Checking for zlib.h...ok
+Found zlib.h in default include path
+Checking for inflateEnd in z...-lz
+Linked to zlib via default library path
+Checking for compressBound in z...-lz
+Using sqlite3.c from this source tree.
+Checking libs for gethostbyname...none needed
+Checking libs for socket...none needed
+Checking libs for nanosleep...none needed
+Checking for arpa/nameser.h...ok
+Checking for bind/resolv.h...not found
+Checking for resolv.h...ok
+Checking libs for dn_expand...none needed
+Checking libs for ns_parserr...-lresolv
+Checking libs for res_query...none needed
+Checking libs for res_9_ns_initparse...no
+Checking for utime...ok
+Checking for usleep...ok
+Checking for strchrnul...ok
+Checking for pledge...not found
+Checking for backtrace...ok
+Found getpass() with unistd.h
+Checking for getloadavg...ok
+Checking for getpassphrase...not found
+Checking libs for getpass...none needed
+Use --compile-commands to enable check for compile-commands-capable compiler.
+Emscripten SDK? not found
+Checking for system openssl...ok
+HTTPS support enabled
+Created Makefile from Makefile.in
+Created autoconfig.h

@@ -1,0 +1,190 @@
+# Fossil：让 LLVM BOLT 恢复带 NOTRACK 的跳转表
+
+课程项目设计与复现报告 · 2026 年 11 月 18 日
+
+本项目为 LLVM BOLT 增加默认关闭的 `--x86-notrack-jump-tables`。打开开关后，BOLT 能识别 Fossil 二进制中一类原先被跳过的间接跳转表，将其中的热点代码交给原有布局策略优化。在本机 WSL2 上，开启开关让 Fossil **统计看板**的批量 HTTP 耗时进一步下降 **4.069% 和 3.451%**（两个评估种子，各 24 轮，均相对关闭开关）。历史审查有较小收益，普通浏览的两个种子结果不一致。没有目标指令的 Fossil 构建通过了预定 **1% 性能回退界限**和页面正确性检查。
+
+## 1. 问题与优化设计
+
+Fossil 是带网页界面的开源版本管理系统。它把 SQLite 编进自己的可执行文件；用户打开提交历史或统计看板时，Fossil 在服务进程中查询仓库数据，无需另起数据库服务。实验沿用 Fossil 原生 HTTP 页面和公开开发仓库快照，优化对象是 `fossil` ELF 文件。
+
+SQLite 内部有一段像“按编号选择下一步”的代码。在这里，编译器把多个可选目的地放进一张表，生成类似 `notrack jmp *table(,%rax,8)` 的机器指令。它用索引找到 8 字节表项并跳到表项指向的地址。`0x3e` 是该间接跳转携带的 NOTRACK 前缀；LLVM MC 解码将它保留在段操作数中，表现为 `DS`。原 BOLT 的 `analyzeIndirectBranch` 遇到非空段操作数就返回 `UNKNOWN`，因而无法用跳转表补全相关函数的控制流。此处的问题发生在**解码之后的间接跳转分析**。
+
+补丁让符合条件的指令继续走已有跳转表校验。表项全部通过原有检查后，BOLT 才能利用执行计数重排这些函数的基本块，并纳入原有函数布局策略。新增的是**一种跳转表识别路径和独立开关**；本项目沿用 `ext-tsp` 基本块重排与 `hfsort` 函数重排。未改 Fossil 源码、仓库数据、SQL 或索引。
+
+## 2. 主线依据与实现细节
+
+| 项目 | 可核对记录 |
+| --- | --- |
+| 实际构建、回归和计时 | LLVM BOLT `24.0.0git`，`llvm-project` 的 `main` 提交 `af3fdf39125a6f119bfcc97f1dd00572185f6e07`，提交时间 2026-11-18 17:22:08（北京时间） |
+| 交付前静态核对 | 2026-11-18 22:27（北京时间）读到 `main` 为 `7730245b648b1fd73653415ee161f73d0c69cf7d`。它与实测提交的整个 `bolt/` 子树均为 `0f44a83a1972adbf5d5f5e058f4b2dcda7fbcd26` |
+| 新功能是否已在主线 | 同一 `bolt/` 子树的 `X86MCPlusBuilder.cpp` 仍保留非空段拒绝条件，没有 `--x86-notrack-jump-tables`；原文件 SHA-256 一致 |
+| 本次版本结论的边界 | 两次提交的 `llvm/` 子树不同。后者只核对过源码，表中性能数据和交付镜像都对应实测提交。若验收指定提交时刻的完整 HEAD，须针对该 HEAD 重新构建并计时 |
+
+核对记录见 [upstream-check.json](upstream-check.json)，固定源码归档及哈希见 [llvm-mainline-options.json](configs/llvm-mainline-options.json)。[代码补丁](patches/notrack-jump-table-options.patch) 已在干净的实测源码上应用并反向还原，见 [patch-check.json](evidence/mainline-options/af3fdf39125a/patch-check.json)。
+
+生产代码位于 `bolt/lib/Target/X86/X86MCPlusBuilder.cpp`。`X86NoTrackJumpTables` 用 `cl::opt<bool>` 注册，默认 `false`。在原有内存操作数检查前增加判定 `IsNoTrackJumpTable`，需要同时满足：
+
+1. 显式打开选项，且指针大小为 8 字节。
+2. 指令是 `JMP64m`，跳转指令本身从内存直接取目标地址。
+3. 段操作数为 `DS`，且有索引寄存器，索引缩放为 8。
+4. 仍通过原有基址检查（无基址或 RIP）和后续跳转表检查。
+
+第 4 条由原有逻辑继续执行。间接调用、寄存器间接跳转、FS/GS 和其他表形式不被此分支放行。代码不清空段操作数，让编码器在新地址上重新输出原有 `0x3e`。`-jump-tables=move` 由既有重写逻辑更新跳转表内容，确保表项随基本块地址移动。程序能运行和输出保留前缀都要检查，单凭日志出现 `JUMPTABLE` 不足以验收。
+
+补丁同时提交 BOLT 回归用例：默认和显式关闭保持原分析行为；打开时识别示例跳转表、保留前缀、正确执行全部表项；FS/GS 不被新增规则放行；带计数的插桩、运行和重写能串起来。固定主线版本的本机 BOLT 测试有 **527 PASS、267 UNSUPPORTED、1 XFAIL，无意外失败**。见 [回归日志](evidence/mainline-options/af3fdf39125a/logs/lit-options-all.txt)。
+
+## 3. 实测设备、数据与三组对照
+
+| 项目 | 正式实验配置 |
+| --- | --- |
+| 设备 | Lenovo 83F4，Intel Core Ultra 9 290HX Plus；宿主报告 24 核 / 24 逻辑 CPU，物理内存 16,573,128,704 字节 |
+| 宿主 | Windows 11 家庭版，版本 `10.0.26200` |
+| WSL | WSL2 `2.7.11.0`，配置 8 vCPU、12 GB 内存、8 GB swap；Linux 可见约 11.68 GiB 内存 |
+| Linux | Ubuntu 24.04.5 LTS，x86-64，内核 `6.18.33.2-microsoft-standard-WSL2`，glibc 2.39，Python 3.12.3 |
+| BOLT | 固定主线 `24.0.0git`，Release，启用断言，仅构建 X86 后端 |
+| Fossil | 2.28，内嵌 SQLite 3.52.0；GCC 13.3.0，`-O2`，非 PIE，保留符号及重定位（`--emit-relocs`） |
+| 计时隔离 | Fossil 绑 WSL CPU 0，HTTP 客户端绑 CPU 1；最多 4 个并发请求；数据放在 Linux 文件系统；本机回环 HTTP，未启用 TLS |
+| 运行位置 | A/B/C 正式结果来自原生 WSL。无命中负对照在同一宿主的离线 Docker 容器内运行，服务与客户端仍分别绑定 CPU 0、1 |
+
+Windows 与 WSL 配置见 [设备证据](evidence/host)，正式实验 Linux 快照见 [environment.json](evidence/mainline-options/af3fdf39125a/environment.json)。这里的 CPU 号是 WSL 虚拟 CPU 编号。没有记录跨轮温度和实际频率，未将这些编号解释为固定物理核心。
+
+冻结仓库快照来自 Fossil 的公开开发仓库：**21,159 次提交、68,482 个内容对象，解压后 73,244,672 字节**。源码包、仓库快照、请求清单及 SHA-256 在 [datasets/](datasets) 中。使用的是真实提交、源码与历史数据；页面比例由实验设计，没有线上用户日志。每列表含 100 个请求。
+
+| HTTP 页面 | 普通浏览 | 历史审查 | 统计看板 |
+| --- | ---: | ---: | ---: |
+| `/timeline` 提交历史 | 30% | 35% | 0% |
+| `/ci/…` 提交详情 | 25% | 10% | 0% |
+| `/dir` 目录、`/file` 文件 | 各 15% | 各 5% | 0% |
+| `/finfo` 文件历史、`/fdiff` 差异 | 10% / 5% | 35% / 10% | 0% |
+| `/reports` 统计分类 | 0% | 0% | 按文件 40%、按用户 30%、按月 15%、按年 15% |
+
+| 组别 | 可执行文件 | 用途 |
+| --- | --- | --- |
+| A（`A-original`） | 冻结的原始 Fossil | 测原始基线 |
+| B（`B-before-fix`） | 同一个 BOLT，`--x86-notrack-jump-tables=false` | 测原有布局优化 |
+| C（`C-after-fix`） | 同一个 BOLT，`--x86-notrack-jump-tables=true` | 测扩大优化覆盖的额外价值 |
+
+实验按以下顺序执行：
+
+1. **训练。** 用开启新选项的 BOLT 插桩原版 Fossil，再用种子 42 发请求。普通浏览和历史审查共用 web profile（共 400 个请求）；看板单独训练（200 个请求）。插桩使 fork 工作进程共享计数，服务退出时保存 `.fdata`。
+2. **重写。** 每类实验的 B、C 使用同一个原始 ELF、同一份新 profile、同一 BOLT、同一组 `-reorder-blocks=ext-tsp -reorder-functions=hfsort -split-functions=false -jump-tables=move` 参数，只切换开关。历史标签 `before-fix`、`after-fix` 在这里表示 OFF、ON 两个启动器。
+3. **校验。** 对种子 43 和 44，分别检查 A/B/C 的 HTTP 响应和规范化后的页面可见内容。检查新训练 profile 中的两个目标函数，以及 C 重定位后的指令、前缀与表项。
+4. **计时。** 每个场景和种子测 24 轮，A/B/C 六种顺序各用 4 次。每轮每组使用新的仓库副本并启动服务，先预热两遍请求列表，然后计时固定请求量。在 A 上用试跑将每次正式请求量校准到约 3 秒。训练、重写、启动、预热和页面校验不计入结果。服务 CPU 时间包含已回收的 fork 子进程。
+
+主指标是逐轮计算 `100 × (1 − C 耗时 / B 耗时)` 后取中位数；正数表示节省时间。表中的绝对秒数、请求每秒为各组中位数，与逐轮配对值是不同统计量。95% 区间由 10,000 次按轮配对 bootstrap 重采样得到，反映本次会话的波动，未做跨场景多重比较校正。精确参数见 [计时计划](evidence/mainline-options/af3fdf39125a/formal-analysis-plan.json)。
+
+## 4. 正确性与性能结果
+
+两套训练 profile 中，`sqlite3VdbeExec` / `vdbeRecordCompareInt` 的非零记录条数分别为 **970 / 21**（web）和 **831 / 18**（看板）。这是记录条数，不能读成调用次数。两函数在 B 的控制流分析中均为 `IsSimple=0`，在 C 中变为 `IsSimple=1`。`sqlite3VdbeExec` 恢复两张表（186、7 项），`vdbeRecordCompareInt` 恢复一张（10 项）。C 的新符号中保留三处 `0x3e`，表项地址均通过重定位后的目标范围检查。见 [web 反汇编与表项证据](evidence/mainline-options/af3fdf39125a/apps/fossil-web/tables) 和 [看板证据](evidence/mainline-options/af3fdf39125a/apps/fossil-dashboard/tables)。
+
+两个评估种子、三个场景、100 个页面、三组，共 **1,800 个页面指纹**，在相同请求下可见内容一致；正式计时的 **432 条**运行记录无 HTTP 错误。校验针对可见内容，包含不过滤业务文本的规范化过程，不等于整个 HTML 按字节都相同。
+
+表中每一行对应 24 轮。A/B/C 的三个数字按组别顺序排列。
+
+| 场景 / 种子 | 每次请求数 | A / B / C 耗时中位数（秒） | A / B / C 吞吐中位数（请求/秒） |
+| --- | ---: | --- | --- |
+| 普通浏览 / 43 | 300 | 3.9167 / 3.8624 / 3.8730 | 76.59 / 77.67 / 77.46 |
+| 普通浏览 / 44 | 400 | 3.5860 / 3.5386 / 3.4887 | 111.54 / 113.04 / 114.65 |
+| 历史审查 / 43 | 500 | 3.3827 / 3.3120 / 3.2887 | 147.81 / 150.97 / 152.04 |
+| 历史审查 / 44 | 600 | 3.1581 / 3.0827 / 3.0266 | 189.99 / 194.63 / 198.24 |
+| 统计看板 / 43 | 200 | 3.5427 / 3.4271 / 3.2888 | 56.45 / 58.36 / 60.81 |
+| 统计看板 / 44 | 200 | 3.6384 / 3.5165 / 3.3916 | 54.97 / 56.87 / 58.97 |
+
+| 场景 / 种子 | A→B 耗时下降 | A→C 耗时下降 | **B→C 额外耗时下降** | B→C 95% 区间 | C 胜/平/负 |
+| --- | ---: | ---: | ---: | --- | --- |
+| 普通浏览 / 43 | +1.538% | +1.494% | −0.106% | [−1.235%, +0.969%] | 12/0/12 |
+| 普通浏览 / 44 | +1.401% | +2.659% | +1.512% | [+0.886%, +1.808%] | 22/0/2 |
+| 历史审查 / 43 | +2.189% | +2.707% | +0.727% | [+0.221%, +1.235%] | 19/0/5 |
+| 历史审查 / 44 | +2.113% | +3.874% | +1.698% | [+0.772%, +2.232%] | 22/0/2 |
+| 统计看板 / 43 | +3.322% | +7.178% | **+4.069%** | [+3.677%, +4.420%] | 24/0/0 |
+| 统计看板 / 44 | +3.380% | +6.866% | **+3.451%** | [+3.136%, +3.900%] | 24/0/0 |
+
+两组看板数据中，服务 CPU 中位数也下降（B→C：3.420→3.290 秒、3.510→3.390 秒）。结合刚恢复的跳转表和训练计数，结果支持如下解释：当页面中 SQLite 聚合、排序和扫描执行足够多，原先不参与布局的热代码得到更多重排机会。当前能证明的是**这些 Fossil 统计页面整体更快**。尚无逐查询或按函数开关的实验来证明每一类 SQL 获得了多少收益。普通浏览的种子 43 区间跨零，无法确认有额外收益。原始秒数、各组 CV、按操作延迟和完整配对统计在 [正向数据](evidence/mainline-options/af3fdf39125a/positive) 的 `raw.jsonl`、`summary.json` 中。
+
+## 5. 不满足优化条件时的检查
+
+用同一份 Fossil 源码加 `-fcf-protection=none` 重编。对整个待重写 ELF 反汇编，确认没有 `notrack jmp` 或以 `ds jmp` 显示的等效形式。这是**目标指令不出现**的负对照；普通浏览种子 43 仍运行同一个含目标指令的 ELF，两者不能互相替代。
+
+负对照仍重新插桩、用种子 42 训练并把同一份 profile 交给 OFF/ON。两份输出 ELF 的入口和所有 `PT_LOAD` 段（映射地址、大小、属性及内容哈希）一致；A/OFF/ON 各自请求的 100 个看板页面可见内容一致。然后用种子 43 做 48 轮 OFF/ON 平衡配对，每种顺序 24 次，每组每轮预热 20 个请求后计时 100 个请求。
+
+| 正式记录 | OFF 耗时中位数 | ON 耗时中位数 | ON 配对耗时下降 | 95% 区间 | ON 胜/平/负 |
+| ---: | ---: | ---: | ---: | --- | --- |
+| 96 条，零 HTTP 错误 | 1.650721 s | 1.647587 s | +0.111% | [−0.323%, +0.460%] | 26/0/22 |
+
+计时前将“有实际意义的回退”定为超过 1% 的耗时增加，要求区间下端大于 −1%。本次下端为 −0.323%，通过判据；区间跨零，该对照也没有可信的加速证据。此结果支持**本次无命中 Fossil 负载**功能一致、未出现超过 1% 的性能回退，不能证明任意二进制都绝对零回退。完整证据见 [负对照目录](evidence/mainline-options/af3fdf39125a/fossil-nonmatching)。
+
+## 6. 在另一台机器上复现
+
+使用 **原生 x86-64 Linux 或带 Linux 容器支持的 x86-64 WSL2**、可访问 Docker daemon 的 Bash、至少两个允许调度的逻辑 CPU。建议至少 8 GiB 可用内存和 8 GiB 磁盘余量；源码重编 LLVM 另外留空间。镜像为 `linux/amd64`；不要用 ARM 指令模拟的计时作原生性能比较。WSL 下把结果目录放在 `~/` 等 Linux 文件系统中，避免 `/mnt/c` 的文件系统差异。运行 Docker 的帐号需要有相应权限；需要 `sudo` 的机器把下文的 `docker` 改为 `sudo docker`。
+
+交付目录包含 `fossil-bolt-materials-af3fdf39125a.tar.gz`、`fossil-bolt-image-af3fdf39125a.tar.gz` 和 `DELIVERY_SHA256SUMS`。先在 Bash 中进入这三个文件所在目录。第一条校验命令应显示两个 `OK`；加载后可把镜像 ID 和平台与随附的 `image-manifest.json` 对照。
+
+```bash
+sha256sum --check DELIVERY_SHA256SUMS
+docker load --input fossil-bolt-image-af3fdf39125a.tar.gz
+image=bolt-fossil-notrack:main-af3fdf39125a
+docker image inspect "$image" --format '{{.Id}} {{.Os}}/{{.Architecture}}'
+results=$(mktemp -d "$HOME/fossil-bolt-results.XXXXXXXX")
+
+run_fossil() {
+  docker run --rm --network none --user "$(id -u):$(id -g)" \
+    --mount "type=bind,src=$results,dst=/results" "$image" \
+    bash scripts/reproduce_fossil_mainline.sh "$@"
+}
+```
+
+先复核已提交的证据，再检查新生成的实验输出：
+
+```bash
+run_fossil verify
+run_fossil check /results/check
+run_fossil negative-check /results/negative-check
+```
+
+`verify` 检查固定输入、代码补丁和运行工具的 SHA-256，并从 432 条正向、96 条负对照记录重算统计。`check` 从冻结的 Fossil ELF 重新插桩训练、生成 B/C、核对页面和跳转表；`negative-check` 重新构建无命中 Fossil 并核对页面和 ELF 的可加载内容。所有容器仅使用内部回环网络，复现无需下载源码、克隆仓库或连接外部服务。
+
+交付前已将导出的镜像重新加载，以普通用户在断网容器中执行这三项检查。`verify` 重算结果与归档一致；`check` 确认新 profile、页面、跳转表和前缀均通过；`negative-check` 确认无目标跳转、页面一致、OFF/ON 的 ELF 可加载段一致。交付目录中的 `docker-*.txt` 保存验收输出；这些检查与第 4、5 节的正式计时是两次工作。
+
+正式计时可以随后进行。一次只启动一种计时，期间避免并行编译；完整 A/B/C 包含预热，需预留约一小时或更久。下列目录必须是新的，重复运行请更换目录名：
+
+```bash
+run_fossil benchmark /results/benchmark
+run_fossil negative /results/negative
+
+find "$results/benchmark" -name summary.json -print
+cat "$results/negative/summary.json"
+```
+
+| 模式 | 可找的输出（相对 `$results`） |
+| --- | --- |
+| `check` | `check/environment.json`、`check/fossil-web/` 和 `check/fossil-dashboard/` 中的新 profile、重写日志、`check-seed*.json`；`check/web-tables/summary.json` 和 `check/dashboard-tables/summary.json` |
+| `benchmark` | `benchmark/formal-analysis-plan.json` 与 `benchmark/benchmark-console.txt`；每个负载目录的 `benchmark-seed43.json`、`benchmark-seed44.json` 指向各自 `summary.json` 和 `raw.jsonl` |
+| `negative-check` | `negative-check/environment.json`、`check.json`、`correctness.json` 和反汇编日志 |
+| `negative` | `negative/environment.json`、`analysis-plan.json`、`raw.jsonl`、`summary.json` |
+
+复现判据：`verify` 重算旧数值应完全一致；新校验应通过且无请求错误；新计时按本文同样的轮内配对方法报告。计时脚本会按机器速度校准每次请求量，百分比受 CPU、系统与容器环境影响，不要求新机恰好得到同一数值。
+
+也可只读源码包、不启动 Docker，就核对原始数据（需 Bash 和 Python 3.12）：
+
+```bash
+tar -xzf fossil-bolt-materials-af3fdf39125a.tar.gz
+cd fossil-bolt-submission
+bash scripts/reproduce_fossil_mainline.sh verify
+```
+
+材料包提供 [源码构建脚本](scripts/build_bolt_options.sh)：它按 [LLVM 源码配置](configs/llvm-mainline-options.json) 取得固定源码、校验补丁并构建 BOLT。只有审阅者要重新编译 BOLT 时才需要这一流程。随附 Dockerfile 记录了实际镜像怎么组装，需要预先准备底包和构建产物；直接加载交付镜像即可运行上述实验。
+
+## 7. 局限性与交付内容
+
+- **指令范围。** 目前只覆盖 x86-64 的直接内存取表形式；不覆盖先加载目标再通过寄存器跳转、间接调用或其他架构。编译器、PIE 与编译选项改变时，先反汇编确认有没有候选指令和热点计数。无匹配形式时，本改动没有新的可用布局机会。
+- **负载范围。** 看板的优势来自这份数据库快照和这批查询形态。常规浏览可能更多耗在页面生成、文件处理或 HTTP。结论不延伸到写入、同步、TLS、慢磁盘、跨主机网络或线上访问比例。两个种子共用仓库、训练资料和宿主，不能当成跨机器验证。
+- **归因范围。** 补丁也可能让其他匹配函数参与全局布局。没有函数消融或本轮硬件事件测量，不能把整体加速全归给两个函数、指令缓存或分支预测。当前计时衡量 **Fossil 重写后的运行**，不衡量 BOLT 重写本身耗时。
+- **安全语义与正确性。** 已检查机器码保留 `0x3e`、输出表项和应用页面；未在强制启用 CET/IBT 的环境执行。负对照覆盖一个实际 Fossil 非匹配构建；不能代替所有工具链和输入的功能测试。
+- **版本范围。** 冻结镜像用于实验复现；主线持续变化，提交日期之后是否仍有相同缺口，应根据当时的源码重新确认。
+
+| 提交项 | 文件与内容 |
+| --- | --- |
+| 代码 patch | [notrack-jump-table-options.patch](patches/notrack-jump-table-options.patch)，含实现与可执行的回归测试 |
+| Docker | `fossil-bolt-image-af3fdf39125a.tar.gz`，可直接 `docker load`；含实际 `llvm-bolt`、OFF/ON 启动器、插桩库、冻结 Fossil ELF、Fossil 源码、仓库快照、请求与脚本。[Dockerfile](docker/Dockerfile) 记录镜像构造 |
+| 设计与复现文档 | 本文，及源码材料归档；后者含 [配置](configs)、[脚本](scripts)、[证据](evidence)、[许可说明](THIRD_PARTY_NOTICES.md) 和文件校验清单 |

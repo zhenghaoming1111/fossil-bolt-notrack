@@ -1,0 +1,19 @@
+[
+  "/home/zhm/bolt-lab/notrack-main-20261118-af3fdf39125a/stage2/tools/before-fix/bin/llvm-bolt",
+  "/home/zhm/bolt-lab/notrack-main-20261118-af3fdf39125a/stage2/apps/fossil-web/bin/fossil.orig",
+  "-data=/home/zhm/bolt-lab/notrack-main-20261118-af3fdf39125a/stage2/apps/fossil-web/profiles/fossil.fdata",
+  "-o",
+  "/home/zhm/bolt-lab/notrack-main-20261118-af3fdf39125a/stage2/apps/fossil-web/bin/fossil.before",
+  "-reorder-blocks=ext-tsp",
+  "-reorder-functions=hfsort",
+  "-split-functions=false",
+  "-jump-tables=move",
+  "-no-threads",
+  "-sequential-disassembly",
+  "-print-cfg",
+  "-v=2",
+  "-time-build",
+  "-time-rewrite",
+  "-time-opts",
+  "-print-only=sqlite3VdbeExec,sqlite3VdbeExec/1,sqlite3VdbeExec/2,vdbeRecordCompareInt,vdbeRecordCompareInt/1,vdbeRecordCompareInt/2"
+]

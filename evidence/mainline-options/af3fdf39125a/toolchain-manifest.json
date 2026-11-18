@@ -1,0 +1,19 @@
+{
+  "upstream_commit": "af3fdf39125a6f119bfcc97f1dd00572185f6e07",
+  "option": "--x86-notrack-jump-tables",
+  "default": false,
+  "both_modes_use_same_executable": true,
+  "actual_executable_sha256": "0dcee46b08c82f43667e8a6a382eddbd69bde10043d1688d00d7e3d5d2734ff2",
+  "patch_sha256": "2c359b4708adfa3a55b20eec473e484c23c4907debd632f2ab1ea635c3246e76",
+  "files": {
+    "after-fix/bin/llvm-bolt": "67b6027bedb90262a42ac8ed89124c7392eb0dcdc9fac314e41940cee214333e",
+    "after-fix/lib/libbolt_rt_instr.a": "64c1ea86f35c1672241e522e2b8a06668e169e23a3c9485b596076a8006732f5",
+    "before-fix/bin/llvm-bolt": "8d8ab42a32c6be1acf08a05b293cd07470269400900b7c83d69fb3c94cd9ff19",
+    "before-fix/lib/libbolt_rt_instr.a": "64c1ea86f35c1672241e522e2b8a06668e169e23a3c9485b596076a8006732f5",
+    "common/bin/FileCheck": "74f8f4bd727eab214228763c506fe559041d1a4647b99b569fc890727b3a4000",
+    "common/bin/llvm-bolt": "0dcee46b08c82f43667e8a6a382eddbd69bde10043d1688d00d7e3d5d2734ff2",
+    "common/bin/llvm-mc": "ca7b10e101f18d9526dfde614a14b06ff10354e6ddf726726d07de8a3f5584d8",
+    "common/bin/llvm-objdump": "73c60a74a62da02cd4bc7619a9826d31dfe7637465455d43593836352153e0b4",
+    "common/lib/libbolt_rt_instr.a": "64c1ea86f35c1672241e522e2b8a06668e169e23a3c9485b596076a8006732f5"
+  }
+}

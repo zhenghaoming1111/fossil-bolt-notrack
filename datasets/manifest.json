@@ -1,0 +1,28 @@
+{
+  "created_at_utc": "2026-11-18T08:35:42.117023+00:00",
+  "fossil_source_url": "https://fossil-scm.org/home/tarball/version-2.28/fossil-src-2.28.tar.gz",
+  "public_repository_url": "https://fossil-scm.org/home",
+  "frozen_script_sha256": "b40d84fc14682861d85b48586fea699ce11b6d51917e792a65f0df4ff14195e6",
+  "snapshot_sha256": "032e728053279cfb91273eacb4ba1797d795dcfbb75596b3f65f5826af881a6f",
+  "snapshot_bytes": 73244672,
+  "snapshot_tip": "ea810b6f00dd3602d6fc208879a4b3f1a1b452c6c9ec556d61af1abfe562c1f6",
+  "files_sha256": {
+    "datasets/fossil-src-2.28.tar.gz": "84c18824ca227e7602d2408b663c3747f754ad306ed5c73ddab959d6589538a6",
+    "datasets/fossil-snapshot.fossil.gz": "214b58ccddc7ccb28de25fda43331b772018c3698d79a5f40d0d9b6ba54cfbd7",
+    "datasets/traces/browse-seed42.json": "271a303d5bbcba82a4954f625331d8c45bd39aff2ffb28f233c5a98683534ba0",
+    "datasets/traces/browse-seed43.json": "ee904cd8e936028233740beb0b7fbc7d6ec7cdf4bd2ade7f93674ed842e7ffab",
+    "datasets/traces/browse-seed44.json": "e571d0d3d466cf90259fc4d4056f15336575db4be622699c400d0a1c0737b468",
+    "datasets/traces/dashboard-seed42.json": "bb51f99dd7b94db4018705da27ca915c94f4a8048639dea861aa7711c924e205",
+    "datasets/traces/dashboard-seed43.json": "0a776f0f3bd156c3889375c499b8bca212c01c226f5b45662b252bd319722dea",
+    "datasets/traces/dashboard-seed44.json": "452031e119da85371e32aa40c1c2ae42da5583722fc2aabf3e6ee10c734b6770",
+    "datasets/traces/review-seed42.json": "c708fce84961d19b8a8e1f1e9ae9fb51c6e708174acf7017b4e39f3bbe35f016",
+    "datasets/traces/review-seed43.json": "ab9184548bf8d02319a9169017b5b5265c72a1d4beea2be5c8b0b84da6e8a67e",
+    "datasets/traces/review-seed44.json": "a91d78e3a6ee9bd75e2bbc192cb927facc44ea6a34707cbec699fb728e29dbdc"
+  },
+  "seed_roles": {
+    "42": "training",
+    "43": "formal evaluation",
+    "44": "formal evaluation in the pinned-mainline experiment"
+  },
+  "note": "Real public repository data; designed traffic proportions. Do not regenerate from the live upstream for the historical comparison."
+}

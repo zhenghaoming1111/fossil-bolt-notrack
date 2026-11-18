@@ -1,0 +1,2776 @@
+{
+  "status": "COMPLETE",
+  "server_cpu": 0,
+  "client_cpu": 1,
+  "rounds": 24,
+  "concurrency": 4,
+  "evaluation_seed": 43,
+  "order_seed": 20261118,
+  "target_seconds": 3.0,
+  "two_warmup_trace_passes_per_variant_per_round": true,
+  "dataset_sha256": "032e728053279cfb91273eacb4ba1797d795dcfbb75596b3f65f5826af881a6f",
+  "profile_sha256": "a689562ee0e338730531c9cbc9a0cd20f74d00f59d63721eb141d03f09a8fccf",
+  "script_sha256": "b40d84fc14682861d85b48586fea699ce11b6d51917e792a65f0df4ff14195e6",
+  "trace_sha256": {
+    "dashboard": "0a776f0f3bd156c3889375c499b8bca212c01c226f5b45662b252bd319722dea"
+  },
+  "binary_sha256": {
+    "A-original": "29c3362b983c49606ee7576972a0b31c09f29b847e6516f7659ef8c4240f5933",
+    "B-before-fix": "a32bf5b25c353f1dc423cdd64561a2c82a85ed4e12d53ec448c90aa4fdf4bb74",
+    "C-after-fix": "f48101dc8b04af1e80d7292e09997540b891aeba87b00ee09715b318cbbcf336"
+  },
+  "cases": {
+    "dashboard": {
+      "pilot": {
+        "elapsed_seconds": 1.7603310139966197,
+        "requests": 100,
+        "requests_per_second": 56.8074976836101,
+        "errors": 0,
+        "user_seconds": 1.5,
+        "system_seconds": 0.26,
+        "cpu_seconds": 1.7599999999999998,
+        "wire_bytes": 976119,
+        "by_operation": {
+          "report_file": {
+            "count": 40,
+            "latency_p50_seconds": 0.04088788400986232,
+            "latency_p95_seconds": 0.17762260499875993
+          },
+          "report_month": {
+            "count": 15,
+            "latency_p50_seconds": 0.03410212698508985,
+            "latency_p95_seconds": 0.06109407698386349
+          },
+          "report_user": {
+            "count": 30,
+            "latency_p50_seconds": 0.10978188850276638,
+            "latency_p95_seconds": 0.11939886098843999
+          },
+          "report_year": {
+            "count": 15,
+            "latency_p50_seconds": 0.03717591901659034,
+            "latency_p95_seconds": 0.05887106101727113
+          }
+        }
+      },
+      "repeats": 2,
+      "requests_per_measured_run": 200,
+      "orders": [
+        [
+          "C-after-fix",
+          "A-original",
+          "B-before-fix"
+        ],
+        [
+          "A-original",
+          "C-after-fix",
+          "B-before-fix"
+        ],
+        [
+          "B-before-fix",
+          "A-original",
+          "C-after-fix"
+        ],
+        [
+          "C-after-fix",
+          "B-before-fix",
+          "A-original"
+        ],
+        [
+          "B-before-fix",
+          "C-after-fix",
+          "A-original"
+        ],
+        [
+          "B-before-fix",
+          "A-original",
+          "C-after-fix"
+        ],
+        [
+          "C-after-fix",
+          "A-original",
+          "B-before-fix"
+        ],
+        [
+          "B-before-fix",
+          "C-after-fix",
+          "A-original"
+        ],
+        [
+          "A-original",
+          "B-before-fix",
+          "C-after-fix"
+        ],
+        [
+          "B-before-fix",
+          "C-after-fix",
+          "A-original"
+        ],
+        [
+          "C-after-fix",
+          "B-before-fix",
+          "A-original"
+        ],
+        [
+          "A-original",
+          "C-after-fix",
+          "B-before-fix"
+        ],
+        [
+          "C-after-fix",
+          "A-original",
+          "B-before-fix"
+        ],
+        [
+          "C-after-fix",
+          "B-before-fix",
+          "A-original"
+        ],
+        [
+          "C-after-fix",
+          "B-before-fix",
+          "A-original"
+        ],
+        [
+          "B-before-fix",
+          "C-after-fix",
+          "A-original"
+        ],
+        [
+          "A-original",
+          "B-before-fix",
+          "C-after-fix"
+        ],
+        [
+          "A-original",
+          "C-after-fix",
+          "B-before-fix"
+        ],
+        [
+          "A-original",
+          "B-before-fix",
+          "C-after-fix"
+        ],
+        [
+          "A-original",
+          "C-after-fix",
+          "B-before-fix"
+        ],
+        [
+          "B-before-fix",
+          "A-original",
+          "C-after-fix"
+        ],
+        [
+          "C-after-fix",
+          "A-original",
+          "B-before-fix"
+        ],
+        [
+          "A-original",
+          "B-before-fix",
+          "C-after-fix"
+        ],
+        [
+          "B-before-fix",
+          "A-original",
+          "C-after-fix"
+        ]
+      ],
+      "rows": [
+        {
+          "elapsed_seconds": 3.287673098006053,
+          "requests": 200,
+          "requests_per_second": 60.833298821983966,
+          "errors": 0,
+          "user_seconds": 2.8600000000000003,
+          "system_seconds": 0.43000000000000005,
+          "cpu_seconds": 3.290000000000001,
+          "wire_bytes": 1952253,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.039079201509593986,
+              "latency_p95_seconds": 0.17342952301260084
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.032264612993458286,
+              "latency_p95_seconds": 0.05335536701022647
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.1030764525057748,
+              "latency_p95_seconds": 0.11026961100287735
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03279703749285545,
+              "latency_p95_seconds": 0.05203459502081387
+            }
+          },
+          "round": 1,
+          "variant": "C-after-fix"
+        },
+        {
+          "elapsed_seconds": 3.528415856999345,
+          "requests": 200,
+          "requests_per_second": 56.68266103136865,
+          "errors": 0,
+          "user_seconds": 3.0200000000000005,
+          "system_seconds": 0.51,
+          "cpu_seconds": 3.5300000000000002,
+          "wire_bytes": 1952246,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.04107061951071955,
+              "latency_p95_seconds": 0.1866173590242397
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.03513147599005606,
+              "latency_p95_seconds": 0.05729778402019292
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.11063204999663867,
+              "latency_p95_seconds": 0.11933076300192624
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.037381819987786,
+              "latency_p95_seconds": 0.05534410898690112
+            }
+          },
+          "round": 1,
+          "variant": "A-original"
+        },
+        {
+          "elapsed_seconds": 3.36069683500682,
+          "requests": 200,
+          "requests_per_second": 59.51146735899911,
+          "errors": 0,
+          "user_seconds": 2.9,
+          "system_seconds": 0.46,
+          "cpu_seconds": 3.3599999999999994,
+          "wire_bytes": 1952253,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.037300577489077114,
+              "latency_p95_seconds": 0.17450653400737792
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.033542215009219944,
+              "latency_p95_seconds": 0.0583703960001003
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.10659103299258277,
+              "latency_p95_seconds": 0.11502433198620565
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.033023683485225774,
+              "latency_p95_seconds": 0.0560867479944136
+            }
+          },
+          "round": 1,
+          "variant": "B-before-fix"
+        },
+        {
+          "elapsed_seconds": 3.5349783890123945,
+          "requests": 200,
+          "requests_per_second": 56.57743216242863,
+          "errors": 0,
+          "user_seconds": 3.0000000000000004,
+          "system_seconds": 0.55,
+          "cpu_seconds": 3.5500000000000003,
+          "wire_bytes": 1952256,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.040808056510286406,
+              "latency_p95_seconds": 0.17902803397737443
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.03634157498891,
+              "latency_p95_seconds": 0.06123737897723913
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.11010275299486239,
+              "latency_p95_seconds": 0.1193085509876255
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03610606849542819,
+              "latency_p95_seconds": 0.05826714599970728
+            }
+          },
+          "round": 2,
+          "variant": "A-original"
+        },
+        {
+          "elapsed_seconds": 3.2473979450005572,
+          "requests": 200,
+          "requests_per_second": 61.58777069743009,
+          "errors": 0,
+          "user_seconds": 2.75,
+          "system_seconds": 0.48,
+          "cpu_seconds": 3.23,
+          "wire_bytes": 1952252,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.03883184498408809,
+              "latency_p95_seconds": 0.16932200800511055
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.03214743950229604,
+              "latency_p95_seconds": 0.05630847200518474
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.10057717649033293,
+              "latency_p95_seconds": 0.10960562800755724
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03260736700030975,
+              "latency_p95_seconds": 0.051117210008669645
+            }
+          },
+          "round": 2,
+          "variant": "C-after-fix"
+        },
+        {
+          "elapsed_seconds": 3.397578389995033,
+          "requests": 200,
+          "requests_per_second": 58.86545564009559,
+          "errors": 0,
+          "user_seconds": 2.96,
+          "system_seconds": 0.44,
+          "cpu_seconds": 3.3999999999999995,
+          "wire_bytes": 1952277,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.04129846399882808,
+              "latency_p95_seconds": 0.17391259397845715
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.03404732749913819,
+              "latency_p95_seconds": 0.05305085200234316
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.10721971398743335,
+              "latency_p95_seconds": 0.11574499198468402
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03507817999343388,
+              "latency_p95_seconds": 0.054190199996810406
+            }
+          },
+          "round": 2,
+          "variant": "B-before-fix"
+        },
+        {
+          "elapsed_seconds": 3.3625961869838648,
+          "requests": 200,
+          "requests_per_second": 59.47785249212254,
+          "errors": 0,
+          "user_seconds": 2.8699999999999997,
+          "system_seconds": 0.49000000000000005,
+          "cpu_seconds": 3.3599999999999994,
+          "wire_bytes": 1952240,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.042559016510494985,
+              "latency_p95_seconds": 0.17412347497884184
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.033020529997884296,
+              "latency_p95_seconds": 0.05392983299680054
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.10841895050543826,
+              "latency_p95_seconds": 0.11512900301022455
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03556975899846293,
+              "latency_p95_seconds": 0.05000763098360039
+            }
+          },
+          "round": 3,
+          "variant": "B-before-fix"
+        },
+        {
+          "elapsed_seconds": 3.5346722260001116,
+          "requests": 200,
+          "requests_per_second": 56.582332734801554,
+          "errors": 0,
+          "user_seconds": 3.0900000000000003,
+          "system_seconds": 0.44,
+          "cpu_seconds": 3.5300000000000007,
+          "wire_bytes": 1952265,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.041822431987384334,
+              "latency_p95_seconds": 0.1797684310004115
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.034620060003362596,
+              "latency_p95_seconds": 0.06432992301415652
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.1114037400111556,
+              "latency_p95_seconds": 0.12319295399356633
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03364636299374979,
+              "latency_p95_seconds": 0.0580148370063398
+            }
+          },
+          "round": 3,
+          "variant": "A-original"
+        },
+        {
+          "elapsed_seconds": 3.3101082920038607,
+          "requests": 200,
+          "requests_per_second": 60.42098395485568,
+          "errors": 0,
+          "user_seconds": 2.8200000000000003,
+          "system_seconds": 0.5,
+          "cpu_seconds": 3.3200000000000003,
+          "wire_bytes": 1952260,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.03796103449712973,
+              "latency_p95_seconds": 0.17239917101687752
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.033549524494446814,
+              "latency_p95_seconds": 0.05770195502554998
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.10256377999030519,
+              "latency_p95_seconds": 0.11498577002203092
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.033421572486986406,
+              "latency_p95_seconds": 0.05691676298738457
+            }
+          },
+          "round": 3,
+          "variant": "C-after-fix"
+        },
+        {
+          "elapsed_seconds": 3.2912727520160843,
+          "requests": 200,
+          "requests_per_second": 60.76676564635644,
+          "errors": 0,
+          "user_seconds": 2.8400000000000003,
+          "system_seconds": 0.43999999999999995,
+          "cpu_seconds": 3.2800000000000002,
+          "wire_bytes": 1952280,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.03881976749107707,
+              "latency_p95_seconds": 0.170776405982906
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.03319327300414443,
+              "latency_p95_seconds": 0.05475200500222854
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.1024747519986704,
+              "latency_p95_seconds": 0.11189461199683137
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.035853150009643286,
+              "latency_p95_seconds": 0.05454204700072296
+            }
+          },
+          "round": 4,
+          "variant": "C-after-fix"
+        },
+        {
+          "elapsed_seconds": 3.394326956011355,
+          "requests": 200,
+          "requests_per_second": 58.92184300213033,
+          "errors": 0,
+          "user_seconds": 2.86,
+          "system_seconds": 0.54,
+          "cpu_seconds": 3.4000000000000004,
+          "wire_bytes": 1952235,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.041208474489394575,
+              "latency_p95_seconds": 0.16992952401051298
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.03314571450755466,
+              "latency_p95_seconds": 0.0531111559830606
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.10760302549169865,
+              "latency_p95_seconds": 0.1142271019925829
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03537601500283927,
+              "latency_p95_seconds": 0.056554063980001956
+            }
+          },
+          "round": 4,
+          "variant": "B-before-fix"
+        },
+        {
+          "elapsed_seconds": 3.5218490390107036,
+          "requests": 200,
+          "requests_per_second": 56.78835117140073,
+          "errors": 0,
+          "user_seconds": 3.03,
+          "system_seconds": 0.49,
+          "cpu_seconds": 3.5199999999999996,
+          "wire_bytes": 1952267,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.040760819509159774,
+              "latency_p95_seconds": 0.17909786000382155
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.03399024649115745,
+              "latency_p95_seconds": 0.06107869200059213
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.11034985400328878,
+              "latency_p95_seconds": 0.11858666798798367
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03742279298603535,
+              "latency_p95_seconds": 0.057517694018315524
+            }
+          },
+          "round": 4,
+          "variant": "A-original"
+        },
+        {
+          "elapsed_seconds": 3.395533314003842,
+          "requests": 200,
+          "requests_per_second": 58.900909372663484,
+          "errors": 0,
+          "user_seconds": 2.9399999999999995,
+          "system_seconds": 0.46,
+          "cpu_seconds": 3.4,
+          "wire_bytes": 1952219,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.042413321003550664,
+              "latency_p95_seconds": 0.17637000299873762
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.03382244848762639,
+              "latency_p95_seconds": 0.05362198597867973
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.10752649500500411,
+              "latency_p95_seconds": 0.11734706000424922
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03273043550143484,
+              "latency_p95_seconds": 0.05341244101873599
+            }
+          },
+          "round": 5,
+          "variant": "B-before-fix"
+        },
+        {
+          "elapsed_seconds": 3.2674826410075184,
+          "requests": 200,
+          "requests_per_second": 61.209200468263425,
+          "errors": 0,
+          "user_seconds": 2.7699999999999996,
+          "system_seconds": 0.49,
+          "cpu_seconds": 3.26,
+          "wire_bytes": 1952254,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.03967116599960718,
+              "latency_p95_seconds": 0.17111664099502377
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.033192881994182244,
+              "latency_p95_seconds": 0.05861707899020985
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.10237122450780589,
+              "latency_p95_seconds": 0.11190905899275094
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03302205698855687,
+              "latency_p95_seconds": 0.053372049995232373
+            }
+          },
+          "round": 5,
+          "variant": "C-after-fix"
+        },
+        {
+          "elapsed_seconds": 3.557843306014547,
+          "requests": 200,
+          "requests_per_second": 56.21383034545093,
+          "errors": 0,
+          "user_seconds": 3.0599999999999996,
+          "system_seconds": 0.4900000000000001,
+          "cpu_seconds": 3.5499999999999994,
+          "wire_bytes": 1952274,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.04064264350745361,
+              "latency_p95_seconds": 0.18532401701668277
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.03417154250200838,
+              "latency_p95_seconds": 0.05903692898573354
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.11121931100205984,
+              "latency_p95_seconds": 0.1204894460097421
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03703448500891682,
+              "latency_p95_seconds": 0.05893780998303555
+            }
+          },
+          "round": 5,
+          "variant": "A-original"
+        },
+        {
+          "elapsed_seconds": 3.4275205169979017,
+          "requests": 200,
+          "requests_per_second": 58.351218908290036,
+          "errors": 0,
+          "user_seconds": 2.94,
+          "system_seconds": 0.45999999999999996,
+          "cpu_seconds": 3.4,
+          "wire_bytes": 1952225,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.04166848699969705,
+              "latency_p95_seconds": 0.1744379810115788
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.033528934509376995,
+              "latency_p95_seconds": 0.059025586990173906
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.10775979500613175,
+              "latency_p95_seconds": 0.12120196298928931
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03398260599351488,
+              "latency_p95_seconds": 0.05032310701790266
+            }
+          },
+          "round": 6,
+          "variant": "B-before-fix"
+        },
+        {
+          "elapsed_seconds": 3.5496036219992675,
+          "requests": 200,
+          "requests_per_second": 56.344319337648365,
+          "errors": 0,
+          "user_seconds": 3.07,
+          "system_seconds": 0.47,
+          "cpu_seconds": 3.54,
+          "wire_bytes": 1952290,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.0411165900004562,
+              "latency_p95_seconds": 0.1817956159939058
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.03538809099700302,
+              "latency_p95_seconds": 0.06205193200730719
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.11127925750042778,
+              "latency_p95_seconds": 0.12233423799625598
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03751246449246537,
+              "latency_p95_seconds": 0.05928944400511682
+            }
+          },
+          "round": 6,
+          "variant": "A-original"
+        },
+        {
+          "elapsed_seconds": 3.2983593820245005,
+          "requests": 200,
+          "requests_per_second": 60.636206318197495,
+          "errors": 0,
+          "user_seconds": 2.87,
+          "system_seconds": 0.42999999999999994,
+          "cpu_seconds": 3.3000000000000007,
+          "wire_bytes": 1952216,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.04181396300555207,
+              "latency_p95_seconds": 0.17145438099396415
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.0330259295005817,
+              "latency_p95_seconds": 0.05338029901031405
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.103448201509309,
+              "latency_p95_seconds": 0.11139287299010903
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03236325448960997,
+              "latency_p95_seconds": 0.05760783900041133
+            }
+          },
+          "round": 6,
+          "variant": "C-after-fix"
+        },
+        {
+          "elapsed_seconds": 3.303996772010578,
+          "requests": 200,
+          "requests_per_second": 60.53274679148497,
+          "errors": 0,
+          "user_seconds": 2.7699999999999996,
+          "system_seconds": 0.52,
+          "cpu_seconds": 3.2899999999999996,
+          "wire_bytes": 1952266,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.03846543149848003,
+              "latency_p95_seconds": 0.1701833590050228
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.032397883507655933,
+              "latency_p95_seconds": 0.05993970998679288
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.10359873599372804,
+              "latency_p95_seconds": 0.11425743799190968
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.030550834999303333,
+              "latency_p95_seconds": 0.05710528200143017
+            }
+          },
+          "round": 7,
+          "variant": "C-after-fix"
+        },
+        {
+          "elapsed_seconds": 3.532314768002834,
+          "requests": 200,
+          "requests_per_second": 56.62009564144243,
+          "errors": 0,
+          "user_seconds": 2.99,
+          "system_seconds": 0.5499999999999999,
+          "cpu_seconds": 3.5400000000000005,
+          "wire_bytes": 1952216,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.040770664010779,
+              "latency_p95_seconds": 0.1833064639940858
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.03400629651150666,
+              "latency_p95_seconds": 0.05920564700500108
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.10951629299961496,
+              "latency_p95_seconds": 0.11996122100390494
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03739938299986534,
+              "latency_p95_seconds": 0.05448105398681946
+            }
+          },
+          "round": 7,
+          "variant": "A-original"
+        },
+        {
+          "elapsed_seconds": 3.5989870129851624,
+          "requests": 200,
+          "requests_per_second": 55.57119247121455,
+          "errors": 0,
+          "user_seconds": 3.04,
+          "system_seconds": 0.56,
+          "cpu_seconds": 3.5999999999999996,
+          "wire_bytes": 1952226,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.040123993007000536,
+              "latency_p95_seconds": 0.18054506400949322
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.03733823100628797,
+              "latency_p95_seconds": 0.06402706500375643
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.11249298299662769,
+              "latency_p95_seconds": 0.1274165970098693
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.036419345502508804,
+              "latency_p95_seconds": 0.05450721498345956
+            }
+          },
+          "round": 7,
+          "variant": "B-before-fix"
+        },
+        {
+          "elapsed_seconds": 3.4265824359899852,
+          "requests": 200,
+          "requests_per_second": 58.36719347515634,
+          "errors": 0,
+          "user_seconds": 2.9799999999999995,
+          "system_seconds": 0.43000000000000005,
+          "cpu_seconds": 3.4099999999999993,
+          "wire_bytes": 1952221,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.04040638000878971,
+              "latency_p95_seconds": 0.18056466401321813
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.034073468996211886,
+              "latency_p95_seconds": 0.05871199202374555
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.108954420502414,
+              "latency_p95_seconds": 0.11962557598599233
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03528658297727816,
+              "latency_p95_seconds": 0.054706424998585135
+            }
+          },
+          "round": 8,
+          "variant": "B-before-fix"
+        },
+        {
+          "elapsed_seconds": 3.2721668960002717,
+          "requests": 200,
+          "requests_per_second": 61.1215767277854,
+          "errors": 0,
+          "user_seconds": 2.78,
+          "system_seconds": 0.49,
+          "cpu_seconds": 3.27,
+          "wire_bytes": 1952273,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.03881671300041489,
+              "latency_p95_seconds": 0.17555251298472285
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.03338571648055222,
+              "latency_p95_seconds": 0.05791179899824783
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.10191475048486609,
+              "latency_p95_seconds": 0.11174514700542204
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03305737998744007,
+              "latency_p95_seconds": 0.05268602599971928
+            }
+          },
+          "round": 8,
+          "variant": "C-after-fix"
+        },
+        {
+          "elapsed_seconds": 3.5441772129852325,
+          "requests": 200,
+          "requests_per_second": 56.43058684177408,
+          "errors": 0,
+          "user_seconds": 2.9799999999999995,
+          "system_seconds": 0.56,
+          "cpu_seconds": 3.539999999999999,
+          "wire_bytes": 1952283,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.04296970850555226,
+              "latency_p95_seconds": 0.17985323700122535
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.03646099650359247,
+              "latency_p95_seconds": 0.06603947200346738
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.10977904150786344,
+              "latency_p95_seconds": 0.11839378299191594
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03528721252223477,
+              "latency_p95_seconds": 0.05826821899972856
+            }
+          },
+          "round": 8,
+          "variant": "A-original"
+        },
+        {
+          "elapsed_seconds": 3.5760735589719843,
+          "requests": 200,
+          "requests_per_second": 55.92726119914997,
+          "errors": 0,
+          "user_seconds": 3.0999999999999996,
+          "system_seconds": 0.47,
+          "cpu_seconds": 3.5699999999999994,
+          "wire_bytes": 1952287,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.04024106101132929,
+              "latency_p95_seconds": 0.18465509300585836
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.03527876349107828,
+              "latency_p95_seconds": 0.063495245995
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.11313459850498475,
+              "latency_p95_seconds": 0.12162705199443735
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03374530700966716,
+              "latency_p95_seconds": 0.059093445976031944
+            }
+          },
+          "round": 9,
+          "variant": "A-original"
+        },
+        {
+          "elapsed_seconds": 3.4297471239988226,
+          "requests": 200,
+          "requests_per_second": 58.31333703891712,
+          "errors": 0,
+          "user_seconds": 2.9399999999999995,
+          "system_seconds": 0.48,
+          "cpu_seconds": 3.42,
+          "wire_bytes": 1952285,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.04003741350607015,
+              "latency_p95_seconds": 0.17898949902155437
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.033600856011617,
+              "latency_p95_seconds": 0.058105008996790275
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.1079957260080846,
+              "latency_p95_seconds": 0.116549054015195
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03503434649610426,
+              "latency_p95_seconds": 0.061030869983369485
+            }
+          },
+          "round": 9,
+          "variant": "B-before-fix"
+        },
+        {
+          "elapsed_seconds": 3.303623982996214,
+          "requests": 200,
+          "requests_per_second": 60.53957745475938,
+          "errors": 0,
+          "user_seconds": 2.8,
+          "system_seconds": 0.51,
+          "cpu_seconds": 3.3099999999999996,
+          "wire_bytes": 1952248,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.03951749950647354,
+              "latency_p95_seconds": 0.172142834024271
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.030793428493780084,
+              "latency_p95_seconds": 0.05272941500879824
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.10440647701034322,
+              "latency_p95_seconds": 0.11263601999962702
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03341777100285981,
+              "latency_p95_seconds": 0.06090631999541074
+            }
+          },
+          "round": 9,
+          "variant": "C-after-fix"
+        },
+        {
+          "elapsed_seconds": 3.4644942200102378,
+          "requests": 200,
+          "requests_per_second": 57.72848424593677,
+          "errors": 0,
+          "user_seconds": 3.0200000000000005,
+          "system_seconds": 0.43999999999999995,
+          "cpu_seconds": 3.460000000000001,
+          "wire_bytes": 1952249,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.03978422700311057,
+              "latency_p95_seconds": 0.17494004097534344
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.033846099497168325,
+              "latency_p95_seconds": 0.060154118022182956
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.10828006849624217,
+              "latency_p95_seconds": 0.11748669799999334
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03469794998818543,
+              "latency_p95_seconds": 0.05763906202628277
+            }
+          },
+          "round": 10,
+          "variant": "B-before-fix"
+        },
+        {
+          "elapsed_seconds": 3.294588785007363,
+          "requests": 200,
+          "requests_per_second": 60.70560335485177,
+          "errors": 0,
+          "user_seconds": 2.7900000000000005,
+          "system_seconds": 0.51,
+          "cpu_seconds": 3.3000000000000003,
+          "wire_bytes": 1952282,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.03975133349013049,
+              "latency_p95_seconds": 0.17151844798354432
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.032502694506547414,
+              "latency_p95_seconds": 0.05380636200425215
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.1036728679900989,
+              "latency_p95_seconds": 0.11324480499024503
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03288641551625915,
+              "latency_p95_seconds": 0.05424223298905417
+            }
+          },
+          "round": 10,
+          "variant": "C-after-fix"
+        },
+        {
+          "elapsed_seconds": 3.5665959189936984,
+          "requests": 200,
+          "requests_per_second": 56.07587866483884,
+          "errors": 0,
+          "user_seconds": 3.08,
+          "system_seconds": 0.48,
+          "cpu_seconds": 3.5600000000000005,
+          "wire_bytes": 1952272,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.04404014199099038,
+              "latency_p95_seconds": 0.1847409100155346
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.034077406002325006,
+              "latency_p95_seconds": 0.058835675998125225
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.11059197050053626,
+              "latency_p95_seconds": 0.12291229001129977
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03705693149822764,
+              "latency_p95_seconds": 0.0586126180132851
+            }
+          },
+          "round": 10,
+          "variant": "A-original"
+        },
+        {
+          "elapsed_seconds": 3.2789670350030065,
+          "requests": 200,
+          "requests_per_second": 60.99481875389352,
+          "errors": 0,
+          "user_seconds": 2.8300000000000005,
+          "system_seconds": 0.44999999999999996,
+          "cpu_seconds": 3.2800000000000002,
+          "wire_bytes": 1952255,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.03943195051397197,
+              "latency_p95_seconds": 0.16796985801192932
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.032815642494824715,
+              "latency_p95_seconds": 0.0537210009933915
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.1035243545047706,
+              "latency_p95_seconds": 0.11100353900110349
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03441845701308921,
+              "latency_p95_seconds": 0.053564116009511054
+            }
+          },
+          "round": 11,
+          "variant": "C-after-fix"
+        },
+        {
+          "elapsed_seconds": 3.4260901869856752,
+          "requests": 200,
+          "requests_per_second": 58.375579475321096,
+          "errors": 0,
+          "user_seconds": 2.9,
+          "system_seconds": 0.53,
+          "cpu_seconds": 3.4299999999999997,
+          "wire_bytes": 1952238,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.041407826996874064,
+              "latency_p95_seconds": 0.17351494301692583
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.03445902551175095,
+              "latency_p95_seconds": 0.05625648199929856
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.10857321548974141,
+              "latency_p95_seconds": 0.12328850300400518
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.032901177983148955,
+              "latency_p95_seconds": 0.05500797199783847
+            }
+          },
+          "round": 11,
+          "variant": "B-before-fix"
+        },
+        {
+          "elapsed_seconds": 3.532785072020488,
+          "requests": 200,
+          "requests_per_second": 56.61255805907689,
+          "errors": 0,
+          "user_seconds": 3.03,
+          "system_seconds": 0.51,
+          "cpu_seconds": 3.54,
+          "wire_bytes": 1952297,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.04127740800322499,
+              "latency_p95_seconds": 0.18529495000257157
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.03403162700124085,
+              "latency_p95_seconds": 0.06634906399995089
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.10997249200590886,
+              "latency_p95_seconds": 0.1220614779740572
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03631036099977791,
+              "latency_p95_seconds": 0.057256022992078215
+            }
+          },
+          "round": 11,
+          "variant": "A-original"
+        },
+        {
+          "elapsed_seconds": 3.523701006983174,
+          "requests": 200,
+          "requests_per_second": 56.75850465281972,
+          "errors": 0,
+          "user_seconds": 3.08,
+          "system_seconds": 0.45999999999999996,
+          "cpu_seconds": 3.54,
+          "wire_bytes": 1952299,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.04016625501390081,
+              "latency_p95_seconds": 0.18419539200840518
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.0359547285042936,
+              "latency_p95_seconds": 0.05572663000202738
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.11112109801615588,
+              "latency_p95_seconds": 0.11998653499176726
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.036785900505492464,
+              "latency_p95_seconds": 0.05838184800813906
+            }
+          },
+          "round": 12,
+          "variant": "A-original"
+        },
+        {
+          "elapsed_seconds": 3.3241113270050846,
+          "requests": 200,
+          "requests_per_second": 60.16645663314575,
+          "errors": 0,
+          "user_seconds": 2.8500000000000005,
+          "system_seconds": 0.47,
+          "cpu_seconds": 3.320000000000001,
+          "wire_bytes": 1952278,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.03873759099224117,
+              "latency_p95_seconds": 0.17737003401271068
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.0330143625033088,
+              "latency_p95_seconds": 0.052841609984170645
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.10333120651193894,
+              "latency_p95_seconds": 0.11352766599156894
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03270472200529184,
+              "latency_p95_seconds": 0.053791965008713305
+            }
+          },
+          "round": 12,
+          "variant": "C-after-fix"
+        },
+        {
+          "elapsed_seconds": 3.408090065990109,
+          "requests": 200,
+          "requests_per_second": 58.683895122324635,
+          "errors": 0,
+          "user_seconds": 2.93,
+          "system_seconds": 0.45999999999999996,
+          "cpu_seconds": 3.3899999999999997,
+          "wire_bytes": 1952215,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.040489413993782364,
+              "latency_p95_seconds": 0.17141076098778285
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.03306391800288111,
+              "latency_p95_seconds": 0.05794267699820921
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.10900372899777722,
+              "latency_p95_seconds": 0.1179868670005817
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.036120762990321964,
+              "latency_p95_seconds": 0.05382155400002375
+            }
+          },
+          "round": 12,
+          "variant": "B-before-fix"
+        },
+        {
+          "elapsed_seconds": 3.3194462299870793,
+          "requests": 200,
+          "requests_per_second": 60.251013615839916,
+          "errors": 0,
+          "user_seconds": 2.8699999999999997,
+          "system_seconds": 0.44,
+          "cpu_seconds": 3.31,
+          "wire_bytes": 1952316,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.03915048800990917,
+              "latency_p95_seconds": 0.17370879199006595
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.032586748493486084,
+              "latency_p95_seconds": 0.0539366340090055
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.1040701775054913,
+              "latency_p95_seconds": 0.118718268990051
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.032986713500577025,
+              "latency_p95_seconds": 0.05269235500600189
+            }
+          },
+          "round": 13,
+          "variant": "C-after-fix"
+        },
+        {
+          "elapsed_seconds": 3.5759032130008563,
+          "requests": 200,
+          "requests_per_second": 55.929925416566945,
+          "errors": 0,
+          "user_seconds": 3.0900000000000003,
+          "system_seconds": 0.49,
+          "cpu_seconds": 3.580000000000001,
+          "wire_bytes": 1952276,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.04252573300618678,
+              "latency_p95_seconds": 0.18222148000495508
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.033780826488509774,
+              "latency_p95_seconds": 0.05855698700179346
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.11140167999838013,
+              "latency_p95_seconds": 0.12133480800548568
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.037162030494073406,
+              "latency_p95_seconds": 0.06410486198728904
+            }
+          },
+          "round": 13,
+          "variant": "A-original"
+        },
+        {
+          "elapsed_seconds": 3.4115327920007985,
+          "requests": 200,
+          "requests_per_second": 58.62467465326746,
+          "errors": 0,
+          "user_seconds": 2.9299999999999997,
+          "system_seconds": 0.48000000000000004,
+          "cpu_seconds": 3.4099999999999997,
+          "wire_bytes": 1952214,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.0397737530147424,
+              "latency_p95_seconds": 0.17881420100457035
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.0332872074941406,
+              "latency_p95_seconds": 0.059320226981071755
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.10806378300185315,
+              "latency_p95_seconds": 0.11572893700213172
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03351653748541139,
+              "latency_p95_seconds": 0.054660424997564405
+            }
+          },
+          "round": 13,
+          "variant": "B-before-fix"
+        },
+        {
+          "elapsed_seconds": 3.2984060629969463,
+          "requests": 200,
+          "requests_per_second": 60.63534815912845,
+          "errors": 0,
+          "user_seconds": 2.81,
+          "system_seconds": 0.48999999999999994,
+          "cpu_seconds": 3.3000000000000003,
+          "wire_bytes": 1952304,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.03777946149057243,
+              "latency_p95_seconds": 0.17409651199704967
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.03292388850240968,
+              "latency_p95_seconds": 0.05433545500272885
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.10294183298537973,
+              "latency_p95_seconds": 0.11603884599753655
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.02877143450314179,
+              "latency_p95_seconds": 0.056963497976539657
+            }
+          },
+          "round": 14,
+          "variant": "C-after-fix"
+        },
+        {
+          "elapsed_seconds": 3.4783431389951147,
+          "requests": 200,
+          "requests_per_second": 57.49864001565399,
+          "errors": 0,
+          "user_seconds": 2.9899999999999998,
+          "system_seconds": 0.48999999999999994,
+          "cpu_seconds": 3.48,
+          "wire_bytes": 1952253,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.03958215050806757,
+              "latency_p95_seconds": 0.1749910750077106
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.03560435198596679,
+              "latency_p95_seconds": 0.05746378400363028
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.11132050299784169,
+              "latency_p95_seconds": 0.12390614300966263
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.033110062999185175,
+              "latency_p95_seconds": 0.06055602600099519
+            }
+          },
+          "round": 14,
+          "variant": "B-before-fix"
+        },
+        {
+          "elapsed_seconds": 3.541316540999105,
+          "requests": 200,
+          "requests_per_second": 56.47617141380261,
+          "errors": 0,
+          "user_seconds": 3.09,
+          "system_seconds": 0.44999999999999996,
+          "cpu_seconds": 3.54,
+          "wire_bytes": 1952235,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.04303935950156301,
+              "latency_p95_seconds": 0.185525904991664
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.03635540799587034,
+              "latency_p95_seconds": 0.06441473399172537
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.11211808850930538,
+              "latency_p95_seconds": 0.12092607299564406
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.035592877495219,
+              "latency_p95_seconds": 0.05603851701016538
+            }
+          },
+          "round": 14,
+          "variant": "A-original"
+        },
+        {
+          "elapsed_seconds": 3.386802049004473,
+          "requests": 200,
+          "requests_per_second": 59.052757470366075,
+          "errors": 0,
+          "user_seconds": 2.92,
+          "system_seconds": 0.45999999999999996,
+          "cpu_seconds": 3.38,
+          "wire_bytes": 1952269,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.040716729999985546,
+              "latency_p95_seconds": 0.17141835601069033
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.03350427599798422,
+              "latency_p95_seconds": 0.056891371990786865
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.10599350449047051,
+              "latency_p95_seconds": 0.1152434270188678
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03443739400245249,
+              "latency_p95_seconds": 0.0543908929976169
+            }
+          },
+          "round": 15,
+          "variant": "C-after-fix"
+        },
+        {
+          "elapsed_seconds": 3.4892984530015383,
+          "requests": 200,
+          "requests_per_second": 57.31811213453452,
+          "errors": 0,
+          "user_seconds": 2.9000000000000004,
+          "system_seconds": 0.5800000000000001,
+          "cpu_seconds": 3.48,
+          "wire_bytes": 1952246,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.04055346550012473,
+              "latency_p95_seconds": 0.18107280100230128
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.034647939493879676,
+              "latency_p95_seconds": 0.053900961007457227
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.10836486599873751,
+              "latency_p95_seconds": 0.12683851199108176
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03294568099954631,
+              "latency_p95_seconds": 0.059221574978437275
+            }
+          },
+          "round": 15,
+          "variant": "B-before-fix"
+        },
+        {
+          "elapsed_seconds": 3.562537007004721,
+          "requests": 200,
+          "requests_per_second": 56.139767701151335,
+          "errors": 0,
+          "user_seconds": 3.0799999999999996,
+          "system_seconds": 0.47,
+          "cpu_seconds": 3.5499999999999994,
+          "wire_bytes": 1952310,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.04227251648262609,
+              "latency_p95_seconds": 0.1814288659952581
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.034189002006314695,
+              "latency_p95_seconds": 0.05852374798269011
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.11329616099828854,
+              "latency_p95_seconds": 0.11926691999542527
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03507238349993713,
+              "latency_p95_seconds": 0.054064638999989256
+            }
+          },
+          "round": 15,
+          "variant": "A-original"
+        },
+        {
+          "elapsed_seconds": 3.3919907810050063,
+          "requests": 200,
+          "requests_per_second": 58.96242440279935,
+          "errors": 0,
+          "user_seconds": 2.9400000000000004,
+          "system_seconds": 0.45,
+          "cpu_seconds": 3.39,
+          "wire_bytes": 1952255,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.03946539950266015,
+              "latency_p95_seconds": 0.17374877401744016
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.0338435925077647,
+              "latency_p95_seconds": 0.05595609897864051
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.10759357600181829,
+              "latency_p95_seconds": 0.11587846398469992
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.035297691996674985,
+              "latency_p95_seconds": 0.053177153022261336
+            }
+          },
+          "round": 16,
+          "variant": "B-before-fix"
+        },
+        {
+          "elapsed_seconds": 3.258438479999313,
+          "requests": 200,
+          "requests_per_second": 61.37909346075552,
+          "errors": 0,
+          "user_seconds": 2.8099999999999996,
+          "system_seconds": 0.45,
+          "cpu_seconds": 3.2599999999999993,
+          "wire_bytes": 1952265,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.035954422506620176,
+              "latency_p95_seconds": 0.16671633298392408
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.03228110750205815,
+              "latency_p95_seconds": 0.05423585601965897
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.10185663199808914,
+              "latency_p95_seconds": 0.10975574800977483
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03333170499536209,
+              "latency_p95_seconds": 0.052077859989367425
+            }
+          },
+          "round": 16,
+          "variant": "C-after-fix"
+        },
+        {
+          "elapsed_seconds": 3.549029556015739,
+          "requests": 200,
+          "requests_per_second": 56.35343319725034,
+          "errors": 0,
+          "user_seconds": 3.09,
+          "system_seconds": 0.43999999999999995,
+          "cpu_seconds": 3.5300000000000002,
+          "wire_bytes": 1952254,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.04085963200486731,
+              "latency_p95_seconds": 0.1818547829752788
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.034128167491871864,
+              "latency_p95_seconds": 0.05920704299933277
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.11124052949890029,
+              "latency_p95_seconds": 0.12168406700948253
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03799423850432504,
+              "latency_p95_seconds": 0.05881782900542021
+            }
+          },
+          "round": 16,
+          "variant": "A-original"
+        },
+        {
+          "elapsed_seconds": 3.5616175679897424,
+          "requests": 200,
+          "requests_per_second": 56.154260299452794,
+          "errors": 0,
+          "user_seconds": 3.07,
+          "system_seconds": 0.49999999999999994,
+          "cpu_seconds": 3.57,
+          "wire_bytes": 1952264,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.042655356010072865,
+              "latency_p95_seconds": 0.1814340869896114
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.03650186100276187,
+              "latency_p95_seconds": 0.06276337101007812
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.11188813050102908,
+              "latency_p95_seconds": 0.1197691360139288
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03685567250067834,
+              "latency_p95_seconds": 0.057502593990648165
+            }
+          },
+          "round": 17,
+          "variant": "A-original"
+        },
+        {
+          "elapsed_seconds": 3.4431849170068745,
+          "requests": 200,
+          "requests_per_second": 58.08575630432825,
+          "errors": 0,
+          "user_seconds": 2.8699999999999997,
+          "system_seconds": 0.5700000000000001,
+          "cpu_seconds": 3.4399999999999995,
+          "wire_bytes": 1952264,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.040136767507647164,
+              "latency_p95_seconds": 0.17683273297734559
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.03320357399934437,
+              "latency_p95_seconds": 0.0551829370087944
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.10943355401104782,
+              "latency_p95_seconds": 0.12165281700436026
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03318409400526434,
+              "latency_p95_seconds": 0.056203978980192915
+            }
+          },
+          "round": 17,
+          "variant": "B-before-fix"
+        },
+        {
+          "elapsed_seconds": 3.289617538015591,
+          "requests": 200,
+          "requests_per_second": 60.79734123762205,
+          "errors": 0,
+          "user_seconds": 2.73,
+          "system_seconds": 0.56,
+          "cpu_seconds": 3.29,
+          "wire_bytes": 1952250,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.039133959013270214,
+              "latency_p95_seconds": 0.17349580899463035
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.032935688010184094,
+              "latency_p95_seconds": 0.054063142015365884
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.10351686349895317,
+              "latency_p95_seconds": 0.11271906000911258
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03120287851197645,
+              "latency_p95_seconds": 0.054337870999006554
+            }
+          },
+          "round": 17,
+          "variant": "C-after-fix"
+        },
+        {
+          "elapsed_seconds": 3.5161548579926603,
+          "requests": 200,
+          "requests_per_second": 56.88031616280351,
+          "errors": 0,
+          "user_seconds": 3.12,
+          "system_seconds": 0.38999999999999996,
+          "cpu_seconds": 3.5100000000000002,
+          "wire_bytes": 1952259,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.041950189508497715,
+              "latency_p95_seconds": 0.17946808401029557
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.033885380486026406,
+              "latency_p95_seconds": 0.05859505198895931
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.1107160940009635,
+              "latency_p95_seconds": 0.12318850998417474
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03627229698759038,
+              "latency_p95_seconds": 0.06077760399784893
+            }
+          },
+          "round": 18,
+          "variant": "A-original"
+        },
+        {
+          "elapsed_seconds": 3.3149732000019867,
+          "requests": 200,
+          "requests_per_second": 60.33231279211552,
+          "errors": 0,
+          "user_seconds": 2.8,
+          "system_seconds": 0.51,
+          "cpu_seconds": 3.3099999999999996,
+          "wire_bytes": 1952244,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.04030773599515669,
+              "latency_p95_seconds": 0.1715479620033875
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.033427572998334654,
+              "latency_p95_seconds": 0.05706154799554497
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.10412774099677335,
+              "latency_p95_seconds": 0.11111290499684401
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03370868098863866,
+              "latency_p95_seconds": 0.05358570598764345
+            }
+          },
+          "round": 18,
+          "variant": "C-after-fix"
+        },
+        {
+          "elapsed_seconds": 3.4491615029983222,
+          "requests": 200,
+          "requests_per_second": 57.98510734453634,
+          "errors": 0,
+          "user_seconds": 2.87,
+          "system_seconds": 0.5700000000000001,
+          "cpu_seconds": 3.44,
+          "wire_bytes": 1952258,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.03984238150587771,
+              "latency_p95_seconds": 0.17586260099778883
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.033875463996082544,
+              "latency_p95_seconds": 0.059079492988530546
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.11041656699671876,
+              "latency_p95_seconds": 0.12172683599055745
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03366691198607441,
+              "latency_p95_seconds": 0.057974586001364514
+            }
+          },
+          "round": 18,
+          "variant": "B-before-fix"
+        },
+        {
+          "elapsed_seconds": 3.5581741580099333,
+          "requests": 200,
+          "requests_per_second": 56.20860337872244,
+          "errors": 0,
+          "user_seconds": 3.0200000000000005,
+          "system_seconds": 0.5300000000000001,
+          "cpu_seconds": 3.550000000000001,
+          "wire_bytes": 1952294,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.04049826500704512,
+              "latency_p95_seconds": 0.18223664999823086
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.03574978401593398,
+              "latency_p95_seconds": 0.059306686016498134
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.11214876500889659,
+              "latency_p95_seconds": 0.12057538400404155
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03444884000055026,
+              "latency_p95_seconds": 0.05903554300311953
+            }
+          },
+          "round": 19,
+          "variant": "A-original"
+        },
+        {
+          "elapsed_seconds": 3.464823153015459,
+          "requests": 200,
+          "requests_per_second": 57.723003791965155,
+          "errors": 0,
+          "user_seconds": 2.93,
+          "system_seconds": 0.54,
+          "cpu_seconds": 3.4699999999999998,
+          "wire_bytes": 1952245,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.03966304448840674,
+              "latency_p95_seconds": 0.1786787429882679
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.03298986950539984,
+              "latency_p95_seconds": 0.05671832399093546
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.10953306550800335,
+              "latency_p95_seconds": 0.12497825000900775
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03536375449039042,
+              "latency_p95_seconds": 0.055392462003510445
+            }
+          },
+          "round": 19,
+          "variant": "B-before-fix"
+        },
+        {
+          "elapsed_seconds": 3.282144379016245,
+          "requests": 200,
+          "requests_per_second": 60.93577152749931,
+          "errors": 0,
+          "user_seconds": 2.8100000000000005,
+          "system_seconds": 0.47,
+          "cpu_seconds": 3.2800000000000007,
+          "wire_bytes": 1952266,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.03757776747806929,
+              "latency_p95_seconds": 0.17527622697525658
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.03291137047926895,
+              "latency_p95_seconds": 0.05336175599950366
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.10282735849614255,
+              "latency_p95_seconds": 0.11175481998361647
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.032757737513748,
+              "latency_p95_seconds": 0.04978716999175958
+            }
+          },
+          "round": 19,
+          "variant": "C-after-fix"
+        },
+        {
+          "elapsed_seconds": 3.6939192920108326,
+          "requests": 200,
+          "requests_per_second": 54.14303458999707,
+          "errors": 0,
+          "user_seconds": 3.1399999999999997,
+          "system_seconds": 0.54,
+          "cpu_seconds": 3.6799999999999997,
+          "wire_bytes": 1952328,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.04439436898974236,
+              "latency_p95_seconds": 0.1864044300164096
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.03542213999025989,
+              "latency_p95_seconds": 0.06434625500696711
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.1180350844952045,
+              "latency_p95_seconds": 0.12837970201508142
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03781704649736639,
+              "latency_p95_seconds": 0.05689599600736983
+            }
+          },
+          "round": 20,
+          "variant": "A-original"
+        },
+        {
+          "elapsed_seconds": 3.2869204659946263,
+          "requests": 200,
+          "requests_per_second": 60.8472283005119,
+          "errors": 0,
+          "user_seconds": 2.79,
+          "system_seconds": 0.49,
+          "cpu_seconds": 3.28,
+          "wire_bytes": 1952283,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.038876895501744,
+              "latency_p95_seconds": 0.17306378300418146
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.03289574049995281,
+              "latency_p95_seconds": 0.05895495301228948
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.10260421250131913,
+              "latency_p95_seconds": 0.11329203200875781
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.032599350495729595,
+              "latency_p95_seconds": 0.053075753996381536
+            }
+          },
+          "round": 20,
+          "variant": "C-after-fix"
+        },
+        {
+          "elapsed_seconds": 3.4310640250041615,
+          "requests": 200,
+          "requests_per_second": 58.290955383660446,
+          "errors": 0,
+          "user_seconds": 2.9499999999999997,
+          "system_seconds": 0.48,
+          "cpu_seconds": 3.4299999999999997,
+          "wire_bytes": 1952240,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.040532034006901085,
+              "latency_p95_seconds": 0.1771156320173759
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.034289713512407616,
+              "latency_p95_seconds": 0.05779443000210449
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.10796446549647953,
+              "latency_p95_seconds": 0.11738188800518401
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03352147749683354,
+              "latency_p95_seconds": 0.05418264100444503
+            }
+          },
+          "round": 20,
+          "variant": "B-before-fix"
+        },
+        {
+          "elapsed_seconds": 3.413223064999329,
+          "requests": 200,
+          "requests_per_second": 58.59564294255679,
+          "errors": 0,
+          "user_seconds": 2.9199999999999995,
+          "system_seconds": 0.48,
+          "cpu_seconds": 3.3999999999999995,
+          "wire_bytes": 1952193,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.039917495494592004,
+              "latency_p95_seconds": 0.1736187239876017
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.033313060499494895,
+              "latency_p95_seconds": 0.05669280301663093
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.10730848849925678,
+              "latency_p95_seconds": 0.11712566501228139
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03324386800522916,
+              "latency_p95_seconds": 0.05534042802173644
+            }
+          },
+          "round": 21,
+          "variant": "B-before-fix"
+        },
+        {
+          "elapsed_seconds": 3.516208503016969,
+          "requests": 200,
+          "requests_per_second": 56.879448368433344,
+          "errors": 0,
+          "user_seconds": 2.98,
+          "system_seconds": 0.52,
+          "cpu_seconds": 3.5,
+          "wire_bytes": 1952271,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.040861489993403666,
+              "latency_p95_seconds": 0.1779243380005937
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.03449665699736215,
+              "latency_p95_seconds": 0.06426164801814593
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.1099195044953376,
+              "latency_p95_seconds": 0.12232930297614075
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03709619949222542,
+              "latency_p95_seconds": 0.05463369897915982
+            }
+          },
+          "round": 21,
+          "variant": "A-original"
+        },
+        {
+          "elapsed_seconds": 3.288011088006897,
+          "requests": 200,
+          "requests_per_second": 60.8270454833638,
+          "errors": 0,
+          "user_seconds": 2.7600000000000002,
+          "system_seconds": 0.53,
+          "cpu_seconds": 3.2900000000000005,
+          "wire_bytes": 1952331,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.04035654850304127,
+              "latency_p95_seconds": 0.17054019297938794
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.032984656005282886,
+              "latency_p95_seconds": 0.05639767899992876
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.10347985949192662,
+              "latency_p95_seconds": 0.11201154001173563
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03324453649111092,
+              "latency_p95_seconds": 0.051656472991453484
+            }
+          },
+          "round": 21,
+          "variant": "C-after-fix"
+        },
+        {
+          "elapsed_seconds": 3.2679252550005913,
+          "requests": 200,
+          "requests_per_second": 61.20091017808907,
+          "errors": 0,
+          "user_seconds": 2.7800000000000002,
+          "system_seconds": 0.49,
+          "cpu_seconds": 3.2700000000000005,
+          "wire_bytes": 1952270,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.03941502900852356,
+              "latency_p95_seconds": 0.17128020600648597
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.0330360250081867,
+              "latency_p95_seconds": 0.056275354989338666
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.10139319799782243,
+              "latency_p95_seconds": 0.11417706601787359
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03249935701023787,
+              "latency_p95_seconds": 0.051060494006378576
+            }
+          },
+          "round": 22,
+          "variant": "C-after-fix"
+        },
+        {
+          "elapsed_seconds": 3.524401883012615,
+          "requests": 200,
+          "requests_per_second": 56.74721743964184,
+          "errors": 0,
+          "user_seconds": 3.0,
+          "system_seconds": 0.51,
+          "cpu_seconds": 3.5100000000000002,
+          "wire_bytes": 1952250,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.039835969495470636,
+              "latency_p95_seconds": 0.18553264101501554
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.03569738499936648,
+              "latency_p95_seconds": 0.0604061660123989
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.11023200899944641,
+              "latency_p95_seconds": 0.1180737070098985
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03653891300200485,
+              "latency_p95_seconds": 0.05543439800385386
+            }
+          },
+          "round": 22,
+          "variant": "A-original"
+        },
+        {
+          "elapsed_seconds": 3.4155089810083155,
+          "requests": 200,
+          "requests_per_second": 58.55642632242667,
+          "errors": 0,
+          "user_seconds": 2.9,
+          "system_seconds": 0.52,
+          "cpu_seconds": 3.4199999999999995,
+          "wire_bytes": 1952260,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.04025221199844964,
+              "latency_p95_seconds": 0.17350417099078186
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.033276621004915796,
+              "latency_p95_seconds": 0.05746057300711982
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.10634122700139415,
+              "latency_p95_seconds": 0.1193203930160962
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.033798072501667775,
+              "latency_p95_seconds": 0.053803604998392984
+            }
+          },
+          "round": 22,
+          "variant": "B-before-fix"
+        },
+        {
+          "elapsed_seconds": 3.523902963002911,
+          "requests": 200,
+          "requests_per_second": 56.75525180454147,
+          "errors": 0,
+          "user_seconds": 3.0200000000000005,
+          "system_seconds": 0.5,
+          "cpu_seconds": 3.5200000000000005,
+          "wire_bytes": 1952300,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.03688170699751936,
+              "latency_p95_seconds": 0.18522234400734305
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.03388886549510062,
+              "latency_p95_seconds": 0.058839203004026785
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.11032481149595696,
+              "latency_p95_seconds": 0.12072356999851763
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03670015551324468,
+              "latency_p95_seconds": 0.062419458001386374
+            }
+          },
+          "round": 23,
+          "variant": "A-original"
+        },
+        {
+          "elapsed_seconds": 3.4513857349811587,
+          "requests": 200,
+          "requests_per_second": 57.94773906982373,
+          "errors": 0,
+          "user_seconds": 2.9800000000000004,
+          "system_seconds": 0.48,
+          "cpu_seconds": 3.46,
+          "wire_bytes": 1952211,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.03859340900089592,
+              "latency_p95_seconds": 0.17757608598913066
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.03317417198559269,
+              "latency_p95_seconds": 0.05550126402522437
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.11026295900228433,
+              "latency_p95_seconds": 0.12168075502268039
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03294867399381474,
+              "latency_p95_seconds": 0.05306752098840661
+            }
+          },
+          "round": 23,
+          "variant": "B-before-fix"
+        },
+        {
+          "elapsed_seconds": 3.2762053690094035,
+          "requests": 200,
+          "requests_per_second": 61.04623412557076,
+          "errors": 0,
+          "user_seconds": 2.74,
+          "system_seconds": 0.53,
+          "cpu_seconds": 3.2700000000000005,
+          "wire_bytes": 1952311,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.03839383150625508,
+              "latency_p95_seconds": 0.17368525097845122
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.033461433500633575,
+              "latency_p95_seconds": 0.0547590060159564
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.10176206049800385,
+              "latency_p95_seconds": 0.11171727700275369
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03251961349451449,
+              "latency_p95_seconds": 0.05286081400117837
+            }
+          },
+          "round": 23,
+          "variant": "C-after-fix"
+        },
+        {
+          "elapsed_seconds": 3.4308535749732982,
+          "requests": 200,
+          "requests_per_second": 58.29453097588304,
+          "errors": 0,
+          "user_seconds": 2.88,
+          "system_seconds": 0.54,
+          "cpu_seconds": 3.42,
+          "wire_bytes": 1952285,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.04005662800045684,
+              "latency_p95_seconds": 0.17033942200941965
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.03341292300319765,
+              "latency_p95_seconds": 0.05830335701466538
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.10730007149686571,
+              "latency_p95_seconds": 0.11597095298930071
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03611872548935935,
+              "latency_p95_seconds": 0.06097379498532973
+            }
+          },
+          "round": 24,
+          "variant": "B-before-fix"
+        },
+        {
+          "elapsed_seconds": 3.5584243779885583,
+          "requests": 200,
+          "requests_per_second": 56.204650922791956,
+          "errors": 0,
+          "user_seconds": 3.05,
+          "system_seconds": 0.51,
+          "cpu_seconds": 3.5599999999999996,
+          "wire_bytes": 1952273,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.0447599035105668,
+              "latency_p95_seconds": 0.18378797298646532
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.03466867099632509,
+              "latency_p95_seconds": 0.059876679006265476
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.1100395139947068,
+              "latency_p95_seconds": 0.11976354199578054
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03651131549850106,
+              "latency_p95_seconds": 0.06202117900829762
+            }
+          },
+          "round": 24,
+          "variant": "A-original"
+        },
+        {
+          "elapsed_seconds": 3.2806764429842588,
+          "requests": 200,
+          "requests_per_second": 60.96303718938845,
+          "errors": 0,
+          "user_seconds": 2.8200000000000003,
+          "system_seconds": 0.45999999999999996,
+          "cpu_seconds": 3.2800000000000002,
+          "wire_bytes": 1952263,
+          "by_operation": {
+            "report_file": {
+              "count": 80,
+              "latency_p50_seconds": 0.03712748100224417,
+              "latency_p95_seconds": 0.17718437299481593
+            },
+            "report_month": {
+              "count": 30,
+              "latency_p50_seconds": 0.03308284499507863,
+              "latency_p95_seconds": 0.05320847299299203
+            },
+            "report_user": {
+              "count": 60,
+              "latency_p50_seconds": 0.10255223501008004,
+              "latency_p95_seconds": 0.11210999201284721
+            },
+            "report_year": {
+              "count": 30,
+              "latency_p50_seconds": 0.03156565350946039,
+              "latency_p95_seconds": 0.05285982400528155
+            }
+          },
+          "round": 24,
+          "variant": "C-after-fix"
+        }
+      ],
+      "summary": {
+        "variants": {
+          "A-original": {
+            "elapsed_median": 3.542746876992169,
+            "server_cpu_median": 3.54,
+            "rps_median": 56.453379127788345,
+            "elapsed_cv_percent": 1.0102847576723817
+          },
+          "B-before-fix": {
+            "elapsed_median": 3.4270514764939435,
+            "server_cpu_median": 3.42,
+            "rps_median": 58.35920619172319,
+            "elapsed_cv_percent": 1.4038741513783914
+          },
+          "C-after-fix": {
+            "elapsed_median": 3.288814313011244,
+            "server_cpu_median": 3.29,
+            "rps_median": 60.81219336049293,
+            "elapsed_cv_percent": 0.834728983765861
+          }
+        },
+        "comparisons": {
+          "A-original -> B-before-fix": {
+            "elapsed_reduction_paired_median_percent": 3.3216100466538947,
+            "rps_increase_paired_median_percent": 3.4357318010039717,
+            "server_cpu_reduction_paired_median_percent": 3.6568864834069235,
+            "wins_ties_losses": [
+              23,
+              0,
+              1
+            ],
+            "per_round_reductions": [
+              4.753380236057481,
+              3.8868695617612636,
+              4.868231847651982,
+              3.6208844157377573,
+              4.562033177130642,
+              3.4393447269642996,
+              -1.887494443764548,
+              3.317971137684683,
+              4.091818374542222,
+              2.86272124183522,
+              3.0201351868199278,
+              3.280952066135878,
+              4.596612693611468,
+              1.7782483230438295,
+              2.055797704253459,
+              4.424837058472686,
+              3.3252489556231057,
+              1.9053016064424333,
+              2.6235648073697715,
+              7.115890906852551,
+              2.9288774522124306,
+              3.0896845938358064,
+              2.057866768270944,
+              3.5850362257064727
+            ],
+            "paired_bootstrap_median_interval_95": [
+              2.9288774522124306,
+              3.8868695617612636
+            ]
+          },
+          "A-original -> C-after-fix": {
+            "elapsed_reduction_paired_median_percent": 7.178227072402859,
+            "rps_increase_paired_median_percent": 7.733344584947666,
+            "server_cpu_reduction_paired_median_percent": 7.192592946269416,
+            "wins_ties_losses": [
+              24,
+              0,
+              0
+            ],
+            "per_round_reductions": [
+              6.822970101886627,
+              8.135281531160409,
+              6.35317561680594,
+              6.547023578824063,
+              8.161142580848713,
+              7.078092844441519,
+              6.463693384872016,
+              7.674850907239161,
+              7.618679299597275,
+              7.626519520694153,
+              7.1846441785465505,
+              5.664205889845597,
+              7.171809966259168,
+              6.85932689692933,
+              4.932859859552763,
+              8.187902395004388,
+              7.636980242313729,
+              5.721638156333264,
+              7.75762418408632,
+              11.018075757541823,
+              6.489871542437687,
+              7.277167488992231,
+              7.029069659240294,
+              7.805362865721477
+            ],
+            "paired_bootstrap_median_interval_95": [
+              6.8125582116327905,
+              7.646765103418218
+            ]
+          },
+          "B-before-fix -> C-after-fix": {
+            "elapsed_reduction_paired_median_percent": 4.069208304733729,
+            "rps_increase_paired_median_percent": 4.2420138021072145,
+            "server_cpu_reduction_paired_median_percent": 4.099569549484643,
+            "wins_ties_losses": [
+              24,
+              0,
+              0
+            ],
+            "per_round_reductions": [
+              2.1728748704766487,
+              4.420220161416067,
+              1.5609336376213534,
+              3.0360718142594223,
+              3.7711505426325065,
+              3.7683548306380654,
+              8.196479729164297,
+              4.506400849075176,
+              3.677330614845986,
+              4.904191613931241,
+              4.294199625612016,
+              2.464099755551119,
+              2.6992723689961196,
+              5.173068579144036,
+              2.937450188845181,
+              3.9372837259340376,
+              4.460038676191058,
+              3.8904615768118433,
+              5.272383782134094,
+              4.20113288353342,
+              3.668438147990094,
+              4.320987789180252,
+              5.075653068743746,
+              4.377252736302173
+            ],
+            "paired_bootstrap_median_interval_95": [
+              3.677330614845986,
+              4.420220161416067
+            ]
+          }
+        }
+      }
+    }
+  }
+}
