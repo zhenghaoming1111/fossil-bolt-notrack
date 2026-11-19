@@ -1,0 +1,133 @@
+{
+  "status": "PASS",
+  "runtime_image_equivalent": true,
+  "raw_load_segments_identical": false,
+  "ignored_field": "ELF64 e_shoff at file bytes [40,48); referenced section table is outside every PT_LOAD",
+  "actual_loaded_differing_offsets": [
+    40,
+    41
+  ],
+  "changed_section_contents": [
+    ".note.bolt_info"
+  ],
+  "section_table_offsets": {
+    "off": 11193600,
+    "on": 11193584
+  },
+  "nonallocated_command_notes": {
+    "off": "\u0004\u0000\u0000\u0000�\u0001\u0000\u0000\u0004\u0000\u0000\u0000GNU\u0000BOLT revision: af3fdf39125a6f119bfcc97f1dd00572185f6e07, command line: /opt/project/artifacts/mainline-options/common/bin/llvm-bolt --x86-notrack-jump-tables=false /results/negative/bin/fossil.orig -data=/results/negative/profiles/fossil.fdata -o /results/negative/bin/fossil.before -reorder-blocks=ext-tsp -reorder-functions=hfsort -split-functions=false -jump-tables=move -no-threads -sequential-disassembly\u0000\u0000\u0000",
+    "on": "\u0004\u0000\u0000\u0000�\u0001\u0000\u0000\u0004\u0000\u0000\u0000GNU\u0000BOLT revision: af3fdf39125a6f119bfcc97f1dd00572185f6e07, command line: /opt/project/artifacts/mainline-options/common/bin/llvm-bolt --x86-notrack-jump-tables=true /results/negative/bin/fossil.orig -data=/results/negative/profiles/fossil.fdata -o /results/negative/bin/fossil.after -reorder-blocks=ext-tsp -reorder-functions=hfsort -split-functions=false -jump-tables=move -no-threads -sequential-disassembly\u0000"
+  },
+  "normalized_images": {
+    "off": {
+      "entry": 13228958,
+      "segments": [
+        {
+          "vaddr": 4194304,
+          "paddr": 4194304,
+          "offset": 0,
+          "filesz": 19248,
+          "memsz": 19248,
+          "flags": 4,
+          "align": 4096,
+          "sha256": "54d0a9260a204804bf0a4583dc62410426d9b91eaa06429289aa6dc970942b00"
+        },
+        {
+          "vaddr": 4214784,
+          "paddr": 4214784,
+          "offset": 20480,
+          "filesz": 2959249,
+          "memsz": 2959249,
+          "flags": 5,
+          "align": 4096,
+          "sha256": "f5588cb63d75c9f795d57287b9739863fb16defea52c2aea3caa03fe79cef869"
+        },
+        {
+          "vaddr": 7176192,
+          "paddr": 7176192,
+          "offset": 2981888,
+          "filesz": 2356616,
+          "memsz": 2356616,
+          "flags": 4,
+          "align": 4096,
+          "sha256": "03f02647a7b893f898808e07ac64eb1c7a148385e502ea96dcb7e23f5fd32051"
+        },
+        {
+          "vaddr": 9538944,
+          "paddr": 9538944,
+          "offset": 5340544,
+          "filesz": 37560,
+          "memsz": 58208,
+          "flags": 6,
+          "align": 4096,
+          "sha256": "9685f987b6c125120d8a4a0ff853d1b8d020f3c9957428024a14486e5ab7d8ad"
+        },
+        {
+          "vaddr": 10485760,
+          "paddr": 10485760,
+          "offset": 6291456,
+          "filesz": 4539164,
+          "memsz": 4539164,
+          "flags": 5,
+          "align": 2097152,
+          "sha256": "952fc499b83fa0d17834612e5274a7cbf1e75a83a16ce82b6f18a7b8e819ec96"
+        }
+      ]
+    },
+    "on": {
+      "entry": 13228958,
+      "segments": [
+        {
+          "vaddr": 4194304,
+          "paddr": 4194304,
+          "offset": 0,
+          "filesz": 19248,
+          "memsz": 19248,
+          "flags": 4,
+          "align": 4096,
+          "sha256": "54d0a9260a204804bf0a4583dc62410426d9b91eaa06429289aa6dc970942b00"
+        },
+        {
+          "vaddr": 4214784,
+          "paddr": 4214784,
+          "offset": 20480,
+          "filesz": 2959249,
+          "memsz": 2959249,
+          "flags": 5,
+          "align": 4096,
+          "sha256": "f5588cb63d75c9f795d57287b9739863fb16defea52c2aea3caa03fe79cef869"
+        },
+        {
+          "vaddr": 7176192,
+          "paddr": 7176192,
+          "offset": 2981888,
+          "filesz": 2356616,
+          "memsz": 2356616,
+          "flags": 4,
+          "align": 4096,
+          "sha256": "03f02647a7b893f898808e07ac64eb1c7a148385e502ea96dcb7e23f5fd32051"
+        },
+        {
+          "vaddr": 9538944,
+          "paddr": 9538944,
+          "offset": 5340544,
+          "filesz": 37560,
+          "memsz": 58208,
+          "flags": 6,
+          "align": 4096,
+          "sha256": "9685f987b6c125120d8a4a0ff853d1b8d020f3c9957428024a14486e5ab7d8ad"
+        },
+        {
+          "vaddr": 10485760,
+          "paddr": 10485760,
+          "offset": 6291456,
+          "filesz": 4539164,
+          "memsz": 4539164,
+          "flags": 5,
+          "align": 2097152,
+          "sha256": "952fc499b83fa0d17834612e5274a7cbf1e75a83a16ce82b6f18a7b8e819ec96"
+        }
+      ]
+    }
+  }
+}

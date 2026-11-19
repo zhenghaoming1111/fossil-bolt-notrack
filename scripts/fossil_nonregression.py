@@ -17,6 +17,7 @@ from types import SimpleNamespace
 
 import fossil_lab as fossil
 from collect_environment import collect
+from elf_runtime_equivalence import compare as compare_runtime
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -135,15 +136,19 @@ def run(out, tools, run_timing):
                    "-reorder-blocks=ext-tsp", "-reorder-functions=hfsort", "-split-functions=false",
                    "-jump-tables=move", "-no-threads", "-sequential-disassembly"])
         rewrites[label] = {"elf_sha256": fossil.digest(binary), "image": load_segments(binary)}
-    if rewrites["off"]["image"] != rewrites["on"]["image"]:
-        raise RuntimeError("OFF and ON load segments differ on nonmatching input")
+    equivalence = compare_runtime(out / "bin/fossil.before", out / "bin/fossil.after")
+    fossil.save(out / "runtime-equivalence.json", equivalence)
+    for label in rewrites:
+        rewrites[label]["runtime_image"] = equivalence["normalized_images"][label]
     fossil.check(args)
     fossil.save(out / "correctness.json", {"status": "PASS", "no_notrack_jmp": True,
-                "load_segments_identical": True, "compiler_flags": cflags, "linker_flags": ldflags,
+                "load_segments_identical": equivalence["raw_load_segments_identical"],
+                "runtime_image_equivalent": True, "runtime_equivalence_audit": "runtime-equivalence.json",
+                "compiler_flags": cflags, "linker_flags": ldflags,
                 "original_sha256": fossil.digest(original), "profile_sha256": fossil.digest(profile),
                 "fossil_version": fossil.run(out, "version", [original, "version", "-v"]),
                 "snapshot_sha256": data_manifest["snapshot_sha256"], "rewrites": rewrites})
-    print("PASS: identical ELF load segments and visible A/OFF/ON pages", flush=True)
+    print("PASS: audited equivalent ELF execution contents and visible A/OFF/ON pages", flush=True)
     if not run_timing:
         return
 

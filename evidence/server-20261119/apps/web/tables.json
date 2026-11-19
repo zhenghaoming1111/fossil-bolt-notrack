@@ -1,0 +1,367 @@
+{
+  "passed": true,
+  "kind": "fossil",
+  "lab": "/results/benchmark/fossil-web",
+  "formal_performance_measurements": false,
+  "variants": {
+    "A-original": {
+      "binary_sha256": "29c3362b983c49606ee7576972a0b31c09f29b847e6516f7659ef8c4240f5933",
+      "cfg": null,
+      "code": {
+        "sqlite3VdbeExec": {
+          "function_start": 4983936,
+          "function_end": 5023986,
+          "jumps": [
+            {
+              "instruction_address": 4984176,
+              "table_address": 7351976,
+              "instruction_bytes": "3e ff 24 c5 a8 2e 70 00"
+            },
+            {
+              "instruction_address": 5006402,
+              "table_address": 7353464,
+              "instruction_bytes": "3e ff 24 d5 78 34 70 00"
+            }
+          ]
+        },
+        "vdbeRecordCompareInt": {
+          "function_start": 4514432,
+          "function_end": 4514698,
+          "jumps": [
+            {
+              "instruction_address": 4514455,
+              "table_address": 7342464,
+              "instruction_bytes": "3e ff 24 cd 80 09 70 00"
+            }
+          ]
+        }
+      }
+    },
+    "B-before-fix": {
+      "binary_sha256": "68445085eb34bec440c6ce8316541a0fd0159c2580098c34c1999d46cba2985a",
+      "cfg": {
+        "vdbeRecordCompareInt": {
+          "is_simple": 0,
+          "jump_table_markers": 0,
+          "tables": []
+        },
+        "sqlite3VdbeExec": {
+          "is_simple": 0,
+          "jump_table_markers": 0,
+          "tables": []
+        }
+      },
+      "code": {
+        "sqlite3VdbeExec": {
+          "function_start": 12779776,
+          "function_end": 12819212,
+          "jumps": [
+            {
+              "instruction_address": 12780011,
+              "table_address": 7351976,
+              "instruction_bytes": "3e ff 24 c5 a8 2e 70 00"
+            },
+            {
+              "instruction_address": 12801848,
+              "table_address": 7353464,
+              "instruction_bytes": "3e ff 24 d5 78 34 70 00"
+            }
+          ]
+        },
+        "vdbeRecordCompareInt": {
+          "function_start": 12836032,
+          "function_end": 12836220,
+          "jumps": [
+            {
+              "instruction_address": 12836055,
+              "table_address": 7342464,
+              "instruction_bytes": "3e ff 24 cd 80 09 70 00"
+            }
+          ]
+        }
+      }
+    },
+    "C-after-fix": {
+      "binary_sha256": "c7e96249236e7b816d3d249f40db5262b0f1ebe623b81bb5c7ff5d981851b792",
+      "cfg": {
+        "vdbeRecordCompareInt": {
+          "is_simple": 1,
+          "jump_table_markers": 1,
+          "tables": [
+            {
+              "original_address": 7342464,
+              "entry_count": 10
+            }
+          ]
+        },
+        "sqlite3VdbeExec": {
+          "is_simple": 1,
+          "jump_table_markers": 2,
+          "tables": [
+            {
+              "original_address": 7351976,
+              "entry_count": 186
+            },
+            {
+              "original_address": 7353464,
+              "entry_count": 7
+            }
+          ]
+        }
+      },
+      "code": {
+        "sqlite3VdbeExec": {
+          "function_start": 12780032,
+          "function_end": 12819606,
+          "jumps": [
+            {
+              "instruction_address": 12782266,
+              "table_address": 14971120,
+              "instruction_bytes": "3e ff 24 c5 f0 70 e4 00",
+              "entry_count": 186,
+              "table_entries": [
+                12804860,
+                12805788,
+                12786337,
+                12805646,
+                12793715,
+                12805547,
+                12794474,
+                12805219,
+                12780820,
+                12782879,
+                12787224,
+                12792655,
+                12787602,
+                12790203,
+                12782580,
+                12780930,
+                12782625,
+                12788412,
+                12797261,
+                12797162,
+                12800296,
+                12780248,
+                12780248,
+                12780248,
+                12780248,
+                12797373,
+                12797340,
+                12780602,
+                12780602,
+                12780602,
+                12783182,
+                12790257,
+                12789279,
+                12790836,
+                12789008,
+                12789008,
+                12789016,
+                12791745,
+                12782921,
+                12790288,
+                12782798,
+                12780975,
+                12780975,
+                12794301,
+                12794301,
+                12780975,
+                12780975,
+                12800132,
+                12797777,
+                12797463,
+                12797895,
+                12785752,
+                12787773,
+                12783071,
+                12783071,
+                12783071,
+                12783071,
+                12783071,
+                12783071,
+                12797081,
+                12780873,
+                12789791,
+                12781508,
+                12800460,
+                12787680,
+                12794711,
+                12788863,
+                12788863,
+                12785611,
+                12793062,
+                12796910,
+                12786028,
+                12782522,
+                12800634,
+                12788671,
+                12785075,
+                12785075,
+                12790745,
+                12792719,
+                12786672,
+                12787033,
+                12784499,
+                12788081,
+                12790368,
+                12801187,
+                12786139,
+                12783002,
+                12790790,
+                12789983,
+                12798320,
+                12782242,
+                12785219,
+                12798192,
+                12793995,
+                12782242,
+                12782274,
+                12799716,
+                12785531,
+                12783330,
+                12793416,
+                12792817,
+                12791499,
+                12797945,
+                12796010,
+                12796010,
+                12796010,
+                12796010,
+                12789424,
+                12789424,
+                12789424,
+                12789424,
+                12789424,
+                12792240,
+                12784651,
+                12784651,
+                12805113,
+                12798043,
+                12790442,
+                12788559,
+                12790442,
+                12790127,
+                12799611,
+                12789925,
+                12791447,
+                12782242,
+                12799317,
+                12799268,
+                12788334,
+                12787286,
+                12787856,
+                12798985,
+                12790026,
+                12798850,
+                12798661,
+                12784893,
+                12798457,
+                12784362,
+                12791269,
+                12789279,
+                12788141,
+                12781268,
+                12804551,
+                12781346,
+                12781346,
+                12800830,
+                12800903,
+                12791791,
+                12806051,
+                12792938,
+                12806111,
+                12793143,
+                12806016,
+                12801440,
+                12801322,
+                12791886,
+                12802881,
+                12802605,
+                12802518,
+                12802410,
+                12805970,
+                12802971,
+                12800693,
+                12792076,
+                12792076,
+                12782673,
+                12785901,
+                12785901,
+                12791166,
+                12801528,
+                12802385,
+                12782242,
+                12802206,
+                12801638,
+                12801553,
+                12794129,
+                12803533,
+                12803343,
+                12786788,
+                12804018,
+                12803834,
+                12803918,
+                12798413,
+                12803168,
+                12803097,
+                12795037,
+                12780820
+              ],
+              "all_targets_within_function": true
+            },
+            {
+              "instruction_address": 12784001,
+              "table_address": 14972608,
+              "instruction_bytes": "3e ff 24 d5 c0 76 e4 00",
+              "entry_count": 7,
+              "table_entries": [
+                12783883,
+                12783932,
+                12783925,
+                12783918,
+                12783911,
+                12783883,
+                12783897
+              ],
+              "all_targets_within_function": true
+            }
+          ]
+        },
+        "vdbeRecordCompareInt": {
+          "function_start": 12836416,
+          "function_end": 12836612,
+          "jumps": [
+            {
+              "instruction_address": 12836439,
+              "table_address": 14972856,
+              "instruction_bytes": "3e ff 24 cd b8 77 e4 00",
+              "entry_count": 10,
+              "table_entries": [
+                12836552,
+                12836528,
+                12836486,
+                12836447,
+                12836544,
+                12836566,
+                12836601,
+                12836552,
+                12836534,
+                12836559
+              ],
+              "all_targets_within_function": true
+            }
+          ]
+        }
+      }
+    }
+  },
+  "http_verification": {
+    "status": "PASS",
+    "seed": 44
+  },
+  "profile_sha256": "50aac34c44ddce53982bcfa823d50b41ec6a6d452d8e7dde15276f29560c2161",
+  "target_nonzero_records": {
+    "sqlite3VdbeExec": 972,
+    "vdbeRecordCompareInt": 21
+  }
+}

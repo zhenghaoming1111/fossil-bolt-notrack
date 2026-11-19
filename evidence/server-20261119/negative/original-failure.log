@@ -1,0 +1,13 @@
+Build the frozen Fossil sources with -fcf-protection=none
+PASS: whole-executable disassembly has no NOTRACK JMP
+Instrument with patched BOLT; counters shared across HTTP worker forks.
+Train and verify actual HTTP routes: dashboard
+Fresh profile has both target functions: {"sqlite3VdbeExec": {"nonzero_records": 833, "counter_sum_not_function_calls": 4914711877}, "vdbeRecordCompareInt": {"nonzero_records": 18, "counter_sum_not_function_calls": 43879708}}
+Traceback (most recent call last):
+  File "/opt/project/scripts/fossil_nonregression.py", line 189, in <module>
+    main()
+  File "/opt/project/scripts/fossil_nonregression.py", line 185, in main
+    run(args.output.resolve(), args.tools.resolve(), args.measure)
+  File "/opt/project/scripts/fossil_nonregression.py", line 139, in run
+    raise RuntimeError("OFF and ON load segments differ on nonmatching input")
+RuntimeError: OFF and ON load segments differ on nonmatching input

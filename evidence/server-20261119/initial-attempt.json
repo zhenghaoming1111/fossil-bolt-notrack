@@ -1,0 +1,169 @@
+{
+  "updated_at_utc": "2026-11-19T09:38:39.310942+00:00",
+  "state": "failed",
+  "elapsed_seconds": 5734.05,
+  "completed_stages": [
+    {
+      "stage": "verify",
+      "mode": "verify",
+      "started_at_utc": "2026-11-19T08:03:05.262080+00:00",
+      "command": [
+        "/home/sole/workspace/zhm/fossil-repro-20261119-a3535wwv/run-docker",
+        "run",
+        "--rm",
+        "--name",
+        "sole-fossil-a3535wwv-verify",
+        "--network",
+        "none",
+        "--user",
+        "1000:1000",
+        "--mount",
+        "type=bind,src=/home/sole/workspace/zhm/fossil-repro-20261119-a3535wwv/results,dst=/results",
+        "bolt-fossil-notrack:main-af3fdf39125a",
+        "bash",
+        "scripts/reproduce_fossil_mainline.sh",
+        "verify"
+      ],
+      "log": "/home/sole/workspace/zhm/fossil-repro-20261119-a3535wwv/logs/verify.log",
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-19T08:03:10.435081+00:00",
+      "elapsed_seconds": 5.17
+    },
+    {
+      "stage": "check",
+      "mode": "check",
+      "started_at_utc": "2026-11-19T08:03:10.435382+00:00",
+      "command": [
+        "/home/sole/workspace/zhm/fossil-repro-20261119-a3535wwv/run-docker",
+        "run",
+        "--rm",
+        "--name",
+        "sole-fossil-a3535wwv-check",
+        "--network",
+        "none",
+        "--user",
+        "1000:1000",
+        "--mount",
+        "type=bind,src=/home/sole/workspace/zhm/fossil-repro-20261119-a3535wwv/results,dst=/results",
+        "bolt-fossil-notrack:main-af3fdf39125a",
+        "bash",
+        "scripts/reproduce_fossil_mainline.sh",
+        "check",
+        "/results/check"
+      ],
+      "log": "/home/sole/workspace/zhm/fossil-repro-20261119-a3535wwv/logs/check.log",
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-19T08:07:30.337832+00:00",
+      "elapsed_seconds": 259.9
+    },
+    {
+      "stage": "negative-check",
+      "mode": "negative-check",
+      "started_at_utc": "2026-11-19T08:07:30.338172+00:00",
+      "command": [
+        "/home/sole/workspace/zhm/fossil-repro-20261119-a3535wwv/run-docker",
+        "run",
+        "--rm",
+        "--name",
+        "sole-fossil-a3535wwv-negative-check",
+        "--network",
+        "none",
+        "--user",
+        "1000:1000",
+        "--mount",
+        "type=bind,src=/home/sole/workspace/zhm/fossil-repro-20261119-a3535wwv/results,dst=/results",
+        "bolt-fossil-notrack:main-af3fdf39125a",
+        "bash",
+        "scripts/reproduce_fossil_mainline.sh",
+        "negative-check",
+        "/results/negative-check"
+      ],
+      "log": "/home/sole/workspace/zhm/fossil-repro-20261119-a3535wwv/logs/negative-check.log",
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-19T08:11:01.436148+00:00",
+      "elapsed_seconds": 211.1
+    },
+    {
+      "stage": "benchmark",
+      "mode": "benchmark",
+      "started_at_utc": "2026-11-19T08:11:01.501228+00:00",
+      "command": [
+        "/home/sole/workspace/zhm/fossil-repro-20261119-a3535wwv/run-docker",
+        "run",
+        "--rm",
+        "--name",
+        "sole-fossil-a3535wwv-benchmark",
+        "--network",
+        "none",
+        "--user",
+        "1000:1000",
+        "--mount",
+        "type=bind,src=/home/sole/workspace/zhm/fossil-repro-20261119-a3535wwv/results,dst=/results",
+        "bolt-fossil-notrack:main-af3fdf39125a",
+        "bash",
+        "scripts/reproduce_fossil_mainline.sh",
+        "benchmark",
+        "/results/benchmark"
+      ],
+      "log": "/home/sole/workspace/zhm/fossil-repro-20261119-a3535wwv/logs/benchmark.log",
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-19T09:35:31.750371+00:00",
+      "elapsed_seconds": 5070.25
+    },
+    {
+      "stage": "negative",
+      "mode": "negative",
+      "started_at_utc": "2026-11-19T09:35:31.750680+00:00",
+      "command": [
+        "/home/sole/workspace/zhm/fossil-repro-20261119-a3535wwv/run-docker",
+        "run",
+        "--rm",
+        "--name",
+        "sole-fossil-a3535wwv-negative",
+        "--network",
+        "none",
+        "--user",
+        "1000:1000",
+        "--mount",
+        "type=bind,src=/home/sole/workspace/zhm/fossil-repro-20261119-a3535wwv/results,dst=/results",
+        "bolt-fossil-notrack:main-af3fdf39125a",
+        "bash",
+        "scripts/reproduce_fossil_mainline.sh",
+        "negative",
+        "/results/negative"
+      ],
+      "log": "/home/sole/workspace/zhm/fossil-repro-20261119-a3535wwv/logs/negative.log",
+      "exit_code": 1,
+      "finished_at_utc": "2026-11-19T09:38:39.278496+00:00",
+      "elapsed_seconds": 187.53
+    }
+  ],
+  "paused_updates": [
+    {
+      "pid": 1811,
+      "ppid": 1191,
+      "state": "S",
+      "start_ticks": "38832",
+      "argv": [
+        "/usr/bin/apt-get",
+        "--option=Dpkg::Options::=--force-confold",
+        "--option=Dpkg::options::=--force-unsafe-io",
+        "--assume-yes",
+        "--quiet",
+        "dist-upgrade"
+      ]
+    },
+    {
+      "pid": 1818,
+      "ppid": 1811,
+      "state": "S",
+      "start_ticks": "38936",
+      "argv": [
+        "/usr/lib/apt/methods/http"
+      ]
+    }
+  ],
+  "current_stage": null,
+  "error": "negative failed with exit 1",
+  "update_downloads_resumed": true
+}

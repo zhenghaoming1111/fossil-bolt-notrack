@@ -4,13 +4,14 @@ root=$(cd -- "$(dirname -- "$0")/.." && pwd)
 cd "$root"
 
 mode=${1:-}
+sha256sum --check SOURCE_SHA256SUMS --quiet
 case "$mode" in
   verify)
-    sha256sum --check SOURCE_SHA256SUMS --quiet
     if [[ -f CONTAINER_SHA256SUMS ]]; then
       sha256sum --check CONTAINER_SHA256SUMS --quiet
     fi
-    exec python3 scripts/verify_fossil_submission.py
+    python3 scripts/verify_fossil_submission.py
+    exec python3 scripts/verify_server_results.py
     ;;
   check|benchmark|negative-check|negative) ;;
   *) printf 'Usage: %s {verify|check|benchmark|negative-check|negative} [new-output-dir]\n' "$0" >&2; exit 2 ;;

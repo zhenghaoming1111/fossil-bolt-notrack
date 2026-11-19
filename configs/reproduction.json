@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "release": "repro-v2-20261120",
+  "image": "bolt-fossil-notrack:repro-v2-af3fdf39125a",
+  "image_archive": "fossil-bolt-image-repro-v2-af3fdf39125a.tar.gz",
+  "materials_archive": "fossil-bolt-materials-repro-v2-af3fdf39125a.tar.gz",
+  "llvm_commit": "af3fdf39125a6f119bfcc97f1dd00572185f6e07",
+  "minimum_free_gib": 8,
+  "profile_method": "BOLT instrumentation; hardware perf/LBR is optional",
+  "stages": ["verify", "check", "negative-check", "benchmark", "negative"]
+}

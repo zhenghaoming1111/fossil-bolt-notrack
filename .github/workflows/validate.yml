@@ -1,0 +1,20 @@
+name: Validate reproduction materials
+on: [push, pull_request]
+jobs:
+  source-and-regressions:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check pinned source files
+        run: |
+          python3 scripts/update_source_checksums.py --check
+          sha256sum --check SOURCE_SHA256SUMS --quiet
+      - name: Check validators, including optimized Python
+        run: |
+          python3 -m unittest discover -s tests -p 'test_*.py' -v
+          python3 -O -m unittest discover -s tests -p 'test_*.py' -v
+          for script in scripts/*.sh; do bash -n "$script"; done
+      - name: Recompute archived experiments
+        run: |
+          python3 scripts/verify_fossil_submission.py
+          python3 scripts/verify_server_results.py

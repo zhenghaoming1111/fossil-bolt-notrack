@@ -116,64 +116,13 @@ Windows 与 WSL 配置见 [设备证据](evidence/host)，正式实验 Linux 快
 
 ## 6. 在另一台机器上复现
 
-使用 **原生 x86-64 Linux 或带 Linux 容器支持的 x86-64 WSL2**、可访问 Docker daemon 的 Bash、至少两个允许调度的逻辑 CPU。建议至少 8 GiB 可用内存和 8 GiB 磁盘余量；源码重编 LLVM 另外留空间。镜像为 `linux/amd64`；不要用 ARM 指令模拟的计时作原生性能比较。WSL 下把结果目录放在 `~/` 等 Linux 文件系统中，避免 `/mnt/c` 的文件系统差异。运行 Docker 的帐号需要有相应权限；需要 `sudo` 的机器把下文的 `docker` 改为 `sudo docker`。
+当前交付版本为 **repro-v2-20261120**。请使用 [新机器复现指引](docs/REPRODUCE.md)：取得匹配的 Release 镜像与材料、校验归档、加载镜像，再依次运行环境预检、原数据复核、新输出校验、正向计时和负对照。
 
-交付目录包含 `fossil-bolt-materials-af3fdf39125a.tar.gz`、`fossil-bolt-image-af3fdf39125a.tar.gz` 和 `DELIVERY_SHA256SUMS`。先在 Bash 中进入这三个文件所在目录。第一条校验命令应显示两个 `OK`；加载后可把镜像 ID 和平台与随附的 `image-manifest.json` 对照。
+v2 修复了原负对照脚本对 `.note.bolt_info` 和节表偏移的误报；它保持执行代码、数据、程序头与其他节的严格核对。实现、回归拒绝样例及环境问题见 [排错说明](docs/TROUBLESHOOTING.md)。旧镜像 `main-af3fdf39125a` 与 v2 材料不可混用。
 
-```bash
-sha256sum --check DELIVERY_SHA256SUMS
-docker load --input fossil-bolt-image-af3fdf39125a.tar.gz
-image=bolt-fossil-notrack:main-af3fdf39125a
-docker image inspect "$image" --format '{{.Id}} {{.Os}}/{{.Architecture}}'
-results=$(mktemp -d "$HOME/fossil-bolt-results.XXXXXXXX")
+2026-11-19 在 KVM 服务器上已完成 432 条正向与 96 条负对照计时，统计看板的额外耗时下降为 3.020% / 2.944%。原镜像流程遇到负对照误报后，借助额外脚本才完成；不能称为原文档无修改一次通过。设备、原始记录、问题和 v2 验收边界见 [跨机器验证](docs/SERVER_VALIDATION.md)。原 WSL 数值保持不变，不与服务器结果混合汇总。
 
-run_fossil() {
-  docker run --rm --network none --user "$(id -u):$(id -g)" \
-    --mount "type=bind,src=$results,dst=/results" "$image" \
-    bash scripts/reproduce_fossil_mainline.sh "$@"
-}
-```
-
-先复核已提交的证据，再检查新生成的实验输出：
-
-```bash
-run_fossil verify
-run_fossil check /results/check
-run_fossil negative-check /results/negative-check
-```
-
-`verify` 检查固定输入、代码补丁和运行工具的 SHA-256，并从 432 条正向、96 条负对照记录重算统计。`check` 从冻结的 Fossil ELF 重新插桩训练、生成 B/C、核对页面和跳转表；`negative-check` 重新构建无命中 Fossil 并核对页面和 ELF 的可加载内容。所有容器仅使用内部回环网络，复现无需下载源码、克隆仓库或连接外部服务。
-
-交付前已将导出的镜像重新加载，以普通用户在断网容器中执行这三项检查。`verify` 重算结果与归档一致；`check` 确认新 profile、页面、跳转表和前缀均通过；`negative-check` 确认无目标跳转、页面一致、OFF/ON 的 ELF 可加载段一致。交付目录中的 `docker-*.txt` 保存验收输出；这些检查与第 4、5 节的正式计时是两次工作。
-
-正式计时可以随后进行。一次只启动一种计时，期间避免并行编译；完整 A/B/C 包含预热，需预留约一小时或更久。下列目录必须是新的，重复运行请更换目录名：
-
-```bash
-run_fossil benchmark /results/benchmark
-run_fossil negative /results/negative
-
-find "$results/benchmark" -name summary.json -print
-cat "$results/negative/summary.json"
-```
-
-| 模式 | 可找的输出（相对 `$results`） |
-| --- | --- |
-| `check` | `check/environment.json`、`check/fossil-web/` 和 `check/fossil-dashboard/` 中的新 profile、重写日志、`check-seed*.json`；`check/web-tables/summary.json` 和 `check/dashboard-tables/summary.json` |
-| `benchmark` | `benchmark/formal-analysis-plan.json` 与 `benchmark/benchmark-console.txt`；每个负载目录的 `benchmark-seed43.json`、`benchmark-seed44.json` 指向各自 `summary.json` 和 `raw.jsonl` |
-| `negative-check` | `negative-check/environment.json`、`check.json`、`correctness.json` 和反汇编日志 |
-| `negative` | `negative/environment.json`、`analysis-plan.json`、`raw.jsonl`、`summary.json` |
-
-复现判据：`verify` 重算旧数值应完全一致；新校验应通过且无请求错误；新计时按本文同样的轮内配对方法报告。计时脚本会按机器速度校准每次请求量，百分比受 CPU、系统与容器环境影响，不要求新机恰好得到同一数值。
-
-也可只读源码包、不启动 Docker，就核对原始数据（需 Bash 和 Python 3.12）：
-
-```bash
-tar -xzf fossil-bolt-materials-af3fdf39125a.tar.gz
-cd fossil-bolt-submission
-bash scripts/reproduce_fossil_mainline.sh verify
-```
-
-材料包提供 [源码构建脚本](scripts/build_bolt_options.sh)：它按 [LLVM 源码配置](configs/llvm-mainline-options.json) 取得固定源码、校验补丁并构建 BOLT。只有审阅者要重新编译 BOLT 时才需要这一流程。随附 Dockerfile 记录了实际镜像怎么组装，需要预先准备底包和构建产物；直接加载交付镜像即可运行上述实验。
+加载交付镜像不要求重新编译 LLVM。[源码构建脚本](scripts/build_bolt_options.sh) 按固定 [配置](configs/llvm-mainline-options.json) 构建 BOLT；原 [Dockerfile](docker/Dockerfile) 记录环境构造，[v2 Dockerfile](docker/Dockerfile.reproduction) 在固定原镜像上更新复现工具，完整镜像作为 Release 文件交付。
 
 ## 7. 局限性与交付内容
 
@@ -186,5 +135,5 @@ bash scripts/reproduce_fossil_mainline.sh verify
 | 提交项 | 文件与内容 |
 | --- | --- |
 | 代码 patch | [notrack-jump-table-options.patch](patches/notrack-jump-table-options.patch)，含实现与可执行的回归测试 |
-| Docker | `fossil-bolt-image-af3fdf39125a.tar.gz`，可直接 `docker load`；含实际 `llvm-bolt`、OFF/ON 启动器、插桩库、冻结 Fossil ELF、Fossil 源码、仓库快照、请求与脚本。[Dockerfile](docker/Dockerfile) 记录镜像构造 |
+| Docker | `fossil-bolt-image-repro-v2-af3fdf39125a.tar.gz`，可直接 `docker load`；含实际 `llvm-bolt`、OFF/ON 启动器、插桩库、冻结 Fossil ELF、Fossil 源码、仓库快照、请求与修正后的脚本。[v2 Dockerfile](docker/Dockerfile.reproduction) 记录本次更新 |
 | 设计与复现文档 | 本文，及源码材料归档；后者含 [配置](configs)、[脚本](scripts)、[证据](evidence)、[许可说明](THIRD_PARTY_NOTICES.md) 和文件校验清单 |

@@ -1,0 +1,10 @@
+# Load the original pinned offline image before building this revision.
+# Build context: repository root; .dockerignore excludes deliveries and results.
+ARG BASE_IMAGE=bolt-fossil-notrack:main-af3fdf39125a
+FROM ${BASE_IMAGE}
+COPY . /opt/project/
+RUN cd /opt/project \
+    && sha256sum --check SOURCE_SHA256SUMS --quiet \
+    && sha256sum --check CONTAINER_SHA256SUMS --quiet \
+    && python3 -m unittest discover -s tests -p 'test_*.py' -v
+LABEL org.opencontainers.image.version="repro-v2-20261120"

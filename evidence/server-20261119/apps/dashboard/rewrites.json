@@ -1,0 +1,49 @@
+{
+  "profile_sha256": "63ae42e56b126f369b6b6443994908f17f00565b2e9f1fb0c1834d887b723f7d",
+  "variants": {
+    "before": {
+      "binary_sha256": "77c315a80d827cf3c4508f26c55efb38d80b73f7b934ea5318efd3498892e3aa",
+      "cfg": {
+        "vdbeRecordCompareInt": {
+          "name": "vdbeRecordCompareInt/1(*2)",
+          "IsSimple": 0,
+          "jump_table_markers": 0
+        },
+        "sqlite3VdbeExec": {
+          "name": "sqlite3VdbeExec/1(*2)",
+          "IsSimple": 0,
+          "jump_table_markers": 0
+        }
+      },
+      "notrack_jumps": {
+        "sqlite3VdbeExec": 2,
+        "vdbeRecordCompareInt": 1
+      }
+    },
+    "after": {
+      "binary_sha256": "808c7fa5f85d1e5cacddb2df965ac7e631b3d47e16989dbc46426926a7d25852",
+      "cfg": {
+        "vdbeRecordCompareInt": {
+          "name": "vdbeRecordCompareInt/1(*2)",
+          "IsSimple": 1,
+          "jump_table_markers": 1
+        },
+        "sqlite3VdbeExec": {
+          "name": "sqlite3VdbeExec/1(*2)",
+          "IsSimple": 1,
+          "jump_table_markers": 2
+        }
+      },
+      "notrack_jumps": {
+        "sqlite3VdbeExec": 2,
+        "vdbeRecordCompareInt": 1
+      }
+    }
+  },
+  "flags": [
+    "ext-tsp",
+    "hfsort",
+    "split-functions=false",
+    "jump-tables=move"
+  ]
+}

@@ -1,0 +1,8 @@
+.git
+delivery
+artifacts
+build
+results
+release-metadata
+**/__pycache__
+**/*.pyc
