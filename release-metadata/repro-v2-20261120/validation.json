@@ -1,0 +1,100 @@
+{
+  "status": "PASS",
+  "source_manifest_sha256": "06a51b17fee1c59ab0f973a87f54b58d3e91eee1fc4ca861496899384df5f344",
+  "image_id": "sha256:77a7af9e2640d8adc702faf8e045b93994f05d886b0056de8c071f2b57f966b5",
+  "stages": [
+    {
+      "stage": "preflight",
+      "command": [
+        "bash",
+        "/home/sole/workspace/zhm/fossil-portability-v2-20261120/project/scripts/run_reproduction.sh",
+        "preflight",
+        "--results",
+        "/home/sole/workspace/zhm/fossil-portability-v2-20261120/validation-results",
+        "--docker",
+        "/home/sole/workspace/zhm/fossil-repro-20261119-a3535wwv/run-docker",
+        "--image-manifest",
+        "/home/sole/workspace/zhm/fossil-portability-v2-20261120/image-preexport-manifest.json"
+      ],
+      "status": "PASS",
+      "started_at_utc": "2026-11-19T17:03:24.489812+00:00",
+      "exit_code": 0,
+      "elapsed_seconds": 3.7124578889997792
+    },
+    {
+      "stage": "verify",
+      "command": [
+        "bash",
+        "/home/sole/workspace/zhm/fossil-portability-v2-20261120/project/scripts/run_reproduction.sh",
+        "verify",
+        "--results",
+        "/home/sole/workspace/zhm/fossil-portability-v2-20261120/validation-results",
+        "--docker",
+        "/home/sole/workspace/zhm/fossil-repro-20261119-a3535wwv/run-docker",
+        "--image-manifest",
+        "/home/sole/workspace/zhm/fossil-portability-v2-20261120/image-preexport-manifest.json"
+      ],
+      "status": "PASS",
+      "started_at_utc": "2026-11-19T17:03:28.203275+00:00",
+      "exit_code": 0,
+      "elapsed_seconds": 9.261289379996015
+    },
+    {
+      "stage": "check",
+      "command": [
+        "bash",
+        "/home/sole/workspace/zhm/fossil-portability-v2-20261120/project/scripts/run_reproduction.sh",
+        "check",
+        "--results",
+        "/home/sole/workspace/zhm/fossil-portability-v2-20261120/validation-results",
+        "--docker",
+        "/home/sole/workspace/zhm/fossil-repro-20261119-a3535wwv/run-docker",
+        "--image-manifest",
+        "/home/sole/workspace/zhm/fossil-portability-v2-20261120/image-preexport-manifest.json"
+      ],
+      "status": "PASS",
+      "started_at_utc": "2026-11-19T17:03:37.470763+00:00",
+      "exit_code": 0,
+      "elapsed_seconds": 264.56865482099965
+    },
+    {
+      "stage": "negative-check",
+      "command": [
+        "bash",
+        "/home/sole/workspace/zhm/fossil-portability-v2-20261120/project/scripts/run_reproduction.sh",
+        "negative-check",
+        "--results",
+        "/home/sole/workspace/zhm/fossil-portability-v2-20261120/validation-results",
+        "--docker",
+        "/home/sole/workspace/zhm/fossil-repro-20261119-a3535wwv/run-docker",
+        "--image-manifest",
+        "/home/sole/workspace/zhm/fossil-portability-v2-20261120/image-preexport-manifest.json"
+      ],
+      "status": "PASS",
+      "started_at_utc": "2026-11-19T17:08:02.040929+00:00",
+      "exit_code": 0,
+      "elapsed_seconds": 212.7839448789964
+    },
+    {
+      "stage": "negative",
+      "command": [
+        "bash",
+        "/home/sole/workspace/zhm/fossil-portability-v2-20261120/project/scripts/run_reproduction.sh",
+        "negative",
+        "--results",
+        "/home/sole/workspace/zhm/fossil-portability-v2-20261120/validation-results",
+        "--docker",
+        "/home/sole/workspace/zhm/fossil-repro-20261119-a3535wwv/run-docker",
+        "--image-manifest",
+        "/home/sole/workspace/zhm/fossil-portability-v2-20261120/image-preexport-manifest.json"
+      ],
+      "status": "PASS",
+      "started_at_utc": "2026-11-19T17:11:34.852510+00:00",
+      "exit_code": 0,
+      "elapsed_seconds": 806.2888819520012
+    }
+  ],
+  "new_positive_formal_timing": false,
+  "positive_note": "Unchanged original benchmark, binaries and data; earlier 432-row server results are preserved and recomputed, not rerun for this validator change.",
+  "completed_at_utc": "2026-11-19T17:25:01.144772+00:00"
+}

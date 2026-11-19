@@ -1,0 +1,18 @@
+WARNING: No CPU PMU in sysfs. Instrumentation/timing remains usable; do not claim hardware perf, IPC or LBR results.
+PASS: preflight; /home/sole/workspace/zhm/fossil-portability-v2-20261120/validation-results/host-preflight.json
+Running verify; log: /home/sole/workspace/zhm/fossil-portability-v2-20261120/validation-results/verify-20261119T170331Z-xvwnug4l/console.log
+browse     seed43: -0.106% OFF -> ON
+review     seed43: +0.727% OFF -> ON
+browse     seed44: +1.512% OFF -> ON
+review     seed44: +1.698% OFF -> ON
+dashboard  seed43: +4.069% OFF -> ON
+dashboard  seed44: +3.451% OFF -> ON
+nonmatching: +0.111%, 95% interval [-0.32310912989685914, 0.4600213792333163], below 1% regression margin: True
+PASS: recomputed 432 positive + 96 negative timing rows; verified 1800 positive page digests; BOLT regression {'PASS': 527, 'XFAIL': 1, 'UNSUPPORTED': 267}
+server browse     seed43: +0.652% OFF -> ON
+server review     seed43: +0.790% OFF -> ON
+server browse     seed44: +0.654% OFF -> ON
+server review     seed44: +0.989% OFF -> ON
+server dashboard  seed43: +3.020% OFF -> ON
+server dashboard  seed44: +2.944% OFF -> ON
+PASS: server 432 positive + 96 negative rows and 1800 page digests; original failed-stage record retained

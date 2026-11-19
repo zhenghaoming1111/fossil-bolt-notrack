@@ -1,0 +1,22 @@
+{
+  "status": "COMPLETE",
+  "rounds": 48,
+  "records": 96,
+  "requests_per_run": 100,
+  "http_errors": 0,
+  "elapsed_median_seconds": {
+    "off": 4.817106810496625,
+    "on": 4.8171885589981684
+  },
+  "paired_median_reduction_percent": -0.0423429507730777,
+  "paired_bootstrap_median_interval_95": [
+    -0.18766315728427907,
+    0.03190336574920294
+  ],
+  "wins_ties_losses": [
+    21,
+    0,
+    27
+  ],
+  "noninferiority_passed": true
+}

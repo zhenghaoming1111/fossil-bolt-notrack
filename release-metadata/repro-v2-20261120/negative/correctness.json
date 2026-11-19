@@ -1,0 +1,241 @@
+{
+  "status": "PASS",
+  "no_notrack_jmp": true,
+  "load_segments_identical": true,
+  "runtime_image_equivalent": true,
+  "runtime_equivalence_audit": "runtime-equivalence.json",
+  "compiler_flags": "-O2 -g -fno-omit-frame-pointer -fno-reorder-blocks-and-partition -fno-pie -no-pie -fcf-protection=none",
+  "linker_flags": "-no-pie -Wl,--emit-relocs",
+  "original_sha256": "832fc56696bbeb9f316488d38de96fc11d85c0e8dc842cb324899e1d4a48c46b",
+  "profile_sha256": "b0513e9b3331d4255c9764057c53516eb2828857996af76eedb78b0a8152e420",
+  "fossil_version": "This is fossil version 2.28 [52445a27f1] 2026-03-11 11:31:46 UTC\nCompiled on Nov 19 2026 17:11:58 using gcc-13.3.0 (64-bit)\nSQLite 3.52.0 2026-03-06 16:01:44 557aeb4386\nSSL (OpenSSL 3.0.13 30 Jan 2024)\nzlib 1.3, loaded 1.3\n",
+  "snapshot_sha256": "032e728053279cfb91273eacb4ba1797d795dcfbb75596b3f65f5826af881a6f",
+  "rewrites": {
+    "off": {
+      "elf_sha256": "4a7974ff73eca15243aff0ac33687ea0af6d7623b40e8b99560fb14c24ecb68b",
+      "image": {
+        "entry": 13228830,
+        "segments": [
+          {
+            "vaddr": 4194304,
+            "paddr": 4194304,
+            "offset": 0,
+            "filesz": 19248,
+            "memsz": 19248,
+            "flags": 4,
+            "align": 4096,
+            "sha256": "a76be76b7cae70465b47eaa0d2547f1c7aa623991bf0f880ad686da7cec1f290"
+          },
+          {
+            "vaddr": 4214784,
+            "paddr": 4214784,
+            "offset": 20480,
+            "filesz": 2959249,
+            "memsz": 2959249,
+            "flags": 5,
+            "align": 4096,
+            "sha256": "bd9e4ea6f0771bda91d878ced3b452c2074f89de18f94c5fc26879ee33fc5dba"
+          },
+          {
+            "vaddr": 7176192,
+            "paddr": 7176192,
+            "offset": 2981888,
+            "filesz": 2356616,
+            "memsz": 2356616,
+            "flags": 4,
+            "align": 4096,
+            "sha256": "707104af8dac146b610efcce7d329c2b4d7d7eb0179f3a671c10732ff1f176c2"
+          },
+          {
+            "vaddr": 9538944,
+            "paddr": 9538944,
+            "offset": 5340544,
+            "filesz": 37560,
+            "memsz": 58208,
+            "flags": 6,
+            "align": 4096,
+            "sha256": "4aca6dd55cb78bc4543908d077d8ee619bcf22c210b5cb99c7a8bbbe042b3760"
+          },
+          {
+            "vaddr": 10485760,
+            "paddr": 10485760,
+            "offset": 6291456,
+            "filesz": 4539068,
+            "memsz": 4539068,
+            "flags": 5,
+            "align": 2097152,
+            "sha256": "8a2d129f2884dabe7354a889eb2048e7c7b4fae20ead10147070986e7fb29175"
+          }
+        ]
+      },
+      "runtime_image": {
+        "entry": 13228830,
+        "segments": [
+          {
+            "vaddr": 4194304,
+            "paddr": 4194304,
+            "offset": 0,
+            "filesz": 19248,
+            "memsz": 19248,
+            "flags": 4,
+            "align": 4096,
+            "sha256": "2ba1892c452721974e96e7f12e419880a00105162c1c7eb1830719da47e09276"
+          },
+          {
+            "vaddr": 4214784,
+            "paddr": 4214784,
+            "offset": 20480,
+            "filesz": 2959249,
+            "memsz": 2959249,
+            "flags": 5,
+            "align": 4096,
+            "sha256": "bd9e4ea6f0771bda91d878ced3b452c2074f89de18f94c5fc26879ee33fc5dba"
+          },
+          {
+            "vaddr": 7176192,
+            "paddr": 7176192,
+            "offset": 2981888,
+            "filesz": 2356616,
+            "memsz": 2356616,
+            "flags": 4,
+            "align": 4096,
+            "sha256": "707104af8dac146b610efcce7d329c2b4d7d7eb0179f3a671c10732ff1f176c2"
+          },
+          {
+            "vaddr": 9538944,
+            "paddr": 9538944,
+            "offset": 5340544,
+            "filesz": 37560,
+            "memsz": 58208,
+            "flags": 6,
+            "align": 4096,
+            "sha256": "4aca6dd55cb78bc4543908d077d8ee619bcf22c210b5cb99c7a8bbbe042b3760"
+          },
+          {
+            "vaddr": 10485760,
+            "paddr": 10485760,
+            "offset": 6291456,
+            "filesz": 4539068,
+            "memsz": 4539068,
+            "flags": 5,
+            "align": 2097152,
+            "sha256": "8a2d129f2884dabe7354a889eb2048e7c7b4fae20ead10147070986e7fb29175"
+          }
+        ]
+      }
+    },
+    "on": {
+      "elf_sha256": "769b17767ae599c166e47c47f091dcc97689d7e7ef645f2dde0669b0c681bb43",
+      "image": {
+        "entry": 13228830,
+        "segments": [
+          {
+            "vaddr": 4194304,
+            "paddr": 4194304,
+            "offset": 0,
+            "filesz": 19248,
+            "memsz": 19248,
+            "flags": 4,
+            "align": 4096,
+            "sha256": "a76be76b7cae70465b47eaa0d2547f1c7aa623991bf0f880ad686da7cec1f290"
+          },
+          {
+            "vaddr": 4214784,
+            "paddr": 4214784,
+            "offset": 20480,
+            "filesz": 2959249,
+            "memsz": 2959249,
+            "flags": 5,
+            "align": 4096,
+            "sha256": "bd9e4ea6f0771bda91d878ced3b452c2074f89de18f94c5fc26879ee33fc5dba"
+          },
+          {
+            "vaddr": 7176192,
+            "paddr": 7176192,
+            "offset": 2981888,
+            "filesz": 2356616,
+            "memsz": 2356616,
+            "flags": 4,
+            "align": 4096,
+            "sha256": "707104af8dac146b610efcce7d329c2b4d7d7eb0179f3a671c10732ff1f176c2"
+          },
+          {
+            "vaddr": 9538944,
+            "paddr": 9538944,
+            "offset": 5340544,
+            "filesz": 37560,
+            "memsz": 58208,
+            "flags": 6,
+            "align": 4096,
+            "sha256": "4aca6dd55cb78bc4543908d077d8ee619bcf22c210b5cb99c7a8bbbe042b3760"
+          },
+          {
+            "vaddr": 10485760,
+            "paddr": 10485760,
+            "offset": 6291456,
+            "filesz": 4539068,
+            "memsz": 4539068,
+            "flags": 5,
+            "align": 2097152,
+            "sha256": "8a2d129f2884dabe7354a889eb2048e7c7b4fae20ead10147070986e7fb29175"
+          }
+        ]
+      },
+      "runtime_image": {
+        "entry": 13228830,
+        "segments": [
+          {
+            "vaddr": 4194304,
+            "paddr": 4194304,
+            "offset": 0,
+            "filesz": 19248,
+            "memsz": 19248,
+            "flags": 4,
+            "align": 4096,
+            "sha256": "2ba1892c452721974e96e7f12e419880a00105162c1c7eb1830719da47e09276"
+          },
+          {
+            "vaddr": 4214784,
+            "paddr": 4214784,
+            "offset": 20480,
+            "filesz": 2959249,
+            "memsz": 2959249,
+            "flags": 5,
+            "align": 4096,
+            "sha256": "bd9e4ea6f0771bda91d878ced3b452c2074f89de18f94c5fc26879ee33fc5dba"
+          },
+          {
+            "vaddr": 7176192,
+            "paddr": 7176192,
+            "offset": 2981888,
+            "filesz": 2356616,
+            "memsz": 2356616,
+            "flags": 4,
+            "align": 4096,
+            "sha256": "707104af8dac146b610efcce7d329c2b4d7d7eb0179f3a671c10732ff1f176c2"
+          },
+          {
+            "vaddr": 9538944,
+            "paddr": 9538944,
+            "offset": 5340544,
+            "filesz": 37560,
+            "memsz": 58208,
+            "flags": 6,
+            "align": 4096,
+            "sha256": "4aca6dd55cb78bc4543908d077d8ee619bcf22c210b5cb99c7a8bbbe042b3760"
+          },
+          {
+            "vaddr": 10485760,
+            "paddr": 10485760,
+            "offset": 6291456,
+            "filesz": 4539068,
+            "memsz": 4539068,
+            "flags": 5,
+            "align": 2097152,
+            "sha256": "8a2d129f2884dabe7354a889eb2048e7c7b4fae20ead10147070986e7fb29175"
+          }
+        ]
+      }
+    }
+  }
+}

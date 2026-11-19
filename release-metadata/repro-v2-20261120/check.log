@@ -1,0 +1,58 @@
+WARNING: No CPU PMU in sysfs. Instrumentation/timing remains usable; do not claim hardware perf, IPC or LBR results.
+PASS: preflight; /home/sole/workspace/zhm/fossil-portability-v2-20261120/validation-results/host-preflight.json
+Running check; log: /home/sole/workspace/zhm/fossil-portability-v2-20261120/validation-results/check-20261119T170340Z-4ek_6mrq/console.log
+/results/check-20261119T170340Z-4ek_6mrq/output/environment.json
+This is fossil version 2.28 [52445a27f1] 2026-03-11 11:31:46 UTC
+Compiled on Nov 18 2026 14:41:22 using gcc-13.3.0 (64-bit)
+SQLite 3.52.0 2026-03-06 16:01:44 557aeb4386
+SSL (OpenSSL 3.0.13 30 Jan 2024)
+zlib 1.3, loaded 1.3
+
+Environment and recognition probes saved: /results/check-20261119T170340Z-4ek_6mrq/output/fossil-web
+ok
+/results/check-20261119T170340Z-4ek_6mrq/output/fossil-web/host-environment.json
+READY: fixed repository and traces installed without contacting the live upstream.
+/results/check-20261119T170340Z-4ek_6mrq/output/fossil-web
+Instrument with patched BOLT; counters shared across HTTP worker forks.
+Train and verify actual HTTP routes: browse
+Train and verify actual HTTP routes: review
+Fresh profile has both target functions: {"sqlite3VdbeExec": {"nonzero_records": 970, "counter_sum_not_function_calls": 624645879}, "vdbeRecordCompareInt": {"nonzero_records": 21, "counter_sum_not_function_calls": 20671118}}
+Rewrite with identical fresh profile and ext-tsp+hfsort: before
+Rewrite with identical fresh profile and ext-tsp+hfsort: after
+Both rewrites complete; CFG and preserved prefixes recorded.
+Verify real HTTP response text: A-original
+Verify real HTTP response text: B-before-fix
+Verify real HTTP response text: C-after-fix
+PASS: A/B/C HTTP 200 and identical visible repository content.
+Verify real HTTP response text: A-original
+Verify real HTTP response text: B-before-fix
+Verify real HTTP response text: C-after-fix
+PASS: A/B/C HTTP 200 and identical visible repository content.
+PASS: SQLite recognition, fresh counters, relocated functions, prefixes and table entries.
+This is fossil version 2.28 [52445a27f1] 2026-03-11 11:31:46 UTC
+Compiled on Nov 18 2026 14:41:22 using gcc-13.3.0 (64-bit)
+SQLite 3.52.0 2026-03-06 16:01:44 557aeb4386
+SSL (OpenSSL 3.0.13 30 Jan 2024)
+zlib 1.3, loaded 1.3
+
+Environment and recognition probes saved: /results/check-20261119T170340Z-4ek_6mrq/output/fossil-dashboard
+ok
+/results/check-20261119T170340Z-4ek_6mrq/output/fossil-dashboard/host-environment.json
+READY: fixed repository and traces installed without contacting the live upstream.
+/results/check-20261119T170340Z-4ek_6mrq/output/fossil-dashboard
+Instrument with patched BOLT; counters shared across HTTP worker forks.
+Train and verify actual HTTP routes: dashboard
+Fresh profile has both target functions: {"sqlite3VdbeExec": {"nonzero_records": 831, "counter_sum_not_function_calls": 4914711877}, "vdbeRecordCompareInt": {"nonzero_records": 18, "counter_sum_not_function_calls": 43879708}}
+Rewrite with identical fresh profile and ext-tsp+hfsort: before
+Rewrite with identical fresh profile and ext-tsp+hfsort: after
+Both rewrites complete; CFG and preserved prefixes recorded.
+Verify real HTTP response text: A-original
+Verify real HTTP response text: B-before-fix
+Verify real HTTP response text: C-after-fix
+PASS: A/B/C HTTP 200 and identical visible repository content.
+Verify real HTTP response text: A-original
+Verify real HTTP response text: B-before-fix
+Verify real HTTP response text: C-after-fix
+PASS: A/B/C HTTP 200 and identical visible repository content.
+PASS: SQLite recognition, fresh counters, relocated functions, prefixes and table entries.
+PASS: fresh Fossil profiles, A/B/C HTTP content, relocated tables and NOTRACK prefixes.

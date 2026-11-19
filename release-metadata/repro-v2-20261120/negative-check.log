@@ -1,0 +1,13 @@
+WARNING: No CPU PMU in sysfs. Instrumentation/timing remains usable; do not claim hardware perf, IPC or LBR results.
+PASS: preflight; /home/sole/workspace/zhm/fossil-portability-v2-20261120/validation-results/host-preflight.json
+Running negative-check; log: /home/sole/workspace/zhm/fossil-portability-v2-20261120/validation-results/negative-check-20261119T170805Z-0hkr2di4/console.log
+Build the frozen Fossil sources with -fcf-protection=none
+PASS: whole-executable disassembly has no NOTRACK JMP
+Instrument with patched BOLT; counters shared across HTTP worker forks.
+Train and verify actual HTTP routes: dashboard
+Fresh profile has both target functions: {"sqlite3VdbeExec": {"nonzero_records": 831, "counter_sum_not_function_calls": 4914711877}, "vdbeRecordCompareInt": {"nonzero_records": 18, "counter_sum_not_function_calls": 43879708}}
+Verify real HTTP response text: A-original
+Verify real HTTP response text: B-before-fix
+Verify real HTTP response text: C-after-fix
+PASS: A/B/C HTTP 200 and identical visible repository content.
+PASS: audited equivalent ELF execution contents and visible A/OFF/ON pages

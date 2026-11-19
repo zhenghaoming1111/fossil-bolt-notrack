@@ -1,0 +1,2 @@
+WARNING: No CPU PMU in sysfs. Instrumentation/timing remains usable; do not claim hardware perf, IPC or LBR results.
+PASS: preflight; /home/sole/workspace/zhm/fossil-portability-v2-20261120/validation-results/host-preflight.json

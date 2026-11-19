@@ -1,0 +1,239 @@
+{
+  "status": "PASS",
+  "runtime_image_equivalent": true,
+  "raw_load_segments_identical": true,
+  "comparison_policy": "x86-64-elf-bolt-note-v1",
+  "allowed_metadata": "Nonallocated .note.bolt_info content/size; e_shoff only when that note changes. Both note and section table must be outside every program segment.",
+  "actual_loaded_differing_offsets": [],
+  "changed_sections": [
+    ".note.bolt_info"
+  ],
+  "section_table_offsets": {
+    "off": 11193600,
+    "on": 11193600
+  },
+  "raw_images": {
+    "off": {
+      "entry": 13228830,
+      "segments": [
+        {
+          "vaddr": 4194304,
+          "paddr": 4194304,
+          "offset": 0,
+          "filesz": 19248,
+          "memsz": 19248,
+          "flags": 4,
+          "align": 4096,
+          "sha256": "a76be76b7cae70465b47eaa0d2547f1c7aa623991bf0f880ad686da7cec1f290"
+        },
+        {
+          "vaddr": 4214784,
+          "paddr": 4214784,
+          "offset": 20480,
+          "filesz": 2959249,
+          "memsz": 2959249,
+          "flags": 5,
+          "align": 4096,
+          "sha256": "bd9e4ea6f0771bda91d878ced3b452c2074f89de18f94c5fc26879ee33fc5dba"
+        },
+        {
+          "vaddr": 7176192,
+          "paddr": 7176192,
+          "offset": 2981888,
+          "filesz": 2356616,
+          "memsz": 2356616,
+          "flags": 4,
+          "align": 4096,
+          "sha256": "707104af8dac146b610efcce7d329c2b4d7d7eb0179f3a671c10732ff1f176c2"
+        },
+        {
+          "vaddr": 9538944,
+          "paddr": 9538944,
+          "offset": 5340544,
+          "filesz": 37560,
+          "memsz": 58208,
+          "flags": 6,
+          "align": 4096,
+          "sha256": "4aca6dd55cb78bc4543908d077d8ee619bcf22c210b5cb99c7a8bbbe042b3760"
+        },
+        {
+          "vaddr": 10485760,
+          "paddr": 10485760,
+          "offset": 6291456,
+          "filesz": 4539068,
+          "memsz": 4539068,
+          "flags": 5,
+          "align": 2097152,
+          "sha256": "8a2d129f2884dabe7354a889eb2048e7c7b4fae20ead10147070986e7fb29175"
+        }
+      ]
+    },
+    "on": {
+      "entry": 13228830,
+      "segments": [
+        {
+          "vaddr": 4194304,
+          "paddr": 4194304,
+          "offset": 0,
+          "filesz": 19248,
+          "memsz": 19248,
+          "flags": 4,
+          "align": 4096,
+          "sha256": "a76be76b7cae70465b47eaa0d2547f1c7aa623991bf0f880ad686da7cec1f290"
+        },
+        {
+          "vaddr": 4214784,
+          "paddr": 4214784,
+          "offset": 20480,
+          "filesz": 2959249,
+          "memsz": 2959249,
+          "flags": 5,
+          "align": 4096,
+          "sha256": "bd9e4ea6f0771bda91d878ced3b452c2074f89de18f94c5fc26879ee33fc5dba"
+        },
+        {
+          "vaddr": 7176192,
+          "paddr": 7176192,
+          "offset": 2981888,
+          "filesz": 2356616,
+          "memsz": 2356616,
+          "flags": 4,
+          "align": 4096,
+          "sha256": "707104af8dac146b610efcce7d329c2b4d7d7eb0179f3a671c10732ff1f176c2"
+        },
+        {
+          "vaddr": 9538944,
+          "paddr": 9538944,
+          "offset": 5340544,
+          "filesz": 37560,
+          "memsz": 58208,
+          "flags": 6,
+          "align": 4096,
+          "sha256": "4aca6dd55cb78bc4543908d077d8ee619bcf22c210b5cb99c7a8bbbe042b3760"
+        },
+        {
+          "vaddr": 10485760,
+          "paddr": 10485760,
+          "offset": 6291456,
+          "filesz": 4539068,
+          "memsz": 4539068,
+          "flags": 5,
+          "align": 2097152,
+          "sha256": "8a2d129f2884dabe7354a889eb2048e7c7b4fae20ead10147070986e7fb29175"
+        }
+      ]
+    }
+  },
+  "normalized_images": {
+    "off": {
+      "entry": 13228830,
+      "segments": [
+        {
+          "vaddr": 4194304,
+          "paddr": 4194304,
+          "offset": 0,
+          "filesz": 19248,
+          "memsz": 19248,
+          "flags": 4,
+          "align": 4096,
+          "sha256": "2ba1892c452721974e96e7f12e419880a00105162c1c7eb1830719da47e09276"
+        },
+        {
+          "vaddr": 4214784,
+          "paddr": 4214784,
+          "offset": 20480,
+          "filesz": 2959249,
+          "memsz": 2959249,
+          "flags": 5,
+          "align": 4096,
+          "sha256": "bd9e4ea6f0771bda91d878ced3b452c2074f89de18f94c5fc26879ee33fc5dba"
+        },
+        {
+          "vaddr": 7176192,
+          "paddr": 7176192,
+          "offset": 2981888,
+          "filesz": 2356616,
+          "memsz": 2356616,
+          "flags": 4,
+          "align": 4096,
+          "sha256": "707104af8dac146b610efcce7d329c2b4d7d7eb0179f3a671c10732ff1f176c2"
+        },
+        {
+          "vaddr": 9538944,
+          "paddr": 9538944,
+          "offset": 5340544,
+          "filesz": 37560,
+          "memsz": 58208,
+          "flags": 6,
+          "align": 4096,
+          "sha256": "4aca6dd55cb78bc4543908d077d8ee619bcf22c210b5cb99c7a8bbbe042b3760"
+        },
+        {
+          "vaddr": 10485760,
+          "paddr": 10485760,
+          "offset": 6291456,
+          "filesz": 4539068,
+          "memsz": 4539068,
+          "flags": 5,
+          "align": 2097152,
+          "sha256": "8a2d129f2884dabe7354a889eb2048e7c7b4fae20ead10147070986e7fb29175"
+        }
+      ]
+    },
+    "on": {
+      "entry": 13228830,
+      "segments": [
+        {
+          "vaddr": 4194304,
+          "paddr": 4194304,
+          "offset": 0,
+          "filesz": 19248,
+          "memsz": 19248,
+          "flags": 4,
+          "align": 4096,
+          "sha256": "2ba1892c452721974e96e7f12e419880a00105162c1c7eb1830719da47e09276"
+        },
+        {
+          "vaddr": 4214784,
+          "paddr": 4214784,
+          "offset": 20480,
+          "filesz": 2959249,
+          "memsz": 2959249,
+          "flags": 5,
+          "align": 4096,
+          "sha256": "bd9e4ea6f0771bda91d878ced3b452c2074f89de18f94c5fc26879ee33fc5dba"
+        },
+        {
+          "vaddr": 7176192,
+          "paddr": 7176192,
+          "offset": 2981888,
+          "filesz": 2356616,
+          "memsz": 2356616,
+          "flags": 4,
+          "align": 4096,
+          "sha256": "707104af8dac146b610efcce7d329c2b4d7d7eb0179f3a671c10732ff1f176c2"
+        },
+        {
+          "vaddr": 9538944,
+          "paddr": 9538944,
+          "offset": 5340544,
+          "filesz": 37560,
+          "memsz": 58208,
+          "flags": 6,
+          "align": 4096,
+          "sha256": "4aca6dd55cb78bc4543908d077d8ee619bcf22c210b5cb99c7a8bbbe042b3760"
+        },
+        {
+          "vaddr": 10485760,
+          "paddr": 10485760,
+          "offset": 6291456,
+          "filesz": 4539068,
+          "memsz": 4539068,
+          "flags": 5,
+          "align": 2097152,
+          "sha256": "8a2d129f2884dabe7354a889eb2048e7c7b4fae20ead10147070986e7fb29175"
+        }
+      ]
+    }
+  }
+}

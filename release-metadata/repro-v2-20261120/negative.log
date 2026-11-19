@@ -1,0 +1,83 @@
+WARNING: No CPU PMU in sysfs. Instrumentation/timing remains usable; do not claim hardware perf, IPC or LBR results.
+PASS: preflight; /home/sole/workspace/zhm/fossil-portability-v2-20261120/validation-results/host-preflight.json
+Running negative; log: /home/sole/workspace/zhm/fossil-portability-v2-20261120/validation-results/negative-20261119T171138Z-w9mxzzum/console.log
+Build the frozen Fossil sources with -fcf-protection=none
+PASS: whole-executable disassembly has no NOTRACK JMP
+Instrument with patched BOLT; counters shared across HTTP worker forks.
+Train and verify actual HTTP routes: dashboard
+Fresh profile has both target functions: {"sqlite3VdbeExec": {"nonzero_records": 831, "counter_sum_not_function_calls": 4914711877}, "vdbeRecordCompareInt": {"nonzero_records": 18, "counter_sum_not_function_calls": 43879708}}
+Verify real HTTP response text: A-original
+Verify real HTTP response text: B-before-fix
+Verify real HTTP response text: C-after-fix
+PASS: A/B/C HTTP 200 and identical visible repository content.
+PASS: audited equivalent ELF execution contents and visible A/OFF/ON pages
+Negative round 1/48
+Negative round 2/48
+Negative round 3/48
+Negative round 4/48
+Negative round 5/48
+Negative round 6/48
+Negative round 7/48
+Negative round 8/48
+Negative round 9/48
+Negative round 10/48
+Negative round 11/48
+Negative round 12/48
+Negative round 13/48
+Negative round 14/48
+Negative round 15/48
+Negative round 16/48
+Negative round 17/48
+Negative round 18/48
+Negative round 19/48
+Negative round 20/48
+Negative round 21/48
+Negative round 22/48
+Negative round 23/48
+Negative round 24/48
+Negative round 25/48
+Negative round 26/48
+Negative round 27/48
+Negative round 28/48
+Negative round 29/48
+Negative round 30/48
+Negative round 31/48
+Negative round 32/48
+Negative round 33/48
+Negative round 34/48
+Negative round 35/48
+Negative round 36/48
+Negative round 37/48
+Negative round 38/48
+Negative round 39/48
+Negative round 40/48
+Negative round 41/48
+Negative round 42/48
+Negative round 43/48
+Negative round 44/48
+Negative round 45/48
+Negative round 46/48
+Negative round 47/48
+Negative round 48/48
+{
+  "status": "COMPLETE",
+  "rounds": 48,
+  "records": 96,
+  "requests_per_run": 100,
+  "http_errors": 0,
+  "elapsed_median_seconds": {
+    "off": 4.817106810496625,
+    "on": 4.8171885589981684
+  },
+  "paired_median_reduction_percent": -0.0423429507730777,
+  "paired_bootstrap_median_interval_95": [
+    -0.18766315728427907,
+    0.03190336574920294
+  ],
+  "wins_ties_losses": [
+    21,
+    0,
+    27
+  ],
+  "noninferiority_passed": true
+}

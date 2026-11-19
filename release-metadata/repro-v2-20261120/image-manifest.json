@@ -1,0 +1,24 @@
+{
+  "schema": 2,
+  "release": "repro-v2-20261120",
+  "tag": "bolt-fossil-notrack:repro-v2-af3fdf39125a",
+  "platform": "linux/amd64",
+  "llvm_commit": "af3fdf39125a6f119bfcc97f1dd00572185f6e07",
+  "reported_image_id": "sha256:77a7af9e2640d8adc702faf8e045b93994f05d886b0056de8c071f2b57f966b5",
+  "config_digest": "sha256:77a7af9e2640d8adc702faf8e045b93994f05d886b0056de8c071f2b57f966b5",
+  "rootfs_diff_ids": [
+    "sha256:47c2bf97949810fc3b57b71d5a164e9e2272cb8abc87d97b64d4fc97cfd9fc48",
+    "sha256:3f05ecc9f122585846a47d3186bc7a662df63643efc0ca21c5af543034fa87bb",
+    "sha256:e530f110fd2e135fa06f1ce8b3d3c5f30d5cbba6dc891494bd2429e1f3bc34c6",
+    "sha256:0a2b169cfc647f301c0af55d0334bc8231fb0ffef14e69382cc2d10739b416a7",
+    "sha256:2a854c4d239f9c05a47c2c585e07521e8ce28d7716b907b7e9e8c9c5913b723e",
+    "sha256:8819dfffc3d18451516360108f7f79bf374410b62b2ec1299b653e774aa4bcc7"
+  ],
+  "source_manifest_sha256": "06a51b17fee1c59ab0f973a87f54b58d3e91eee1fc4ca861496899384df5f344",
+  "archive": "fossil-bolt-image-repro-v2-af3fdf39125a.tar.gz",
+  "archive_size_bytes": 638612584,
+  "archive_sha256": "054538f412cada7aef610d8605dac17730c9a07216a6ab663cbc5eb2392ff444",
+  "materials": "fossil-bolt-materials-repro-v2-af3fdf39125a.tar.gz",
+  "materials_sha256": "1362536ae10fa3955a28251edbeff0606095a87380023583af4c32fbf336b3f9",
+  "id_note": "reported_image_id may identify a manifest or config depending on Docker storage. config_digest is computed from the actual archive config; RootFS diff IDs identify the unpacked layers."
+}

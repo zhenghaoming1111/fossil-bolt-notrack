@@ -1,0 +1,39 @@
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            BuildKit is currently disabled; enable it by removing the DOCKER_BUILDKIT=0
+            environment-variable.
+
+Sending build context to Docker daemon  91.35MB
+Step 1/5 : ARG BASE_IMAGE=bolt-fossil-notrack:main-af3fdf39125a
+Step 2/5 : FROM ${BASE_IMAGE}
+ ---> f88ce34b8888
+Step 3/5 : COPY . /opt/project/
+ ---> 8a35c6fbf886
+Step 4/5 : RUN cd /opt/project     && sha256sum --check SOURCE_SHA256SUMS --quiet     && sha256sum --check CONTAINER_SHA256SUMS --quiet     && python3 -m unittest discover -s tests -p 'test_*.py' -v
+ ---> Running in d4be3b1e903c
+test_allocated_bolt_note_rejected (test_elf_runtime_equivalence.RuntimeEquivalenceTests.test_allocated_bolt_note_rejected) ... ok
+test_changed_data_rejected (test_elf_runtime_equivalence.RuntimeEquivalenceTests.test_changed_data_rejected) ... ok
+test_changed_entry_rejected (test_elf_runtime_equivalence.RuntimeEquivalenceTests.test_changed_entry_rejected) ... ok
+test_changed_instruction_rejected (test_elf_runtime_equivalence.RuntimeEquivalenceTests.test_changed_instruction_rejected) ... ok
+test_changed_nonallocated_section_rejected (test_elf_runtime_equivalence.RuntimeEquivalenceTests.test_changed_nonallocated_section_rejected) ... ok
+test_changed_program_permissions_rejected (test_elf_runtime_equivalence.RuntimeEquivalenceTests.test_changed_program_permissions_rejected) ... ok
+test_identical_program (test_elf_runtime_equivalence.RuntimeEquivalenceTests.test_identical_program) ... ok
+test_only_note_and_section_table_offset_change (test_elf_runtime_equivalence.RuntimeEquivalenceTests.test_only_note_and_section_table_offset_change) ... ok
+test_section_table_inside_program_segment_rejected (test_elf_runtime_equivalence.RuntimeEquivalenceTests.test_section_table_inside_program_segment_rejected) ... ok
+test_truncated_table_rejected (test_elf_runtime_equivalence.RuntimeEquivalenceTests.test_truncated_table_rejected) ... ok
+test_active_update_blocks_timing_before_creating_stage (test_reproduction_host.HostPreflightTests.test_active_update_blocks_timing_before_creating_stage) ... ok
+test_daemon_failure_recorded (test_reproduction_host.HostPreflightTests.test_daemon_failure_recorded) ... ok
+test_no_pmu_is_a_warning (test_reproduction_host.HostPreflightTests.test_no_pmu_is_a_warning) ... ok
+test_stale_image_rejected_before_binary_probe (test_reproduction_host.HostPreflightTests.test_stale_image_rejected_before_binary_probe) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.079s
+
+OK
+ ---> Removed intermediate container d4be3b1e903c
+ ---> 3cc2925dd26d
+Step 5/5 : LABEL org.opencontainers.image.version="repro-v2-20261120"
+ ---> Running in 5eced7ef8641
+ ---> Removed intermediate container 5eced7ef8641
+ ---> 77a7af9e2640
+Successfully built 77a7af9e2640
+Successfully tagged bolt-fossil-notrack:repro-v2-af3fdf39125a

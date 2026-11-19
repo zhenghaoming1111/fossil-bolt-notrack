@@ -1,0 +1,96 @@
+{
+  "status": "PASS",
+  "collected_at_utc": "2026-11-19T17:11:34.920563+00:00",
+  "release": "repro-v2-20261120",
+  "image": "bolt-fossil-notrack:repro-v2-af3fdf39125a",
+  "results": "/home/sole/workspace/zhm/fossil-portability-v2-20261120/validation-results",
+  "warnings": [
+    "No CPU PMU in sysfs. Instrumentation/timing remains usable; do not claim hardware perf, IPC or LBR results."
+  ],
+  "host": {
+    "platform": "Linux-6.8.0-54-generic-x86_64-with-glibc2.39",
+    "machine": "x86_64",
+    "is_wsl": false,
+    "virtualization": "kvm",
+    "allowed_cpus": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "results_free_bytes": 57364238336,
+    "os_release": "PRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.5 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n",
+    "meminfo": "MemTotal:       32863308 kB\nMemFree:        25337440 kB\nMemAvailable:   32000596 kB\nBuffers:           30568 kB\nCached:          6728692 kB\nSwapCached:            0 kB\nActive:           194656 kB\nInactive:        6674004 kB\nActive(anon):     119256 kB\nInactive(anon):        0 kB\nActive(file):      75400 kB\nInactive(file):  6674004 kB\nUnevictable:       27456 kB\nMlocked:           27456 kB\nSwapTotal:             0 kB\nSwapFree:              0 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:               108 kB\nWriteback:            40 kB\nAnonPages:        136968 kB\nMapped:           224564 kB\nShmem:              1096 kB\nKReclaimable:     379616 kB\nSlab:             525672 kB\nSReclaimable:     379616 kB\nSUnreclaim:       146056 kB\nKernelStack:        5184 kB\nPageTables:         4356 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    16431652 kB\nCommitted_AS:    1050572 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:       13784 kB\nVmallocChunk:          0 kB\nPercpu:            12224 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nUnaccepted:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:      149352 kB\nDirectMap2M:    33404928 kB\n",
+    "cpu_pmu_sysfs_present": false,
+    "pmu_note": "Sysfs presence is not a perf permission/availability test. Main experiments use BOLT instrumentation.",
+    "busy_processes": []
+  },
+  "docker_server": {
+    "ServerVersion": "29.10.0",
+    "OSType": "linux",
+    "Architecture": "x86_64",
+    "Driver": "overlay2",
+    "DockerRootDir": "/home/sole/workspace/zhm/fossil-repro-20261119-a3535wwv/docker-data",
+    "NCPU": 16,
+    "MemTotal": 33652027392
+  },
+  "docker_image": {
+    "Id": "sha256:77a7af9e2640d8adc702faf8e045b93994f05d886b0056de8c071f2b57f966b5",
+    "Os": "linux",
+    "Architecture": "amd64",
+    "RootFS": {
+      "Layers": [
+        "sha256:47c2bf97949810fc3b57b71d5a164e9e2272cb8abc87d97b64d4fc97cfd9fc48",
+        "sha256:3f05ecc9f122585846a47d3186bc7a662df63643efc0ca21c5af543034fa87bb",
+        "sha256:e530f110fd2e135fa06f1ce8b3d3c5f30d5cbba6dc891494bd2429e1f3bc34c6",
+        "sha256:0a2b169cfc647f301c0af55d0334bc8231fb0ffef14e69382cc2d10739b416a7",
+        "sha256:2a854c4d239f9c05a47c2c585e07521e8ce28d7716b907b7e9e8c9c5913b723e",
+        "sha256:8819dfffc3d18451516360108f7f79bf374410b62b2ec1299b653e774aa4bcc7"
+      ],
+      "Type": "layers"
+    }
+  },
+  "source_manifest_sha256": "06a51b17fee1c59ab0f973a87f54b58d3e91eee1fc4ca861496899384df5f344",
+  "image_identity_manifest": {
+    "path": "/home/sole/workspace/zhm/fossil-portability-v2-20261120/image-preexport-manifest.json",
+    "status": "PASS",
+    "config_digest": "sha256:77a7af9e2640d8adc702faf8e045b93994f05d886b0056de8c071f2b57f966b5"
+  },
+  "container_probe": {
+    "allowed_cpus": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "server_cpu": 0,
+    "client_cpu": 1,
+    "writable_results": true,
+    "binary_execution": true
+  },
+  "record_file": "host-preflight-20261119T171138.431620Z.json"
+}

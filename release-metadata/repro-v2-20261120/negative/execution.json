@@ -1,0 +1,25 @@
+{
+  "stage": "negative",
+  "command": [
+    "/home/sole/workspace/zhm/fossil-repro-20261119-a3535wwv/run-docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "--user",
+    "1000:1000",
+    "--mount",
+    "type=bind,src=/home/sole/workspace/zhm/fossil-portability-v2-20261120/validation-results,dst=/results",
+    "bolt-fossil-notrack:repro-v2-af3fdf39125a",
+    "bash",
+    "scripts/reproduce_fossil_mainline.sh",
+    "negative",
+    "/results/negative-20261119T171138Z-w9mxzzum/output"
+  ],
+  "started_at_utc": "2026-11-19T17:11:38.446084+00:00",
+  "status": "PASS",
+  "source_preflight": "../host-preflight-20261119T171138.431620Z.json",
+  "exit_code": 0,
+  "elapsed_seconds": 802.6847814830035,
+  "finished_at_utc": "2026-11-19T17:25:01.131057+00:00"
+}
